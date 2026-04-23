@@ -1,6 +1,7 @@
 # Ignore everything
 *
 
+
 # Allow root-level items
 !.gitignore
 
