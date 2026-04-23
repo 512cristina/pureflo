@@ -1,0 +1,31 @@
+# Ignore everything
+*
+
+# Allow root-level items
+!.gitignore
+
+# Allow wp-content
+!wp-content/
+
+# Allow plugins directory
+!wp-content/plugins/
+
+# Allow specific plugins
+!wp-content/plugins/distributors/
+!wp-content/plugins/distributors/
+!wp-content/plugins/pureflo-faq/
+!wp-content/plugins/regional-pages/
+!wp-content/plugins/resource-library/
+
+# Allow everything inside those plugins
+!wp-content/plugins/distributors/**
+!wp-content/plugins/pureflo-faq/**
+!wp-content/plugins/regional-pages/**
+!wp-content/plugins/resource-library/**
+
+# Allow themes directory
+!wp-content/themes/
+
+# Allow your theme
+!wp-content/themes/pureflo/
+!wp-content/themes/pureflo/**
