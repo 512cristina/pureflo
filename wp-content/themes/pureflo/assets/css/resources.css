@@ -1,0 +1,34 @@
+/* == RESOURCES PAGE ONLY == */
+
+.hero:before {content: '';  opacity: 1; position: absolute; inset: 0; background-repeat: no-repeat; background-position: top right; background-size: cover;
+    background-image: url('../img/global/dust-particles-hero-sm.jpg'); }
+
+@media (min-width: 600px) {.hero:before { background-image:url('../img/global/dust-particles-hero-md.jpg');} }
+@media (min-width: 1200px) {
+    .hero { min-height: 50vh; }
+    .hero:before { background-image: url('../img/global/dust-particles-hero.jpg'); background-attachment: fixed; }
+}
+
+.featured-resource {margin-top:-150px;}
+.featured-resource img {max-height: 300px; width: auto; position: relative;}
+
+.resource-filters {text-transform: capitalize; }
+.resource-filters select {font-size: 1rem; margin:0.5rem 0;}
+.resource-filters .btn-submit {background: none; border:0; color:var(--ada-blue); margin:0; vertical-align: middle;}
+.resource-filters .btn-submit:hover {color:rgba(0, 0, 0, 0.7) !important;}
+
+.card figure {position: relative; overflow: hidden; margin: 0; object-fit: contain; }
+.card figure .overlay {position: absolute; background: rgba(200, 0, 0, 0.8); top: 5px; left: 5px; right: 5px; bottom: 5px; overflow: hidden;  opacity: 0; pointer-events: none; transition: 0.6s; z-index: 1;}
+.card figure .zoom {display: block; color: #fff; width: 100%; position: absolute; z-index: 2; top: 0; bottom: 0; right: 0; font-size: 3rem; text-align: center; text-decoration: none; opacity: 0; pointer-events: auto; transition: 0.6s;  transform: translateX(100%); }
+.card figure .zoom .bi-play-circle {position: absolute; left: 50%; top: 50%; margin: -19px 0 0 -19px;}
+
+.card figure > img {margin-bottom: 0; width: 100%; height: auto;}
+.card figure:hover .overlay {opacity: 1; }
+.card figure:hover .zoom {opacity: 1; transform: translateY(0);}
+
+.card .img-wrapper {overflow: hidden;}
+.card .img-wrapper img {transition: 0.6s ease; }
+.card .img-wrapper img:hover {transform: scale(1.2); transition: 0.6s ease; }
+
+.resource-list .card-text {font-size:1rem; margin: 8px 0 15px 0;}
+.resource-list .card-icon {font-size:2rem;}

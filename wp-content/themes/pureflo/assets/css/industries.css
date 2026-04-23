@@ -1,0 +1,55 @@
+/* == INDUSTRIES PAGE ONLY == */
+
+@media (min-width: 1400px) {.hero { min-height: 70vh;}}
+.hero video {position:absolute; top:0; width:100%;}
+
+.industries .nav-tabs { border: none; background: color-mix(in srgb, var(--background-color), transparent 50%); border-radius: 16px; backdrop-filter: blur(8px); }
+.industries .nav-tabs .nav-item { margin-bottom: 15px; }
+.industries .nav-tabs .nav-item:last-child { margin-bottom: 0; }
+.industries .nav-tabs .nav-link { padding: 20px; border: none; border-radius: 12px; background: var(--background-color); transition: all 0.4s ease; position: relative; overflow: hidden; cursor: pointer; }
+.industries .nav-tabs .nav-link .d-flex { position: relative; z-index: 1; }
+.industries .nav-tabs .nav-link .icon-box { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: color-mix(in srgb, var(--pureflo-blue), transparent 92%); transition: all 0.4s ease; }
+.industries .nav-tabs .nav-link .icon-box i { font-size: 24px; color: var(--pureflo-blue); transition: all 0.4s ease; }
+.industries .nav-tabs .nav-link h4 { font-size: 1rem; font-weight: 600; margin: 0 0 5px 0; color: var(--hd-color); transition: all 0.4s ease; }
+.industries .nav-tabs .nav-link p { font-size: 14px; margin: 0; color: color-mix(in srgb, var(--main-color), transparent 40%); transition: all 0.4s ease; }
+.industries .nav-tabs .nav-link:hover { transform: translateY(-2px); }
+.industries .nav-tabs .nav-link:hover::before { opacity: 1; }
+.industries .nav-tabs .nav-link:hover .icon-box { background: var(--pureflo-blue); }
+.industries .nav-tabs .nav-link:hover .icon-box i { color: #ffffff; }
+.industries .nav-tabs .nav-link:hover h4 { color: var(--pureflo-blue); }
+.industries .nav-tabs .nav-link:hover p { color: color-mix(in srgb, var(--main-color), transparent 20%); }
+.industries .nav-tabs .nav-link.active { background: var(--pureflo-blue); }
+.industries .nav-tabs .nav-link.active::before { opacity: 0; }
+.industries .nav-tabs .nav-link.active .icon-box { background: color-mix(in srgb, #ffffff, transparent 85%); }
+.industries .nav-tabs .nav-link.active .icon-box i { color: #ffffff; }
+.industries .nav-tabs .nav-link.active h4 { color: #ffffff; }
+.industries .nav-tabs .nav-link.active p { color: color-mix(in srgb, #ffffff, transparent 20%); }
+
+.industries .tab-content {color: color-mix(in srgb, var(--main-color), transparent 20%); font-size: 1rem; }
+.industries .tab-content .content-box { background: var(--background-color); border-radius: 1rem; padding: 1.5rem 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); transition: all 0.4s ease; }
+.industries .tab-content .content-box h3 { font-size: 28px; color: var(--hd-color); margin-bottom: 20px; position: relative; padding-bottom: 15px; }
+.industries .tab-content .content-box h3::after { content: ""; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--pureflo-blue); border-radius: 3px; }
+
+.industries .tab-content .content-box .image-box { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); }
+.industries .tab-content .content-box .image-box img { transition: all 0.6s ease; }
+.industries .tab-content .content-box .image-box:hover img { transform: scale(1.05); }
+.industries .tab-content .content-box .image-box::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.05) 100%); pointer-events: none; }
+.industries .tab-pane { transition: all 0.4s ease; }
+.industries .tab-pane.fade { transform: translateY(10px); opacity: 0; }
+.industries .tab-pane.show { transform: translateY(0); opacity: 1; }
+
+@media (max-width: 991px) { .industries .nav-tabs { margin-bottom: 30px; }
+  .industries .nav-tabs .nav-link { padding: 15px; }
+  .industries .nav-tabs .nav-link .icon-box { width: 40px; height: 40px; }
+  .industries .nav-tabs .nav-link .icon-box i { font-size: 20px; }
+  .industries .tab-content .content-box { padding: 30px; }
+  .industries .tab-content .content-box h3 { font-size: 24px; }
+}
+
+@media (max-width: 767px) { .industries .nav-tabs .nav-item { margin-bottom: 10px; }
+  .industries .nav-tabs .nav-link h4 { font-size: 15px; }
+  .industries .nav-tabs .nav-link p { font-size: 13px; }
+  .industries .tab-content .content-box { padding: 25px; }
+  .industries .tab-content .content-box h3 { font-size: 22px; }
+  .industries .tab-content .content-box p { font-size: 15px; }
+}

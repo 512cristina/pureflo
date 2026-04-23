@@ -1,0 +1,25 @@
+/* == FAQs PAGE ONLY == */
+
+@media (min-width: 1200px) {.hero { min-height: 50vh; }}
+.hero video {position:absolute; top:0; width:100%;}
+
+.faq .category-list {background:var(--pureflo-blue); }
+.faq .nav-tabs .nav-link { color: #ffffff; font-size: 1rem; font-weight: 600; border:0; border-radius: 0.25rem; cursor: pointer; transition: all 0.4s ease; }
+.faq .nav-tabs .nav-link:hover { background: #ffffff; color:var(--navy-black);  transform: translateY(-2px); }
+.faq .nav-tabs .nav-link.active { background: #ffffff; color:var(--navy-black);  }
+.faq .nav-tabs .nav-link.active:after  { content: "\F280"; font-family: "bootstrap-icons"; line-height: 1; vertical-align: -.125em;}
+
+.faq .tab-pane { transition: all 0.4s ease; }
+.faq .tab-pane.fade { transform: translateY(10px); opacity: 0; }
+.faq .tab-pane.show { transform: translateY(0); opacity: 1; }
+
+.accordion-item { margin-bottom: 1rem;}
+.accordion-item button {padding: 0.75rem 1.25rem;}
+
+@media (max-width: 991px) { .faq .nav-tabs { margin-bottom: 30px; }
+  .faq .nav-tabs .nav-link { padding: 15px; }
+}
+
+@media (max-width: 767px) { .faq .nav-tabs .nav-item { margin-bottom: 10px; }
+  .faq .nav-tabs .nav-link { font-size: 15px; }
+}

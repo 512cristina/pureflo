@@ -1,0 +1,18 @@
+/* == RESOURCES PAGE ONLY == */
+
+ .hero {min-height: 50vh; }
+@media (min-width: 1200px) {
+    .hero:before {content: '';  opacity: 1; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+    background: url('/wp-content/themes/pureflo-theme/assets/img/global/dust-particles-hero.jpg') no-repeat fixed; background-size: cover; background-position: top right;}
+}
+
+.dist-list, .mobile-list {font-size:0.95rem;}
+.dist-list div.row {padding:8px 3px; border-radius:.375rem; }
+.dist-list div.row:nth-of-type(2n+1) { background-color: rgba(0,0,0,.05);}
+.dist-header {font-weight: bold; text-transform: uppercase; background-color: #000000 !important; color:#ffffff; padding:5px 3px;}
+.dist-name {font-weight: 600;}
+.dist-name a,
+.dist-rep a {color:#e67904; border:0;}
+.info-card {border:1px solid #dee2e6; border-radius:.375rem; padding:1rem; background: rgba(248,249,250,1);}
+
+#country-filter {padding:.4rem.75rem; font-size:1rem; height:auto;}
