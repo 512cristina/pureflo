@@ -51,7 +51,7 @@ class RegionalPagesPaired {
         <select name="region">
             <option value="us" <?php selected($region, 'us'); ?>>US</option>
             <option value="eu" <?php selected($region, 'eu'); ?>>EU</option>
-            <option value="anz" <?php selected($region, 'eu'); ?>>ANZ</option>
+            <option value="anz" <?php selected($region, 'anz'); ?>>ANZ</option>
         </select>
         <?php
     }
