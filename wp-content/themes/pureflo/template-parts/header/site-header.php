@@ -199,7 +199,6 @@
 					</ul>
 				</li>
 				<li><a href="/us/contact/">Contact</a></li>
-				<button type="button" class="search-toggle ms-5"><i class="bi bi-search"></i></button>
 
 				<!-- Flag Selector -->
 				<?php $region_esc = htmlspecialchars($region, ENT_QUOTES, 'UTF-8');
@@ -218,7 +217,7 @@
 					</div>
 				</div>
 
-
+				<button type="button" class="search-toggle ms-3"><i class="bi bi-search"></i></button>
 				<!-- Search container -->
 				<div class="nav-search">
 					<form role="search" method="get" action="<?php echo home_url('/'); ?>" class="search-form d-flex align-items-center">
