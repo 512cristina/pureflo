@@ -17,12 +17,14 @@
 !wp-content/plugins/pureflo-faq/
 !wp-content/plugins/regional-pages/
 !wp-content/plugins/resource-library/
+!wp-content/plugins/simple-snippets/
 
 # Allow everything inside those plugins
 !wp-content/plugins/distributors/**
 !wp-content/plugins/pureflo-faq/**
 !wp-content/plugins/regional-pages/**
 !wp-content/plugins/resource-library/**
+!wp-content/plugins/simple-snippets/**
 
 # Allow themes directory
 !wp-content/themes/
