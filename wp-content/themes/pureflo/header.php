@@ -8,5 +8,5 @@
 <?php wp_head(); ?>
 </head>
 
-<?php get_template_part('template-parts/header/site-header'); ?>
+<?php get_template_part('template-parts/site-header'); ?>
 
