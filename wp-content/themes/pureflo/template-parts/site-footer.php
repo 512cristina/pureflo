@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <ul>
-                            <li><a href="<?php $region = get_current_region(); ?>/faq/">FAQs</a></li>
-                            <li><a href="<?php $region = get_current_region(); ?>/distributors/">Find a Distributor</a></li>
+                            <li><a href="/<?php echo get_current_region(); ?>/faq/">FAQs</a></li>
+                            <li><a href="/<?php echo get_current_region(); ?>/distributors/">Find a Distributor</a></li>
                             <li><a href="https://www.gentexcorp.com/our-brand-protection-promise/" rel="noopener" target="_blank">Brand Protection</a></li>
                             <li><a href="https://www.gentexcorp.com/supply-chain-transparency/" rel="noopener" target="_blank">Supply Chain Transparency</a></li>
                         </ul>
