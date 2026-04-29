@@ -13,7 +13,7 @@
   --pureflo-navy: #1B365D;    /* rgb(27, 54, 93) */
   --pureflo-blue: #004B88; /* rgb(0, 75, 136) */
   --ada-blue: #0076D6;
-
+  --gtex-oj:#FF8200;
 }
 
 html {overflow-x: hidden; overflow-y: auto; scroll-behavior: smooth;}
@@ -259,6 +259,7 @@ body.modal-open .hero, body.modal-open footer
 @media (min-width: 1400px) { .hero.default:before {background-image: url('/assets/img/global/wavy-lines.webp');}}
 
 .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+.hero sup {font-weight: 300; font-size: 0.5em; top: -1em;}
 .hero p { font-size: 20px; line-height: 1.6; }
 .hero .hero-cta { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 
