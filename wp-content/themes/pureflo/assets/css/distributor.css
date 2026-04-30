@@ -3,7 +3,7 @@
  .hero {min-height: 50vh; }
 @media (min-width: 1200px) {
     .hero:before {content: '';  opacity: 1; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
-    background: url('/wp-content/themes/pureflo-theme/assets/img/global/dust-particles-hero.jpg') no-repeat fixed; background-size: cover; background-position: top right;}
+    background: url('/wp-content/themes/pureflo-theme/assets/img/hero/dust-particles.jpg') no-repeat fixed; background-size: cover; background-position: top right;}
 }
 
 .dist-list, .mobile-list {font-size:0.95rem;}
