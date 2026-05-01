@@ -45,7 +45,6 @@ function region_url($path = '') {
 	return home_url('/' . get_current_region() . '/' . ltrim($path, '/'));
 }
 
-
 // DISABLE ALL EXCESSIVE INLINE CODE NOT BEING USED BY CUSTOM THEME
 
     // Remove unnecessary <head> output
@@ -82,7 +81,6 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'classic-theme-styles' );
 }, 20 );
     
-// END DISABLE EXCESSIVE CODE
 
     // Disable auto-paragraphing for Pages only
 add_action( 'wp', function() { if ( is_page() ) { remove_filter( 'the_content', 'wpautop' );  } });
