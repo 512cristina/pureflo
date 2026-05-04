@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Simple Snippets Shortcode
  * Description: Create reusable snippets (HTML, CSS, JS, PHP) and display via shortcode.
- * Version: 1.1
+ * Version: 1.2
  */
 
 if (!defined('ABSPATH')) exit;
@@ -25,28 +25,67 @@ function sss_register_snippets_cpt() {
         'public' => false,
         'show_ui' => true,
         'menu_icon' => 'dashicons-editor-code',
-        'supports' => ['title', 'editor'],
+        'supports' => ['title', 'editor', 'revisions'],
     ]);
 }
 add_action('init', 'sss_register_snippets_cpt');
 
-// Add shortcode column to admin list
-function sss_add_shortcode_column($columns) {
+
+// Add admin columns (Shortcode + Last Modified)
+function sss_add_columns($columns) {
     $columns['shortcode'] = 'Shortcode';
+    $columns['modified'] = 'Last Modified';
+
+    // Remove unwanted Region column if present
+    if (isset($columns['region'])) {
+        unset($columns['region']);
+    }
+    if (isset($columns['taxonomy-region'])) {
+        unset($columns['taxonomy-region']);
+    }
+
     return $columns;
 }
-add_filter('manage_sss_snippet_posts_columns', 'sss_add_shortcode_column');
+add_filter('manage_sss_snippet_posts_columns', 'sss_add_columns');
 
-// Populate shortcode column
-function sss_render_shortcode_column($column, $post_id) {
+
+// Populate admin columns
+function sss_render_columns($column, $post_id) {
+
     if ($column === 'shortcode') {
         $slug = get_post_field('post_name', $post_id);
         echo '<code>[snippet id="' . esc_attr($slug) . '"]</code>';
     }
-}
-add_action('manage_sss_snippet_posts_custom_column', 'sss_render_shortcode_column', 10, 2);
 
-// Add shortcode metabox (right sidebar)
+    if ($column === 'modified') {
+        $modified = get_post_modified_time('Y/m/d g:i a', false, $post_id);
+        echo esc_html($modified);
+    }
+}
+add_action('manage_sss_snippet_posts_custom_column', 'sss_render_columns', 10, 2);
+
+
+// Make Last Modified sortable
+function sss_sortable_columns($columns) {
+    $columns['modified'] = 'modified';
+    return $columns;
+}
+add_filter('manage_edit-sss_snippet_sortable_columns', 'sss_sortable_columns');
+
+
+// Default sort by Last Modified
+function sss_default_order($query) {
+    if (!is_admin() || !$query->is_main_query()) return;
+
+    if ($query->get('post_type') === 'sss_snippet' && !$query->get('orderby')) {
+        $query->set('orderby', 'modified');
+        $query->set('order', 'DESC');
+    }
+}
+add_action('pre_get_posts', 'sss_default_order');
+
+
+// Add shortcode metabox
 function sss_add_shortcode_metabox() {
     add_meta_box(
         'sss_shortcode_box',
@@ -59,7 +98,8 @@ function sss_add_shortcode_metabox() {
 }
 add_action('add_meta_boxes', 'sss_add_shortcode_metabox');
 
-// Render shortcode metabox content
+
+// Render shortcode metabox
 function sss_render_shortcode_metabox($post) {
     if ($post->post_status === 'auto-draft') {
         echo '<p>Save this snippet to generate a shortcode.</p>';
@@ -72,6 +112,7 @@ function sss_render_shortcode_metabox($post) {
     echo '<p>Use this shortcode:</p>';
     echo '<input type="text" value="' . esc_attr($shortcode) . '" readonly style="width:100%; font-family:monospace;" onclick="this.select();">';
 }
+
 
 // Shortcode handler
 function sss_snippet_shortcode($atts) {
