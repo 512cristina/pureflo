@@ -29,7 +29,7 @@ endwhile;
 	<div class="container">
 		<div class="row">
 
-			<div class="col-md-3 bkg-dark py-5 px-4 resource-filters">
+			<div class="col-md-3 py-5 px-4 bg-white shadow resource-filters">
                 <div class="fw-bolder text-white mb-4">FILTER RESOURCES:</div>
                 
                 <?php
