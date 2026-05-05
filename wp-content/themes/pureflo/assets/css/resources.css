@@ -12,8 +12,7 @@
 .featured-resource {margin-top:-150px;}
 .featured-resource img {max-height: 300px; width: auto; position: relative;}
 
-.resource-filters {text-transform: capitalize; }
-.resource-filters select {font-size: 1rem; margin:0.5rem 0;}
+.resource-filters select {font-size: 1rem; margin:0.5rem 0; border-radius: 5px; background-color: #F2F2F2; padding: 2px 8px; border: 1px solid #D9D9D9;}
 .resource-filters .btn-submit {background: none; border:0; color:var(--ada-blue); margin:0; vertical-align: middle;}
 .resource-filters .btn-submit:hover {color:rgba(0, 0, 0, 0.7) !important;}
 
