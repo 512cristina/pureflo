@@ -67,7 +67,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 <!--
                 <button type="submit" class="btn-submit me-5" title="Submit Filters"><i class="fa-solid fa-arrow-right-from-bracket" role="img" aria-label="Submit Search"></i></button>
                     -->
-                <a href="<?php echo get_permalink(); ?>#rsFilterForm" class="btn btn-primary btn-sm mt-3" title="Reset Filters"><i class="fa-solid fa-rotate-right"></i> Reset</a>
+                <div><a href="<?php echo get_permalink(); ?>#rsFilterForm" class="btn btn-primary btn-sm d-inline-block mt-3" title="Reset Filters"><i class="fa-solid fa-rotate-right"></i> Reset</a></div>
                 
             </div>   
 
