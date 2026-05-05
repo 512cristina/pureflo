@@ -102,18 +102,23 @@ function render_resource_language_radio_box($post) {
     }
 }
 
-
-
-
 add_action('save_post', function ($post_id) {
 
+    // Stop autosaves, revisions, etc.
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (wp_is_post_autosave($post_id)) return;
+    if (wp_is_post_revision($post_id)) return;
 
+    // Only run for your post type
     if (get_post_type($post_id) !== 'resource') return;
 
-    if (empty($_POST['resource_language_radio'])) {
+    // 🚨 CRITICAL FIX: If field is not present at all, DO NOTHING
+    if (!isset($_POST['resource_language_radio'])) {
+        return;
+    }
 
-        remove_action('save_post', __FUNCTION__);
+    // Now validate only when user actually submitted the field
+    if (empty($_POST['resource_language_radio'])) {
 
         wp_die(
             'Please select a Language before saving this Resource.',
@@ -122,6 +127,7 @@ add_action('save_post', function ($post_id) {
         );
     }
 
+    // Save the selected language
     $term_id = intval($_POST['resource_language_radio']);
     wp_set_post_terms($post_id, [$term_id], 'resource_language');
 
