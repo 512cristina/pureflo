@@ -1,10 +1,14 @@
 <?php /* Template Name: Resources */ 
+get_header(); ?>
 
-get_header(); 
+<link href="/wp-content/themes/pureflo/assets/css/resources.css" type="text/css"  rel="preload stylesheet"  as="style">
+
+<?php
 while (have_posts()) : the_post();  the_content(); 
 
 endwhile;
 ?>
+
 
 
 <form method="GET" id="rsFilterForm"> 
@@ -175,11 +179,11 @@ endwhile;
                                             </div>
                                         </figure>
 
-                                        <div class="card-body d-flex flex-column">
+                                        <div class="card-body">
                                             <h4 class="card-title"><?php the_title(); ?></h4>
                                             <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
 
-                                            <a href="<?php echo esc_url($video_url); ?>"  class="card-icon glightbox mt-auto"  rel="noopener">
+                                            <a href="<?php echo esc_url($video_url); ?>" class="card-icon glightbox"  rel="noopener">
                                                 <i class="bi bi-play-btn-fill"><span class="d-none">Play video</span></i>
                                             </a>
                                         </div>
@@ -193,13 +197,11 @@ endwhile;
                                     <div class="card w-100 px-0"> 
 
                                         <a href="<?php echo esc_url($file_url); ?>" target="_blank" class="img-wrapper">
-                                            <img src="<?php echo esc_url($image_url); ?>" 
-                                                width="350" height="200" 
-                                                class="card-img-top" 
+                                            <img src="<?php echo esc_url($image_url); ?>" width="350" height="200" class="card-img-top" 
                                                 alt="<?php echo esc_attr(get_the_title()); ?>">
                                         </a>
 
-                                        <div class="card-body d-flex flex-column">
+                                        <div class="card-body">
 
                                             <a href="<?php echo esc_url($file_url); ?>" target="_blank">
                                                 <h4 class="card-title"><?php the_title(); ?></h4>
@@ -209,11 +211,7 @@ endwhile;
                                                 <?php echo wp_trim_words(get_the_content(), 20); ?>
                                             </div>
 
-                                            <a href="<?php echo esc_url($file_url); ?>" 
-                                            class="card-icon mt-auto" 
-                                            target="_blank">
-                                                <i class="bi bi-file-earmark-arrow-down-fill"></i>
-                                            </a>
+                                            <a href="<?php echo esc_url($file_url); ?>" class="card-icon" target="_blank"><i class="bi bi-file-earmark-arrow-down-fill"></i></a>
 
                                         </div>
                                     </div>

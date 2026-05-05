@@ -73,11 +73,13 @@
 										</div>										
 									</div>
 																	
-									<div class="col-12 col-xl-6 product-section text-center">										
+									<div class="col-12 col-xl-6 product-section text-center">	
+									<?php if ($region !== 'us'): ?>									
 										<div class="product-list">
 											<a href="/us/trial/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/try-purflo-risk-free.png" width="201" height="200" alt="Try PureFlo Risk Free"  class="mt-4"  data-aos="flip-up" data-aos-duration="3000"></a>
 										</div>
 										<a href="/us/trial/" class="btn btn-primary mt-4 ms-3 CTA-nav-products">Learn more</a>
+									<?php endif; ?>
 									</div>
 								</div> <!-- End Row -->
 
@@ -86,7 +88,7 @@
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nav/welder-200x200.jpg" width="200" height="200"  alt="Learn more how Gentex's experience can work for you | decorative photo of a welder at work">
 										<div class="feature-info">
 											<h5>Put Our Experience to Work for You</h5>
-											<a href="/us/contact/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
+											<a href="/<?php echo get_current_region(); ?>/contact/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
 										</div>	
 									</div>								
 								</div>
@@ -101,62 +103,60 @@
 										<h4>Industries We Serve</h4>
 
 										<div class="product-list">											
-											<a href="/us/industries/" class="product-link">
+											<a href="/<?php echo get_current_region(); ?>/industries/#industry-tab-1" class="product-link">
 												<i class="bi bi-fire"></i>
 												<div>
 													<span>Foundries / High Heat</span>
-													<small>Working in foundries and other high-heat environments can be tough. That’s why our PureFlo head top PAPRs are designed with no belts or hoses, making your job easier. </small>
+													<small>Safety is top of mind.</small>
 												</div>
 											</a>
 
-											<a href="/us/industries/" class="product-link">
+											<a href="/<?php echo get_current_region(); ?>/industries/#industry-tab-2" class="product-link">
 												<i class="bi bi-cone-striped"></i>
 												<div>
 													<span>Construction</span>
-													<small>Our all-in-one Powered Air Purifying Respirator (PAPR) solutions are built with you in mind—delivering reliable protection and all-day comfort, even in the toughest worksite conditions. </small>
+													<small>Keeping you safe.</small>
 												</div>
 											</a>
 
-											<a href="/us/industries/" class="product-link">
-												<i class="bi bi-prescription"></i>
+											<a href="/<?php echo get_current_region(); ?>/industries/#industry-tab-3" class="product-link">
+												<i class="bi bi-cpu-fill"></i>
 												<div>
-													<span>Laboratory / Pharmaceutical / Healthcare</span>
-													<small>The PureFlo 3000 PAPR is an advanced, all-in-one air-purifying system. Its lightweight, low-profile design ensures maximum mobility and ease of use. It's the ideal choice for laboratory, pharmaceutical, healthcare and emergency situations where respiratory protection is critical. Built to safeguard against respiratory hazards, it offers reliable protection without compromising on comfort or agility when every second counts. </small>
+													<span>General Trades / Technology</span>
+													<small>Configurable design.  </small>
 												</div>
 											</a>
+
+											<div class="mt-3"><a href="/<?php echo get_current_region(); ?>/industries/" class="btn btn-primary  mx-auto CTA-nav-industries-learn-more">Learn more</a></div>
 										</div>
 									</div>
 									
 									<div class="col-12 col-xl-6 product-section">
 										<h4>&nbsp;</h4>
 										<div class="product-list">
-											<a href="/us/industries/" class="product-link">
+											<a href="/<?php echo get_current_region(); ?>/industries/#industry-tab-4" class="product-link">
 												<i class="bi bi-lightning-charge"></i>
 												<div>
 													<span>Welding / Metalforming / Fabrication</span>
-													<small>Welders and fabricators need to be protected against exposure to harmful welding fume and particulates. Our all-in-one PureFlo 3000 Welding PAPR features a snag-free design, enabling maximum mobility and comfort with no belts or hoses. </small>
+													<small>A breakthrough in safety. </small>
 												</div>
 											</a>
 
-											<a href="/us/industries/" class="product-link">
+											<a href="/<?php echo get_current_region(); ?>/industries/#industry-tab-5" class="product-link">
 												<i class="bi bi-radioactive"></i>
 												<div>
 													<span>Nuclear</span>
-													<small>Want to improve your ROI? PureFlo head-mounted PAPRs improve donning & doffing efficiency, make for easier maintenance and cleaning, and offer cost-effective spare parts and accessories that can save your team time and money compared to waist-mounted PAPRs. </small>
+													<small>Safety and comfort in one unit.  </small>
 												</div>
 											</a>
 
-											<a href="/us/industries/" class="product-link">
-												<i class="bi bi-cpu-fill"></i>
+											<a href="/<?php echo get_current_region(); ?>/industries/#industry-tab-6" class="product-link">
+												<i class="bi bi-prescription"></i>
 												<div>
-													<span>General Trades / Technology</span>
-													<small>From rail work to manufacturing or maintenance and repair, PureFlo provides reliable protection. Our all-in-one head-mounted PAPRs combine respiratory, head, eye and face protection in a single streamlined unit. Improving safety, workforce productivity and fewer parts. </small>
+													<span>Laboratory / Pharmaceutical / Healthcare</span>
+													<small>World-class protection in one.</small>
 												</div>
-											</a>
-
-											<div class="text-center mt-3"><a href="/us/industries/" class="btn btn-primary  mx-auto CTA-nav-industries-learn-more">Learn more</a></div>
-
-											
+											</a>	
 										</div>
 									</div>
 								</div> <!-- End Row -->
@@ -179,26 +179,26 @@
 				</li><!-- /Megamenu -->
 
 				
-				<li class="dropdown"><a href="/us/industries/"><span>Industries</span></a></li>
+				<li class="dropdown"><a href="/<?php echo get_current_region(); ?>/industries/"><span>Industries</span></a></li>
 
-				<li class="dropdown"><a href="/us/about/"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="dropdown"><a href="/<?php echo get_current_region(); ?>/about/"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
-						<li><a href="/us/about/">About Us</a></li>
-						<li><a href="/us/news/">News</a></li>
-						<li><a href="/us/faq/">FAQs</a></li>
-					<?php if ($region === 'eu'): ?>	
-						<li><a href="/eu/conformity/">Declarations of Conformity</a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/about/">About Us</a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/news/">News</a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/faq/">FAQs</a></li>
+					<?php if (in_array($region, ['eu', 'anz'])): ?>	
+						<li><a href="/<?php echo get_current_region(); ?>/conformity/">Declarations of Conformity</a></li>
 					<?php endif; ?>
 					</ul>
 				</li>
-				<li class="dropdown"><a href="/us/resources/"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="dropdown"><a href="/<?php echo get_current_region(); ?>/resources/"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>    
-						<li><a href="/us/resources/">Resource Library</a></li>
-						<li><a href="/us/faq/">FAQs</a></li>
-						<li><a href="/us/distributors/">Find a Distributor</a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/resources/">Resource Library</a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/faq/">FAQs</a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/distributors/">Find a Distributor</a></li>
 					</ul>
 				</li>
-				<li><a href="/us/contact/">Contact</a></li>
+				<li><a href="/<?php echo get_current_region(); ?>/contact/">Contact</a></li>
 
 				<!-- Flag Selector -->
 				<?php $region_esc = htmlspecialchars($region, ENT_QUOTES, 'UTF-8');

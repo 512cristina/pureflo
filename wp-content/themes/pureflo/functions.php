@@ -45,6 +45,44 @@ function region_url($path = '') {
 	return home_url('/' . get_current_region() . '/' . ltrim($path, '/'));
 }
 
+
+// Featured Image instructions
+function my_featured_image_guidance($content, $post_id) {
+    $post = get_post($post_id);
+
+    if (in_array($post->post_type, ['post', 'page'])) {
+        $note = '<p style="font-size:12px; margin-bottom:8px;">
+        <strong>Featured Image:</strong> Recommended 600 x 315 px (16:9 ratio) for best social sharing. </p>';
+        return $note . $content;
+    }
+
+    return $content;
+}
+add_filter('admin_post_thumbnail_html', 'my_featured_image_guidance', 10, 2);
+
+// LOAD CSS FILES FOR CUSTOMR PAGE TEMPLATES
+
+function pureflo_enqueue_template_styles() {
+    $templates = [
+        'page-resources.php'   => 'resources',
+        'page-news.php'        => 'news',
+        'page-distributors.php' => 'distributors',
+    ];
+
+    foreach ($templates as $template => $slug) {
+        if (is_page_template($template)) {
+            wp_enqueue_style(
+                'pureflo-' . $slug,
+                get_template_directory_uri() . '/assets/css/' . $slug . '.css',
+                array(),
+                '1.0'
+            );
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'pureflo_enqueue_template_styles');
+
+
 // DISABLE ALL EXCESSIVE INLINE CODE NOT BEING USED BY CUSTOM THEME
 
     // Remove unnecessary <head> output
@@ -88,19 +126,5 @@ add_action( 'wp', function() { if ( is_page() ) { remove_filter( 'the_content', 
 add_theme_support('post-thumbnails');
 // Ensure it's enabled for both post + page
 add_post_type_support('page', 'thumbnail'); 
-
-function my_featured_image_guidance($content, $post_id) {
-    $post = get_post($post_id);
-
-    if (in_array($post->post_type, ['post', 'page'])) {
-        $note = '<p style="font-size:12px; margin-bottom:8px;">
-        <strong>Featured Image:</strong> Recommended 600 x 315 px (16:9 ratio) for best social sharing. </p>';
-        return $note . $content;
-    }
-
-    return $content;
-}
-add_filter('admin_post_thumbnail_html', 'my_featured_image_guidance', 10, 2);
-
 
 
