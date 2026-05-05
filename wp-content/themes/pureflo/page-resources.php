@@ -195,16 +195,35 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                                         </a>
 
                                         <div class="card-body">
-
                                             <a href="<?php echo esc_url($file_url); ?>" target="_blank">
                                                 <h4 class="card-title"><?php the_title(); ?></h4>
                                             </a>
 
-                                            <div class="card-text">
-                                                <?php echo wp_trim_words(get_the_content(), 20); ?>
-                                            </div>
-
+                                            <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
                                             <a href="<?php echo esc_url($file_url); ?>" class="card-icon" target="_blank"><i class="bi bi-file-earmark-arrow-down-fill"></i></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            <?php elseif ($video_url): ?>
+                                <!-- EXTERNAL LINK CARD -->
+                                <div class="col-md-6 col-lg-4 d-flex">
+                                    <div class="card w-100 px-0"> 
+
+                                        <a href="<?php echo esc_url($video_url); ?>" target="_blank" class="img-wrapper">
+                                            <img src="<?php echo esc_url($image_url); ?>" width="350" height="200" class="card-img-top" 
+                                                alt="<?php echo esc_attr(get_the_title()); ?>">
+                                        </a>
+
+                                        <div class="card-body">
+                                            <a href="<?php echo esc_url($video_url); ?>" target="_blank">
+                                                <h4 class="card-title"><?php the_title(); ?></h4>
+                                            </a>
+
+                                            <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
+                                            <a href="<?php echo esc_url($video_url); ?>" class="card-icon" target="_blank"><i class="bi bi-arrow-up-right-square-fill"></i></a>
 
                                         </div>
                                     </div>
