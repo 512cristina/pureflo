@@ -30,7 +30,7 @@ endwhile;
 		<div class="row">
 
 			<div class="col-md-3 py-5 px-4 bg-white shadow resource-filters">
-                <div class="fw-bolder text-white mb-4">FILTER RESOURCES:</div>
+                <h3>Filter Resources</h3>
                 
                 <?php
                 $selected_type  = $_GET['resource_type'] ?? '';
