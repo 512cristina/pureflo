@@ -1,9 +1,12 @@
 /* == DISTRIBUTOR PAGE ONLY == */
 
- .hero {min-height: 50vh; }
+.hero:before {content: '';  opacity: 1; position: absolute; inset: 0; background-repeat: no-repeat; background-position: top right; background-size: cover;
+    background-image: url('../img/hero/hero-dust-particles-sm.jpg'); }
+
+@media (min-width: 600px) {.hero:before { background-image:url('../img/hero/hero-dust-particles-md.jpg');} }
 @media (min-width: 1200px) {
-    .hero:before {content: '';  opacity: 1; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
-    background: url('/wp-content/themes/pureflo-theme/assets/img/hero/dust-particles.jpg') no-repeat fixed; background-size: cover; background-position: top right;}
+    .hero { min-height: 50vh; }
+    .hero:before { background-image: url('../img/hero/hero-dust-particles.jpg'); background-attachment: fixed; }
 }
 
 .dist-list, .mobile-list {font-size:0.95rem;}

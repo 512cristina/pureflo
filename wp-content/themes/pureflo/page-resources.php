@@ -1,20 +1,13 @@
 <?php /* Template Name: Resources */ 
-get_header(); ?>
 
-<link href="/wp-content/themes/pureflo/assets/css/resources.css" type="text/css"  rel="preload stylesheet"  as="style">
-
-<?php
-while (have_posts()) : the_post();  the_content(); 
-
-endwhile;
+get_header();  
+while (have_posts()) : the_post();  the_content(); endwhile;
 ?>
-
-
 
 <form method="GET" id="rsFilterForm"> 
 <section class="pt-5 pb-0">
 	<div class="container">
-		<div class="d-flex flex-wrap justify-content-center align-items-center mb-5 resource-filters">
+		<div class="d-flex flex-wrap justify-content-center align-items-center mb-5">
 			<div class="fw-bolder my-0 me-3">SEARCH RESOURCES:</div>
             <div class="resource-search d-flex gap-2">
                 <input type="text" name="search" class="form-control" 
@@ -71,9 +64,9 @@ endwhile;
                         </option>
                     <?php endforeach; ?>
                 </select>
-
+<!--
                 <button type="submit" class="btn-submit me-5" title="Submit Filters"><i class="fa-solid fa-arrow-right-from-bracket" role="img" aria-label="Submit Search"></i></button>
-            
+                    -->
                 <a href="<?php echo get_permalink(); ?>#rsFilterForm" class="btn btn-primary btn-sm mt-3" title="Reset Filters"><i class="fa-solid fa-rotate-right"></i> Reset</a>
                 
             </div>   
@@ -229,24 +222,5 @@ endwhile;
     </div>
 </section>
 </form>
-
-<script>
-document.getElementById('rsFilterForm').addEventListener('submit', function(e) {
-    const form = this;
-    const params = new URLSearchParams(new FormData(form)).toString();
-    const action = window.location.pathname;
-
-    e.preventDefault();
-    window.location.href = action + '?' + params + '#rsList';
-});
-
-jQuery(document).ready(function($){
-    $('input[name="search"]').on('keypress', function(e){
-        if (e.which === 13) {
-            $(this).closest('form').submit();
-        }
-    });
-});
-</script>
 
 <?php get_footer(); ?>

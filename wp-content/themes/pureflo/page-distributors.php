@@ -173,26 +173,6 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
 
                 </div> <!-- /.Mobile -->
             </div>
-<!--
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<div id="map" style="height:400px;"></div>
-
-<script>
-var map = L.map('map').setView([37.8, -96], 4);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap'
-}).addTo(map);
-
-// Example marker
-L.marker([30.2672, -97.7431]).addTo(map)
-    .bindPopup("Distributor Example");
-</script>
-
-                            -->
-
 
         <?php wp_reset_postdata(); endif; ?>
 

@@ -252,11 +252,11 @@ body.modal-open .hero, body.modal-open footer
 
 .hero.default {background: linear-gradient(161deg, rgb(0, 14, 26) 50%, rgba(0, 75, 136) 90%);}
 .hero.default:before {content: '';  opacity: 0.1; position: absolute; inset: 0; background-repeat: no-repeat; background-attachment: fixed;
-    background: url('/assets/img/global/wavy-lines-white-sm.webp'); background-size: cover; background-position: center;}
+    background: url('../img/hero/wavy-lines-sm.webp'); background-size: cover; background-position: center;}
 
-@media (min-width: 768px) { .hero.default:before {background-image: url('/assets/img/global/wavy-lines-md.webp');}}
-@media (min-width: 920px) { .hero.default:before {background-image: url('/assets/img/global/wavy-lines-lg.webp');}}
-@media (min-width: 1400px) { .hero.default:before {background-image: url('/assets/img/global/wavy-lines.webp');}}
+@media (min-width: 768px) { .hero.default:before {background-image: url('../img/hero/wavy-lines-md.webp');}}
+@media (min-width: 920px) { .hero.default:before {background-image: url('../img/hero/wavy-lines-lg.webp');}}
+@media (min-width: 1400px) { .hero.default:before {background-image: url('../img/hero/wavy-lines.webp');}}
 
 .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
 .hero sup {font-weight: 300; font-size: 0.5em; top: -1em;}

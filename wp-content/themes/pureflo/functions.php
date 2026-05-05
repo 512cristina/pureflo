@@ -15,12 +15,12 @@ function pureflo_scripts() {
     wp_enqueue_style('bootstrap', $uri.'/assets/css/bootstrap.min.css');
     wp_enqueue_style('icons', $uri.'/assets/css/bootstrap-icons.css');
     wp_enqueue_style('fontawesome', $uri.'/assets/css/fontawesome.all.min.css');
-    wp_enqueue_style('aos', 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css');
+    wp_enqueue_style('aos', $uri.'/assets/vendor/aos/aos.css');
     wp_enqueue_style('glightbox', $uri.'/assets/css/glightbox.min.css');
     wp_enqueue_style('global', $uri.'/assets/css/global.css');
 
     wp_enqueue_script('bootstrap', $uri.'/assets/js/bootstrap.bundle.min.js', [], null, true);
-    wp_enqueue_script('aos', 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js', [], null, true);
+    wp_enqueue_script('aos', $uri.'/assets/vendor/aos/aos.js', [], null, true);
     wp_enqueue_script('glightbox', $uri.'/assets/js/glightbox.min.js', [], null, true);
     wp_enqueue_script('global', $uri.'/assets/js/global.js', [], null, true);
     wp_enqueue_script('counter', $uri.'/assets/js/stat-counter.js', [], null, true);
@@ -65,22 +65,23 @@ add_filter('admin_post_thumbnail_html', 'my_featured_image_guidance', 10, 2);
 function pureflo_enqueue_template_styles() {
     $templates = [
         'page-resources.php'   => 'resources',
-        'page-news.php'        => 'news',
         'page-distributors.php' => 'distributors',
     ];
 
     foreach ($templates as $template => $slug) {
-        if (is_page_template($template)) {
-            wp_enqueue_style(
-                'pureflo-' . $slug,
-                get_template_directory_uri() . '/assets/css/' . $slug . '.css',
-                array(),
-                '1.0'
-            );
-        }
+        if (is_page_template($template)) 
+        { wp_enqueue_style('pureflo-' . $slug, get_template_directory_uri() . '/assets/css/' . $slug . '.css', array(), '1.0' );}
     }
 }
 add_action('wp_enqueue_scripts', 'pureflo_enqueue_template_styles');
+
+// LOAD JS for RESOURCES TEMPLATE
+
+function theme_enqueue_scripts() {
+    if (is_page_template('page-resources.php')) 
+    { wp_enqueue_script('resource-filters', get_template_directory_uri() . '/assets/js/resources.js', [], null, true); }
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
 
 // DISABLE ALL EXCESSIVE INLINE CODE NOT BEING USED BY CUSTOM THEME
