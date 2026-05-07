@@ -34,10 +34,10 @@
                 <h4>Follow Us</h4>
 
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/showcase/pureflo-respiratory-protection/" rel="noopener" title="Follow Gentex on LinkedIn | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-linkedin"></i><span class="sr-only">Follow Gentex on LinkedIn</span></a>
-                    <a href="https://www.facebook.com/purefloindustrial" rel="noopener" aria-label="Gentex Corp Facebook | opens a new browser window to a website that may have different privacy policies" title="Follow Gentex on Facebook | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-facebook"></i><span class="sr-only">Follow Gentex on Facebook</span></a>
-                    <a href="https://www.youtube.com/@pureflo" rel="noopener" title="Follow Gentex on YouTube | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-youtube"></i><span class="sr-only">Follow Gentex on Youtube</span></a>
-                    <a href="https://www.youtube.com/_purefl0_" rel="noopener" title="Follow Gentex on Instagram | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-instagram"></i><span class="sr-only">Follow Gentex on Instagram</span></a>
+                    <a href="https://www.linkedin.com/showcase/pureflo-respiratory-protection/" rel="noopener" title="Follow PureFlo on LinkedIn | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-linkedin"></i><span class="sr-only">Follow PureFlo on LinkedIn</span></a>
+                    <a href="https://www.facebook.com/purefloindustrial" rel="noopener"  title="Follow PureFlo on Facebook | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-facebook"></i><span class="sr-only">Follow PureFlo on Facebook</span></a>
+                    <a href="https://www.youtube.com/@pureflo" rel="noopener" title="Follow PureFlo on YouTube | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-youtube"></i><span class="sr-only">Follow PureFlo on Youtube</span></a>
+                    <a href="https://www.instagram.com/_pureflo_" rel="noopener" title="Follow PureFlo on Instagram | Opens a new browser window to a website that may have different privacy policies" target="_blank"><i class="bi bi-instagram"></i><span class="sr-only">Follow PureFlo on Instagram</span></a>
                 </div>
             </div>
 
