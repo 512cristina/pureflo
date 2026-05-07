@@ -43,7 +43,13 @@ add_action('init', function() {
             'singular_name' => 'Distributor'
         ],
         'public' => true,
-        'has_archive' => true,
+        'has_archive' => 'distributors',
+
+        'rewrite' => [
+            'slug' => 'distributors',
+            'with_front' => false
+        ],
+
         'menu_icon' => 'dashicons-groups',
         'supports' => ['title'],
     ]);
