@@ -40,7 +40,13 @@ add_action('init', function() {
     register_post_type('distributor', [
         'labels' => [
             'name' => 'Distributors',
-            'singular_name' => 'Distributor'
+            'singular_name' => 'Distributor',
+            'add_new_item' => 'Add New Distributor',
+            'add_new' => 'Add Distributor',
+            'new_item' => 'New Distributor',
+            'edit_item' => 'Edit Distributor',
+            'view_item' => 'View Distributor',
+            'all_items' => 'All Distributors'
         ],
         'public' => true,
         'has_archive' => 'distributors',
