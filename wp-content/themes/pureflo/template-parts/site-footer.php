@@ -1,3 +1,4 @@
+<?php $region = get_current_region(); ?>
 </main>
 
 <footer class="bkg-dark position-relative">
