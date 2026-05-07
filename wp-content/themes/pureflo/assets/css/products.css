@@ -1,0 +1,125 @@
+/* == PRODUCTS PAGE ONLY == */
+
+.hero {background-image: url(../img/hero/welder-hero.jpg'); background-attachment: fixed; background-position: right bottom; background-repeat: no-repeat; background-size: cover;}
+.hero .overlay { z-index:1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(155deg,rgba(13, 22, 31, 1) 5%, rgba(13, 22, 31, 0.32) 60%); }
+.hero p { margin-bottom: 40px; max-width: 600px; }
+
+
+@media (min-width: 1400px) {.hero { min-height: 70vh;}}
+
+hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
+.img-overlap {margin-bottom:-250px;}
+
+
+.prod-card { color:#ffffff; background: linear-gradient(121deg,rgba(0, 28, 51, 1) 20%, rgba(0, 14, 26, 1) 49%, rgba(0, 75, 135, 1) 81%);  padding: 2rem; border-radius: 1rem; position: relative; transition: all 0.4s; overflow: hidden; height: 100%; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+.prod-card .icon-box { height: 70px; width: 70px; display: flex; align-items: center; justify-content: center; background-color: #ffffff; border-radius: 50%; overflow:clip; transition: all 0.4s; }
+.prod-card .icon-box img { width:65px; border-radius:50%; }
+.prod-card .arrow-link { display: flex; align-items: center; justify-content: center; height: 40px; width: 40px; color:#ffffff; background-color: var(--pureflo-blue); border-radius: 50%; transform: rotate(-45deg); position: absolute; right: -50px; top: -50px; transition: all 0.4s; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+.prod-card .card-body h4 a { color:#ffffff; font-size: 22px; font-weight: 600; margin-bottom: 15px; transition: all 0.4s; }
+.prod-card .card-body p { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; transition: all 0.4s; }
+
+.prod-card .go-link {color:#ffffff; font-size:0.9rem; text-transform:uppercase; text-align:right;}
+
+.prod-card:hover {transform: translateY(-5px); background:#ffffff;}
+.prod-card:hover .icon-box { background-color: var(--pureflo-blue); }
+.prod-card:hover .arrow-link { top: 16px; right: 16px;  }
+.prod-card:hover .card-body h4 a,  .prod-card:hover .card-body p, .prod-card:hover .go-link { color: var(--pureflo-blue); }
+
+
+/* === PARTS & ACCESSORIES === */
+
+.accessories {--hd-color:#ffffff; color:#ffffff; position:relative; border-radius: 1rem; background: linear-gradient(121deg,rgba(0, 28, 51, 1) 20%, rgba(0, 14, 26, 1) 49%, rgba(0, 75, 135, 1) 81%); }
+
+.accessories:before {content: '';  opacity: 0.1; position: absolute; inset: 0; pointer-events: none;
+    background: url('../img/global/wave-light-sm.webp') no-repeat; background-size: cover; background-position: bottom right;}
+
+.accessories h4 {font-size:2rem; margin-left:1rem;}
+.accessories .border-right {border-right: 5px solid var(--ada-blue);}
+
+.accessories .btn.btn-outline { color: var(--ada-blue);  border-color: var(--ada-blue);}
+.accessories .btn.btn-outline:hover { color: #ffffff;  border-color: #ffffff;}
+
+@media (min-width: 768px) { .accessories:before {background-image: url('../img/global/wave-light-md.webp');}}
+@media (min-width: 1000px) { .accessories:before {background-image: url('../img/global/wave-light-lg.webp');}}
+
+
+/* === OFFERS === */
+
+.offer { padding:0; position: relative; border-radius: 20px; background-color: #ffffff; box-shadow: 0 20px 60px color-mix(in srgb, var(--pureflo-blue), transparent 92%); overflow: hidden; }
+
+.offer .offer-content { position: relative; z-index: 2; }
+.offer .offer-content .badge-offer { display: inline-block; background-color: color-mix(in srgb, var(--pureflo-blue), transparent 90%); color: var(--pureflo-blue); padding: 0.6rem 1.2rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+.offer .offer-content h2 { font-size: 2.5rem; color: var(--hd-color); line-height: 1.2; }
+.offer .offer-content p { color: color-mix(in srgb, var(--main-color), transparent 20%); font-size: 1.05rem; line-height: 1.6; }
+
+.offer .benefits-row { margin-top: 2rem; }
+.offer .benefits-row .benefit-item { display: flex; align-items: flex-start; margin-bottom: 1rem; }
+.offer .benefits-row .benefit-item .icon-box { width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--pureflo-blue) 0%, color-mix(in srgb, var(--pureflo-blue), transparent 20%) 100%); color:#ffffff; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-right: 1rem; font-size: 1.25rem; }
+.offer .benefits-row .benefit-item .benefit-content h5 { margin-bottom: 0.5rem; font-weight: 600; color: var(--hd-color); }
+.offer .benefits-row .benefit-item .benefit-content p { margin: 0; font-size: 0.9rem; color: color-mix(in srgb, var(--main-color), transparent 25%); line-height: 1.5; }
+
+.offer .action-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.offer .action-buttons .guarantee-badge { display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem; color: var(--hd-color); font-size: 0.9rem; font-weight: 500; }
+.offer .action-buttons .guarantee-badge i { color: var(--pureflo-blue); font-size: 1.25rem; }
+
+.offer .feat-img { position: relative; z-index:2; height: 100%; background-color: color-mix(in srgb, var(--pureflo-blue), transparent 95%); display: flex; align-items: center; justify-content: center; padding: 3rem; z-index: 2; }
+.offer .feat-img img { position: relative; z-index: 2; max-height: 400px; object-fit: contain; }
+.offer .feat-img .accent { position: absolute; background-color: #ffffff; border-radius: 12px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); z-index: 3; }
+.offer .feat-img .accent i { color: var(--pureflo-blue); font-size: 1.1rem; }
+.offer .feat-img .accent span { font-weight: 600; font-size: 0.9rem; color: var(--hd-color); }
+.offer .feat-img .accent.accent-1 { top: 20%; left: 0; animation: float1 4s ease-in-out infinite; }
+.offer .feat-img .accent.accent-2 { bottom: 25%; right: 0; animation: float2 5s ease-in-out infinite; }
+.offer .feat-img .pattern-dots { position: absolute; width: 170px; height: 170px; background-image: radial-gradient(color-mix(in srgb, var(--pureflo-blue), transparent 40%) 2px, transparent 2px); background-size: 15px 15px; bottom: 10%; left: 10%; z-index: 1; border-radius: 20px; opacity: 0.6; }
+
+@keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); }}
+@keyframes float2 {0%, 100% { transform: translateY(0); }  50% { transform: translateY(10px); }}
+
+@media (max-width: 991.98px) { .offer { padding: 70px 0; }
+  .offer .row { flex-direction: column-reverse; }
+  .offer .feat-img { padding: 2rem; min-height: 350px; }
+  .offer .feat-img .accent.accent-1 { top: 15%; left: 10%; }
+  .offer .feat-img .accent.accent-2 { bottom: 15%; right: 10%; }
+  .offer .offer-content { padding: 2rem !important; }
+  .offer .offer-content h2 { font-size: 2rem; }
+  .offer .action-buttons { flex-direction: column; align-items: flex-start; }
+  .offer .action-buttons .btn { width: 100%; }
+  .offer  .guarantee-badge { margin-left: 0; margin-top: 1rem; }
+}
+
+@media (max-width: 576px) { .offer { padding: 50px 0; }
+  .offer .offer-content { padding: 1.5rem !important; }
+  .offer .offer-content h2 { font-size: 1.75rem; }
+  .offer .benefits-row .col-md-6 { margin-bottom: 1rem; }
+  .offer .feat-img { min-height: 300px; }
+  .offer .feat-img .accent { padding: 0.5rem 0.75rem; }
+  .offer .feat-img .accent span { font-size: 0.8rem; }
+  .offer .shape { transform: scale(0.7); }
+}
+
+
+/* === HOW WE WORK === */
+
+.how-we-work .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; position: relative; margin-bottom: 3rem; }
+
+@media (min-width: 992px) { .how-we-work .steps-grid { grid-template-columns: repeat(4, 1fr); }}
+@media (max-width: 768px) { .how-we-work .steps-grid { gap: 1.5rem; }}
+
+.how-we-work .step-card { background: #ffffff; padding: 2.5rem 2rem; border-radius: 20px; text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; border: 1px solid color-mix(in srgb, var(--pureflo-blue), transparent 90%); }
+.how-we-work .step-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); border-color: var(--pureflo-blue); }
+.how-we-work .step-card:hover .step-icon { background-color: var(--pureflo-blue); color: #ffffff; transform: scale(1.1); }
+.how-we-work .step-card:hover .step-arrow { transform: translateX(5px); }
+.how-we-work .step-card .step-icon { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, color-mix(in srgb, var(--pureflo-blue), transparent 80%) 0%, color-mix(in srgb, var(--pureflo-blue), transparent 90%) 100%); color: var(--pureflo-blue); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; transition: all 0.3s ease; }
+.how-we-work .step-card .step-number { background: linear-gradient(135deg, var(--pureflo-blue) 0%, color-mix(in srgb, var(--pureflo-blue), #000 20%) 100%); color: #ffffff; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 1rem; }
+.how-we-work .step-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--hd-color); }
+@media (max-width: 576px) { .how-we-work .step-card h3 { font-size: 1.2rem; } }
+
+.how-we-work .step-card p { font-size: 0.95rem; color: var(--main-color); line-height: 1.6; margin-bottom: 0; }
+.how-we-work .step-card .step-arrow { position: absolute; top: 50%; right: -15px; width: 30px; height: 30px; background-color: var(--pureflo-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 0.9rem; transition: all 0.3s ease; z-index: 2; }
+.how-we-work .step-card:last-child .step-arrow { display: none; }
+@media (max-width: 991px) { .how-we-work .step-card .step-arrow { display: none; } }
+
+@media (max-width: 991px) { .how-we-work .steps-grid { grid-template-columns: repeat(2, 1fr); }}
+@media (max-width: 576px) { 
+  .how-we-work .steps-grid { grid-template-columns: 1fr; }
+  .how-we-work .step-card { padding: 2rem 1.5rem; }
+}
