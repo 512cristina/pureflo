@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row gy-4 mb-4">
             <div class="col col-lg-3 mb-4">
-                    <img srcset="<?php echo get_template_directory_uri(); ?>/assets/img/global/gentex-logo.svg" src="<?php echo get_template_directory_uri(); ?>/assets/img/global/gentex-logo.png"  width="120" height="30" alt="Gentex Corporation"/>                
+                    <img srcset="<?php echo get_template_directory_uri(); ?>/assets/img/global/gentex-logo.svg" src="<?php echo get_template_directory_uri(); ?>/assets/img/global/gentex-logo.png" width="193" height="48" alt="Gentex Corporation"/>                
             </div>
 
             <div class="col-12 col-md-6 footer-links">
