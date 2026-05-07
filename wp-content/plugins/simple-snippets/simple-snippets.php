@@ -128,12 +128,10 @@ function sss_snippet_shortcode($atts) {
 
     $content = $snippet->post_content;
 
-    // Execute PHP only for admins
-    if (current_user_can('manage_options')) {
-        ob_start();
-        eval('?>' . $content);
-        return ob_get_clean();
-    }
+    // Execute PHP for all users
+    ob_start();
+    eval('?>' . $content);
+    return ob_get_clean();
 
     return do_shortcode($content);
 }
