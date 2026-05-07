@@ -25,6 +25,9 @@
                             <li><a href="https://www.gentexcorp.com/patents/"  rel="noopener" target="_blank">Patents</a></li>
                             <li><a href="/product-warranty-information/" rel="noopener" target="_blank">Warranty</a></li>
                             <li><a href="https://www.gentexcorp.com/supplier-information/" rel="noopener" target="_blank">Suppliers</a></li>
+                            <?php if (in_array($region, ['eu', 'anz'])): ?>	
+						        <li><a href="/<?php echo $region; ?>/conformity/">Declarations of Conformity</a></li>
+					        <?php endif; ?>
                         </ul>                            
                     </div>
                 </div>

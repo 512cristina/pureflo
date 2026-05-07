@@ -74,7 +74,7 @@
 									</div>
 																	
 									<div class="col-12 col-xl-6 product-section text-center">	
-									<?php if ($region !== 'us'): ?>									
+									<?php if ($region === 'us'): ?>									
 										<div class="product-list">
 											<a href="/us/trial/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/try-purflo-risk-free.png" width="201" height="200" alt="Try PureFlo Risk Free"  class="mt-4"  data-aos="flip-up" data-aos-duration="3000"></a>
 										</div>
