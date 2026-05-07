@@ -17,7 +17,7 @@
 				</li>
 
 				<!-- Megamenu -->
-				<li class="megamenu"><a href="#<?php echo get_current_region(); ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="megamenu"><a href="<?php echo get_current_region(); ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<!-- Desktop Megamenu -->
 					<div class="container desktop-megamenu">
 						<div class="tab-navigation">
