@@ -7,17 +7,17 @@
 
 		<nav id="navmenu" class="navmenu">
 			<ul><!-- Products Mobile Only  -->
-				<li class="dropdown d-lg-none"><a href="<?php echo home_url('/' . $region . '/products/'); ?>"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="dropdown d-lg-none"><a href="<?php echo get_current_region(); ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
-						<li><a href="/us/products/"><span>PureFlo 3000 PAPR Series</span></a></li>
-						<li><a href="/us/products/"><span>PureFlo ESM+ Series</span></a></li>
-						<li><a href="/us/products/"><span>Filter &amp; Parts</span></a></li>
-						<li><a href="/us/industries/"><span>Industries</span></a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/products/"><span>PureFlo 3000 PAPR Series</span></a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/products/"><span>PureFlo ESM+ Series</span></a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/products/"><span>Filter &amp; Parts</span></a></li>
+						<li><a href="/<?php echo get_current_region(); ?>/industries/"><span>Industries</span></a></li>
 					</ul>
 				</li>
 
 				<!-- Megamenu -->
-				<li class="megamenu"><a href="#<?php echo home_url('/' . $region . '/products/'); ?>"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="megamenu"><a href="#<?php echo get_current_region(); ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<!-- Desktop Megamenu -->
 					<div class="container desktop-megamenu">
 						<div class="tab-navigation">
@@ -49,21 +49,21 @@
 										<h4>Working for You</h4>
 
 										<div class="product-list">
-											<a href="<?php echo home_url('/' . $region . '/products/'); ?>" class="product-link">
+											<a href="<?php echo get_current_region(); ?>/products/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>PureFlo 3000 PAPR Series</span>
 												<small>PureFlo PAPRs provide respiratory, head, eye, and face protection in one integrated head-top unit, reducing the need for multiple PPE components. And PureFlo PAPRs are ready to use right out of the box, with no complex setup required, so you can get to work faster. </small>
 												</div>
 											</a>
-											<a href="<?php echo home_url('/' . $region . '/products/'); ?>" class="product-link">
+											<a href="<?php echo get_current_region(); ?>/products/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>PureFlo ESM+ Series</span>
 												<small>In high-heat environments, extra protection is essential. PureFlo has you covered with dependable protection when it matters most.</small>
 												</div>
 											</a>			
-											<a href="<?php echo home_url('/' . $region . '/products/'); ?>" class="product-link">
+											<a href="<?php echo get_current_region(); ?>/products/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>Filters &amp; Parts</span>
