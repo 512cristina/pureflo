@@ -151,6 +151,7 @@ header .logo img { max-height: 50px; width:auto;}
   .navmenu .megamenu .tab-content .feature .feature-info { flex: 1; min-width: 0; }
   .navmenu .megamenu .tab-content .feature .feature-info h5 { color: var(--main-color); font-size: 1rem; font-weight: 600; margin-bottom: 6px; line-height: 1.3; }
   .navmenu .megamenu .tab-content .feature .feature-info p { color: var(--pureflo-navy); font-size: 13px; line-height: 1.5; margin-bottom: 15px; }
+  .navmenu .megamenu .tab-content .feature .feature-info a { color: var(--pureflo-blue);  } 
   .navmenu .megamenu .tab-content .feature .feature-info .callout-link { color: var(--pureflo-blue); font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; }
   .navmenu .megamenu .tab-content .feature .feature-info .callout-link:hover { color: color-mix(in srgb, var(--pureflo-blue), black 15%); }
   .navmenu .megamenu .tab-content .feature .feature-info .callout-link:hover i { transform: translateX(4px); }
