@@ -3,7 +3,7 @@
 	
 <header class="fixed-top d-flex align-items-center">
 	<div class="container-fluid px-5 position-relative d-flex align-items-center justify-content-between">
-		<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/pureflo-logo-white.png"  width="267" height="68" alt="PureFlo"/></a>
+		<a href="/<?php echo $region; ?>/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/pureflo-logo-white.png"  width="267" height="68" alt="PureFlo"/></a>
 
 		<nav id="navmenu" class="navmenu">
 			<ul><!-- Products Mobile Only  -->
