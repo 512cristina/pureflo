@@ -6,7 +6,10 @@
 		<a href="/<?php echo $region; ?>/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/pureflo-logo-white.png"  width="267" height="68" alt="PureFlo"/></a>
 
 		<nav id="navmenu" class="navmenu">
-			<ul><!-- Products Mobile Only  -->
+			<div class="nav1 text-end d-none d-lg-block"><a href="/<?php echo $region; ?>/distributors/" class="btn CTA-nav1-distributor">Find a Distributor</a></div>
+
+			<ul><!-- Products & Distributor Mobile Only  -->
+				<li class="nav1 d-lg-none"><a href="/distributors/" class="btn CTA-nav1-distributor">Find a Distributor</a></li>
 				<li class="dropdown d-lg-none"><a href="/<?php echo $region; ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
 						<li><a href="/<?php echo $region; ?>/products/"><span>PureFlo 3000 PAPR Series</span></a></li>
