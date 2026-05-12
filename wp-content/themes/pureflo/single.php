@@ -30,6 +30,7 @@
 </section>
 <?php endwhile; ?>
 
-<link href="/wp-content/themes/pureflo/assets/css/news.css" type="text/css"  rel="preload stylesheet"  as="style">
+<link href="/wp-content/themes/pureflo/assets/css/news.css" rel="preload" as="style">
+<link href="/wp-content/themes/pureflo/assets/css/news.css" rel="stylesheet">
 
 <?php get_footer(); ?>

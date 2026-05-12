@@ -19,3 +19,7 @@
 .info-card {border:1px solid #dee2e6; border-radius:.375rem; padding:1rem; background: rgba(248,249,250,1);}
 
 #country-filter {padding:.4rem.75rem; font-size:1rem; height:auto;}
+
+.info-card.single {line-height:1.6;}
+.card-countries {--hd-color:#ffffff; color:#ffffff; border-radius: 1rem; padding:2rem; background: linear-gradient(121deg,rgba(0, 28, 51, 1) 20%, rgba(0, 14, 26, 1) 49%, rgba(0, 75, 135, 1) 81%); }
+

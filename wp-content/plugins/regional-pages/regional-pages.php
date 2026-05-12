@@ -29,6 +29,9 @@ class RegionalPagesPaired {
         add_action('template_redirect', [$this, 'root_redirect']);
         add_filter('redirect_canonical', [$this, 'disable_region_canonical'], 10, 2);
 
+        // Rewrites needed for Distributor Single to work
+        add_action('init', [$this, 'regional_rewrites']);
+
     }
 
     public function add_region_meta_box() {
@@ -52,8 +55,8 @@ class RegionalPagesPaired {
 
         if (isset($_POST['region'])) {
             update_post_meta($post_id, '_region', sanitize_text_field($_POST['region']));
+        }
     }
-}
 
     // -------------------------
     // REGION DETECTION
@@ -122,7 +125,17 @@ class RegionalPagesPaired {
         return $classes;
     }
 
-}
+    // REWRITE RULES TO ACCOUNT FOR REGIONAL PAGES (Distributors)
+    public function regional_rewrites() {
+
+        add_rewrite_rule(
+            '^(us|eu|anz)/distributors/([^/]+)/?$',
+            'index.php?post_type=distributor&name=$matches[2]',
+            'top'
+        );
+    }
+
+}  // CLOSE Class
 
 // Init
 new RegionalPagesPaired();
@@ -132,6 +145,16 @@ function get_current_region() {
     return RegionalPagesPaired::get_region();
 }
 
+// Generate URLs with region path detected. Example:  <a href=" echo esc_url(get_regional_permalink()); 
+
+function get_regional_permalink($post_id = null) {
+    $post_id = $post_id ?: get_the_ID();
+    $region = get_current_region();
+    $post = get_post($post_id);
+
+    if (!$post) {  return home_url('/');  }
+    return home_url('/' . $region . '/' . $post->post_type . 's/' . $post->post_name . '/');
+}
 
 function get_region_url($region) {
 	$path = $_SERVER['REQUEST_URI'];

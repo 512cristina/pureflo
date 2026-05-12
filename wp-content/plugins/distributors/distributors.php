@@ -299,11 +299,14 @@ function dm_filter_distributors() {
                 }
 
                 $address = implode(', ', array_filter([$street, $city, $state, $postal, $country]));
+
+                $region = function_exists('get_current_region') ? get_current_region() : 'us';
+                $distributor_url = home_url('/' . $region . '/distributors/' . get_post_field('post_name', get_the_ID()) . '/');
             ?>
 
             <div class="row">
                 <div class="col-12 col-lg-3 dist-name">
-                    <?php the_title(); ?>
+                    <a href="<?php echo esc_url($distributor_url); ?>"><?php the_title(); ?></a>
                     <?php if ($website): ?>
                         <a href="<?php echo esc_url($website); ?>" target="_blank">
                             <i class="fa-solid fa-globe"></i>
@@ -370,13 +373,16 @@ function dm_filter_distributors() {
                     }
                 }
 
-                $address = implode(', ', array_filter([$street, $city, $state, $postal, $country]));
+                $address = implode(', ', array_filter([$street, $city, $state, $postal, $country])); 
+
+                $region = function_exists('get_current_region') ? get_current_region() : 'us';
+                $distributor_url = home_url('/' . $region . '/distributors/' . get_post_field('post_name', get_the_ID()) . '/');
             ?>
 
             <div class="col-12 col-md-6">
                 <div class="info-card h-100">
                     <div class="dist-name">
-                        <?php the_title(); ?>
+                        <a href="<?php echo esc_url($distributor_url); ?>"><?php the_title(); ?></a>
                         <?php if ($website): ?>
                             <a href="<?php echo esc_url($website); ?>" target="_blank">
                                 <i class="fa-solid fa-globe"></i>

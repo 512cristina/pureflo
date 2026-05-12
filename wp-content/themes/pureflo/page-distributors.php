@@ -73,11 +73,22 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
 
                     // Address formatting
                     $address = implode(', ', array_filter([$street, $city, $state, $postal, $country]));
+
+                    // Region adjustments for URLs
+                    // $region = function_exists('get_current_region') ? get_current_region() : 'us';
+                    // $distributor_url = home_url('/' . $region . '/distributors/' . get_post_field('post_name', get_the_ID()) . '/');
                 ?>
+
+
+
                     <div class="row">			
-                        <div class="col-12 col-lg-3 dist-name"><?php the_title(); ?>
+                        <div class="col-12 col-lg-3 dist-name">
+                            <!-- <a href="<?php // echo esc_url($distributor_url); ?>"> <?php // the_title(); ?></a> -->
+
+                            <a href="<?php echo esc_url(get_regional_permalink()); ?>"> <?php the_title(); ?></a>
+
                             <?php if (!empty($website)) : ?>
-                                <a href="<?php echo esc_url($website); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
+                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i></a>
                             <?php endif; ?>
                         </div>		
 
@@ -145,9 +156,10 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
                 ?>
                     
                     <div class="col-12 col-md-6"><div class="info-card h-100">			
-                        <div class="dist-name"><?php the_title(); ?>
+                        <div class="dist-name">
+                            <a href="<?php echo esc_url(get_regional_permalink()); ?>"> <?php the_title(); ?></a>
                             <?php if (!empty($website)) : ?>
-                                <a href="<?php echo esc_url($website); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
+                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i></a>
                             <?php endif; ?>
                         </div>
 
