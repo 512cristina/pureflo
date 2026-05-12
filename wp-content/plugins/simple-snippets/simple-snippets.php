@@ -116,6 +116,7 @@ function sss_render_shortcode_metabox($post) {
 
 // Shortcode handler
 function sss_snippet_shortcode($atts) {
+
     $atts = shortcode_atts([
         'id' => ''
     ], $atts);
@@ -128,11 +129,12 @@ function sss_snippet_shortcode($atts) {
 
     $content = $snippet->post_content;
 
-    // Execute PHP for all users
+    // Execute PHP
     ob_start();
     eval('?>' . $content);
-    return ob_get_clean();
+    $output = ob_get_clean();
 
-    return do_shortcode($content);
+    // Process nested shortcodes
+    return do_shortcode($output);
 }
 add_shortcode('snippet', 'sss_snippet_shortcode');
