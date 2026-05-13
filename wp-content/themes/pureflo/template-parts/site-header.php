@@ -28,7 +28,7 @@
 
 								<li class="nav-item" role="presentation">
 									<button class="nav-link active" id="mega-tab-2-tab" data-bs-toggle="tab" data-bs-target="#mega-tab-2" type="button" role="tab" aria-controls="mega-tab-2" aria-selected="true">
-										<i class="fa-solid fa-mask-face"></i>
+										<i class="bi bi-lungs-fill"></i>
 										<span>Respiratory Protection</span>
 									</button>
 								</li>

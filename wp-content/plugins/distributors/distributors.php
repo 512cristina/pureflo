@@ -309,7 +309,7 @@ function dm_filter_distributors() {
                     <a href="<?php echo esc_url($distributor_url); ?>"><?php the_title(); ?></a>
                     <?php if ($website): ?>
                         <a href="<?php echo esc_url($website); ?>" target="_blank">
-                            <i class="fa-solid fa-globe"></i>
+                            <i class="bi bi-globe2"></i>
                         </a>
                     <?php endif; ?>
                 </div>
@@ -323,15 +323,15 @@ function dm_filter_distributors() {
                     }
 
                     if ($email) {
-                        echo ' <a href="mailto:' . esc_attr($email) . '"><i class="fa-regular fa-envelope"></i></a>';
+                        echo ' <a href="mailto:' . esc_attr($email) . '"><i class="bi bi-envelope-at"></i></a>';
                     }
                     ?>
                 </div>
 
                 <div class="col-12 col-lg-4 dist-contact">
-                    <?php if ($phone) echo '<i class="fa-solid fa-phone"></i> ' . esc_html($phone); ?>
-                    <?php if ($fax) echo '<br><i class="fa-solid fa-fax"></i> ' . esc_html($fax); ?>
-                    <?php if ($address) echo '<br><i class="fa-solid fa-location-dot"></i> ' . esc_html($address); ?>
+                    <?php if ($phone) echo '<i class="bi bi-telephone-fill"></i> ' . esc_html($phone); ?>
+                    <?php if ($fax) echo '<br><i class="bi bi-printer-fill"></i> ' . esc_html($fax); ?>
+                    <?php if ($address) echo '<br><i class="bi bi-geo-alt-fill"></i> ' . esc_html($address); ?>
                 </div>
 
                 <div class="col-12 col-lg-3 dist-countries">
@@ -385,7 +385,7 @@ function dm_filter_distributors() {
                         <a href="<?php echo esc_url($distributor_url); ?>"><?php the_title(); ?></a>
                         <?php if ($website): ?>
                             <a href="<?php echo esc_url($website); ?>" target="_blank">
-                                <i class="fa-solid fa-globe"></i>
+                                <i class="bi bi-globe2"></i>
                             </a>
                         <?php endif; ?>
                     </div>
@@ -399,19 +399,19 @@ function dm_filter_distributors() {
                         }
 
                         if ($email) {
-                            echo ' <a href="mailto:' . esc_attr($email) . '"><i class="fa-regular fa-envelope"></i></a>';
+                            echo ' <a href="mailto:' . esc_attr($email) . '"><i class="bi bi-envelope-at"></i></a>';
                         }
                         ?>
                     </div>
 
                     <div class="dist-contact">
-                        <?php if ($phone) echo '<i class="fa-solid fa-phone"></i> ' . esc_html($phone); ?>
-                        <?php if ($fax) echo '<br><i class="fa-solid fa-fax"></i> ' . esc_html($fax); ?>
-                        <?php if ($address) echo '<br><i class="fa-solid fa-location-dot"></i> ' . esc_html($address); ?>
+                        <?php if ($phone) echo '<i class="bi bi-telephone-fill"></i> ' . esc_html($phone); ?>
+                        <?php if ($fax) echo '<br><i class="bi bi-printer-fill"></i> ' . esc_html($fax); ?>
+                        <?php if ($address) echo '<br><i class="bi bi-geo-alt-fill"></i> ' . esc_html($address); ?>
                     </div>
 
                     <div class="dist-countries">
-                        <i class="fa-solid fa-earth-americas"></i>
+                        <i class="bi bi-globe-americas-fill"></i>
                         <?php echo esc_html(implode(', ', $countries_list)); ?>
                     </div>
                 </div>

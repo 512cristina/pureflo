@@ -14,7 +14,7 @@ function pureflo_scripts() {
 
     wp_enqueue_style('bootstrap', $uri.'/assets/css/bootstrap.min.css');
     wp_enqueue_style('icons', $uri.'/assets/css/bootstrap-icons.css');
-    wp_enqueue_style('fontawesome', $uri.'/assets/css/fontawesome.all.min.css');
+    // wp_enqueue_style('fontawesome', $uri.'/assets/css/fontawesome.all.min.css');
     wp_enqueue_style('aos', $uri.'/assets/vendor/aos/aos.css');
     wp_enqueue_style('glightbox', $uri.'/assets/css/glightbox.min.css');
     wp_enqueue_style('global', $uri.'/assets/css/global.css');

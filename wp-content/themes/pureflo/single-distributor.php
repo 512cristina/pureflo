@@ -49,26 +49,23 @@ while (have_posts()) : the_post();
 		<div class="row justify-content-between mobile-list">
 
             <div class="col-12 col-md-6"><div class="info-card single h-100">
-                <?php if (!empty($website)) : ?>
-                    <div class="dist-name my-1"><a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"> <i class="fa-solid fa-globe"></i> <?php echo esc_url($website); ?></a></div>
-                <?php endif; ?>    
-                
-                <?php if (!empty($rep)) : ?>
-                    <div class="dist-rep my-1"> <?php echo esc_html($rep); ?> </div>	
-                <?php endif; ?>  
-                
+
                 <div class="dist-contact">			
                     <?php
-                    if (!empty($email)) { echo '<i class="fa-regular fa-envelope"></i> <a href="mailto:' . esc_attr($email) . ' ">' . esc_attr($email) . '</a> '; }
-                    if (!empty($phone)) { echo '<br><i class="fa-solid fa-phone"></i> ' . esc_html($phone); }
-                    if (!empty($fax)) { echo '<br><i class="fa-solid fa-fax"></i> ' . esc_html($fax); }
-                    if (!empty($address)) { echo '<br><i class="fa-solid fa-location-dot"></i> ' . esc_html($address); }
+                    if (!empty($rep)) { echo '<i class="bi bi-person-fill"></i> <span class="fw-500">' . esc_html($rep) . '</span><br>'; }
+                    if (!empty($email)) { echo '<i class="bi bi-envelope-at"></i> <a href="mailto:' . esc_attr($email) . ' ">' . esc_attr($email) . '</a><br> '; }
+                    if (!empty($phone)) { echo '<i class="bi bi-telephone-fill"></i> ' . esc_html($phone) . '<br>'; }
+                    if (!empty($fax)) { echo '<i class="bi bi-printer-fill"></i> ' . esc_html($fax) . '<br>'; }
+                    if (!empty($address)) { echo '<i class="bi bi-geo-alt-fill"></i> ' . esc_html($address); }
                     ?>
-                </div>				
+                </div>		
+                <?php if (!empty($website)) : ?>
+                    <div class="my-1"><a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"> <i class="bi bi-globe2"></i> <?php echo esc_url($website); ?></a></div>
+                <?php endif; ?>  		
             </div></div>
 
             <div class="col-12 col-md-6 col-lg-4 card-countries">
-                <p class="h4"><i class="fa-solid fa-earth-americas"></i> Countries</p>
+                <p class="h4"><i class="bi bi-globe-americas-fill"></i> Countries</p>
 
               <?php if (!empty($countries_list)) : ?>
                 <p><?php echo esc_html(implode(', ', $countries_list)); ?></p>
@@ -79,7 +76,7 @@ while (have_posts()) : the_post();
 		</div>
 
         <div class="row"><div class="col text-end mt-4 small">
-            <a href="/<?php echo get_current_region(); ?>/distributors/"><em>Search distributors <i class="bi bi-arrow-right"></i></em></a>
+            <a href="/<?php echo get_current_region(); ?>/distributors/"><em>Search all distributors <i class="bi bi-arrow-right"></i></em></a>
         </div></div>
 
 	</div>

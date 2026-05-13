@@ -88,7 +88,7 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
                             <a href="<?php echo esc_url(get_regional_permalink()); ?>"> <?php the_title(); ?></a>
 
                             <?php if (!empty($website)) : ?>
-                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i></a>
+                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><i class="bi bi-globe2"></i></a>
                             <?php endif; ?>
                         </div>		
 
@@ -97,15 +97,15 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
                                 if (empty($rep) && !empty($email)) { echo '<em>email</em>'; } else { echo esc_html($rep);}
 
                             // Email icon (only if email exists)
-                            if (!empty($email)) { echo ' <a href="mailto:' . esc_attr($email) . '"><i class="fa-regular fa-envelope"></i></a> ';  }                        
+                            if (!empty($email)) { echo ' <a href="mailto:' . esc_attr($email) . '"><i class="bi bi-envelope-at"></i></a> ';  }                        
                             ?> 
                         </div>			
 
                         <div class="col-12 col-lg-4 dist-contact">
                             <?php // Phone icon + number (only if phone exists)
-                            if (!empty($phone)) { echo '<i class="fa-solid fa-phone"></i> ' . esc_html($phone); }
-                            if (!empty($fax)) { echo '<br><i class="fa-solid fa-fax"></i> ' . esc_html($fax); }
-                            if (!empty($address)) { echo '<br><i class="fa-solid fa-location-dot"></i> ' . esc_html($address); }
+                            if (!empty($phone)) { echo '<i class="bi bi-telephone-fill"></i> ' . esc_html($phone); }
+                            if (!empty($fax)) { echo '<br><i class="bi bi-printer-fill"></i> ' . esc_html($fax); }
+                            if (!empty($address)) { echo '<br><i class="bi bi-geo-alt-fill"></i> ' . esc_html($address); }
                             ?>
                         </div>
 
@@ -159,7 +159,7 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
                         <div class="dist-name">
                             <a href="<?php echo esc_url(get_regional_permalink()); ?>"> <?php the_title(); ?></a>
                             <?php if (!empty($website)) : ?>
-                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i></a>
+                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><i class="bi bi-globe2"></i></a>
                             <?php endif; ?>
                         </div>
 
@@ -168,19 +168,19 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
                                 if (empty($rep) && !empty($email)) { echo '<em>email</em>'; } else { echo esc_html($rep);}
 
                             // Email icon (only if email exists)
-                            if (!empty($email)) { echo ' <a href="mailto:' . esc_attr($email) . '"><i class="fa-regular fa-envelope"></i></a> ';  }                        
+                            if (!empty($email)) { echo ' <a href="mailto:' . esc_attr($email) . '"><i class="bi bi-envelope-at"></i></a> ';  }                        
                             ?> 
                         </div>			
                         
                         <div class="dist-contact">
                             <?php // Phone icon + number (only if phone exists)
-                            if (!empty($phone)) { echo '<i class="fa-solid fa-phone"></i> ' . esc_html($phone); }
-                            if (!empty($fax)) { echo '<br><i class="fa-solid fa-fax"></i> ' . esc_html($fax); }
-                            if (!empty($address)) { echo '<br><i class="fa-solid fa-location-dot"></i> ' . esc_html($address); }
+                            if (!empty($phone)) { echo '<i class="bi bi-telephone-fill"></i> ' . esc_html($phone); }
+                            if (!empty($fax)) { echo '<br><i class="bi bi-printer-fill"></i> ' . esc_html($fax); }
+                            if (!empty($address)) { echo '<br><i class="bi bi-geo-alt-fill"></i> ' . esc_html($address); }
                             ?>
                         </div>			
                         
-                        <div class="dist-countries"><i class="fa-solid fa-earth-americas"></i> <?php echo esc_html(implode(', ', $countries_list)); ?></div>			
+                        <div class="dist-countries"><i class="bi bi-globe-americas-fill"></i> <?php echo esc_html(implode(', ', $countries_list)); ?></div>			
                     </div></div>
 
                 </div> <!-- /.Mobile -->
