@@ -32,6 +32,9 @@ class RegionalPagesPaired {
         // Rewrites needed for Distributor Single to work
         add_action('init', [$this, 'regional_rewrites']);
 
+        // Redirect regional 404s to regional homepage
+        add_action('template_redirect', [$this, 'regional_404_redirect']);
+
     }
 
     public function add_region_meta_box() {
@@ -135,6 +138,18 @@ class RegionalPagesPaired {
         );
     }
 
+    // Redirect regional 404s to regional homepage
+    public function regional_404_redirect() {
+
+        if (is_404()) {
+
+            $region = self::get_region();
+
+            wp_redirect(home_url('/' . $region . '/'), 302);
+            exit;
+        }
+    }
+
 }  // CLOSE Class
 
 // Init
@@ -157,12 +172,28 @@ function get_regional_permalink($post_id = null) {
 }
 
 function get_region_url($region) {
-	$path = $_SERVER['REQUEST_URI'];
 
-	// Remove existing region prefix (prevents /us/us/ bug)
-	$path = preg_replace('#^/(us|eu|anz)#', '', $path);
+    $path = $_SERVER['REQUEST_URI'];
 
-	return home_url('/' . $region . $path);
+    // Remove existing region prefix
+    $path = preg_replace('#^/(us|eu|anz)#', '', $path);
+
+    $target_path = '/' . $region . $path;
+    $target_url  = home_url($target_path);
+
+    // Check if URL resolves
+    $request = wp_remote_head($target_url, [
+        'timeout' => 2,  'redirection' => 0
+    ]);
+
+    // If request succeeded and NOT 404
+    if (!is_wp_error($request)) {
+        $code = wp_remote_retrieve_response_code($request);
+        if ($code >= 200 && $code < 400) { return $target_url;  }
+    }
+
+    // Fallback to region homepage
+    return home_url('/' . $region . '/');
 }
 
 function add_region_meta() {
