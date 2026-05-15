@@ -5,6 +5,8 @@
  * Version: 1.0
  * Author: PureFlo
  * Instructions:  in DCT use [pureflo_faq category="general-questions"] to display just one category
+ *  [pureflo_faq category="general-questions,maintenance"]
+ *  [pureflo_faq category="general-questions" order="DESC"]
  */
 
 // REGISTER FAQ POST TYPE
@@ -17,7 +19,7 @@ function pureflo_register_faq() {
         'public' => true,
         'has_archive' => false,
         'menu_icon' => 'dashicons-editor-help',
-        'supports' => ['title', 'editor', 'page-attributes'],
+        'supports' => ['title', 'editor', 'page-attributes', 'revisions'],
         'rewrite' => ['slug' => 'faq'],
         'show_in_rest' => true
     ]);
@@ -46,55 +48,94 @@ function pureflo_faq_shortcode($atts) {
 
     $atts = shortcode_atts([
         'category' => '',
+        'orderby'  => 'menu_order',
+        'order'    => 'ASC',
     ], $atts);
 
     $args = [
-        'post_type' => 'faq',
+        'post_type'      => 'faq',
         'posts_per_page' => -1,
-        'orderby' => 'menu_order',
-        'order' => 'ASC',
+        'orderby'        => $atts['orderby'],
+        'order'          => $atts['order'],
     ];
 
+    // Filter by category slug
     if (!empty($atts['category'])) {
+
+        $categories = array_map('trim', explode(',', $atts['category']));
+
         $args['tax_query'] = [
             [
                 'taxonomy' => 'faq_category',
-                'field' => 'slug',
-                'terms' => $atts['category']
+                'field'    => 'slug',
+                'terms'    => $categories
             ]
         ];
     }
 
     $faqs = new WP_Query($args);
 
-    if (!$faqs->have_posts()) { return '<p>No FAQs found.</p>'; }
+    if (!$faqs->have_posts()) {
+        return '<p>No FAQs found.</p>';
+    }
+
+    // Unique accordion ID prevents conflicts
+    $accordion_id = 'faq-' . wp_rand(1000, 9999);
 
     ob_start();
     ?>
 
-    <div class="accordion" id="FAQs">
-    
-    <?php $i = 0; while ($faqs->have_posts()) : $faqs->the_post(); $i++; ?>
-        <div class="accordion-item">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $i; ?>" aria-expanded="false" aria-controls="collapse<?php echo $i; ?>">
-                <div class="faq-icon"><i class="bi bi-question-circle"></i></div> 
-                <?php the_title(); ?>
-            </button>
-
-            <div id="collapse<?php echo $i; ?>" class="accordion-collapse collapse" data-bs-parent="#FAQs">
-                <div class="accordion-body">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>    
-    <?php endwhile; ?>
-
-    </div> <!-- /Accordion -->
-
+    <div class="accordion" id="<?php echo esc_attr($accordion_id); ?>">
 
     <?php
-        wp_reset_postdata();
-        return ob_get_clean();
+    $i = 0;
+
+    while ($faqs->have_posts()) :
+        $faqs->the_post();
+
+        $i++;
+
+        $collapse_id = $accordion_id . '-collapse-' . $i;
+    ?>
+
+        <div class="accordion-item">
+
+            <button class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#<?php echo esc_attr($collapse_id); ?>"
+                aria-expanded="false"
+                aria-controls="<?php echo esc_attr($collapse_id); ?>">
+
+                <div class="faq-icon">
+                    <i class="bi bi-question-circle"></i>
+                </div>
+
+                <?php the_title(); ?>
+
+            </button>
+
+            <div id="<?php echo esc_attr($collapse_id); ?>"
+                class="accordion-collapse collapse"
+                data-bs-parent="#<?php echo esc_attr($accordion_id); ?>">
+
+                <div class="accordion-body">
+                    <?php echo wpautop(get_the_content()); ?>
+                </div>
+
+            </div>
+
+        </div>
+
+    <?php endwhile; ?>
+
+    </div>
+
+    <?php
+
+    wp_reset_postdata();
+
+    return ob_get_clean();
 }
 add_shortcode('pureflo_faq', 'pureflo_faq_shortcode');
 
