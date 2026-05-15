@@ -17,11 +17,12 @@ class RegionalPagesPaired {
         add_action('save_post', [$this, 'save_meta']);
 
         // Admin column
-        add_filter('manage_posts_columns', [$this, 'add_region_column']);
-        add_filter('manage_pages_columns', [$this, 'add_region_column']);
+        // Only add Region column to Posts + Pages
+        add_filter('manage_post_posts_columns', [$this, 'add_region_column']);
+        add_filter('manage_page_posts_columns', [$this, 'add_region_column']);
 
-        add_action('manage_posts_custom_column', [$this, 'render_region_column'], 10, 2);
-        add_action('manage_pages_custom_column', [$this, 'render_region_column'], 10, 2);
+        add_action('manage_post_posts_custom_column', [$this, 'render_region_column'], 10, 2);
+        add_action('manage_page_posts_custom_column', [$this, 'render_region_column'], 10, 2);
 
         // Helpers
         add_filter('body_class', [$this, 'body_class']);
@@ -203,7 +204,7 @@ function add_region_meta() {
 	$eu  = get_region_url('eu');
 	$anz = get_region_url('anz');
 
-	// ✅ Hreflang tags
+	// Hreflang tags
 	echo '
 	<link rel="alternate" hreflang="en-US" href="' . esc_url($us) . '" />
 	<link rel="alternate" hreflang="en-GB" href="' . esc_url($eu) . '" />
@@ -212,7 +213,7 @@ function add_region_meta() {
 	<link rel="alternate" hreflang="x-default" href="' . esc_url($us) . '" />
 	';
 
-	// ✅ JS object for your switcher
+	// JS object for your switcher
 	echo "<script>
 		window.REGION_URLS = {
 			us: '" . esc_url($us) . "',
