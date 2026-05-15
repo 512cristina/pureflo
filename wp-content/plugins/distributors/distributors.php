@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Distributor Manager
-Description: Manage distributor listings with validation and enhanced UX.
+Description: Custom | Manage distributor listings with validation and enhanced UX.
 Version: 1.3
 Author: PureFlo
 */

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Resource Library
- * Description: Custom Resource Library (PDFs, Docs, Videos)
+ * Description: Custom | Resource Library (PDFs, Docs, Videos)
  * Version: 1.0
 *  Author: PureFlo
  */

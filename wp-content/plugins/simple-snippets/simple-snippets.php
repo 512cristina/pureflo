@@ -1,7 +1,8 @@
 <?php
 /**
  * Plugin Name: Simple Snippets Shortcode
- * Description: Create reusable snippets (HTML, CSS, JS, PHP) and display via shortcode.
+ * Description: Custom | Create reusable snippets (HTML, CSS, JS, PHP) and display via shortcode.
+ * Author: PureFlo
  * Version: 1.2
  */
 

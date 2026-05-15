@@ -1,8 +1,9 @@
 <?php
 /**
  * Plugin Name: Regional Pages
- * Description: Regional support for US/EU/ANZ
- * Version: 4.0
+ * Description: Custom | Regional support for US/EU/ANZ
+ * Author: PureFlo
+ * Version: 1.4
  */
 
 if (!defined('ABSPATH')) exit;
