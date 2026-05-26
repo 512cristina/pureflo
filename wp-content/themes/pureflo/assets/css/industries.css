@@ -1,6 +1,6 @@
 /* == INDUSTRIES PAGE ONLY == */
 
-@media (min-width: 1400px) {.hero { min-height: 70vh;}}
+@media (min-width: 1400px) {.hero { min-height: 80vh;}}
 .hero video {position:absolute; top:0; width:100%;}
 
 .industries .nav-tabs { border: none; background: color-mix(in srgb, var(--background-color), transparent 50%); border-radius: 16px; backdrop-filter: blur(8px); }
