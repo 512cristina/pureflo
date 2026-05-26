@@ -76,28 +76,48 @@ add_action('add_meta_boxes', function () {
 });
 
 function render_resource_language_radio_box($post) {
+
     $taxonomy = 'resource_language';
+
     $terms = get_terms([
         'taxonomy' => $taxonomy,
         'hide_empty' => false,
     ]);
 
     $selected_terms = wp_get_post_terms($post->ID, $taxonomy, ['fields' => 'ids']);
-    $selected = !empty($selected_terms) ? $selected_terms[0] : 0;
+
+    if (!empty($selected_terms)) {
+
+        // Existing saved language
+        $selected = $selected_terms[0];
+
+    } else {
+
+        // Default to English
+        $english = get_term_by('name', 'English', $taxonomy);
+
+        $selected = $english ? $english->term_id : 0;
+    }
 
     if (!empty($terms)) {
+
         foreach ($terms as $term) {
             ?>
             <p>
                 <label>
-                    <input type="radio" name="resource_language_radio" value="<?php echo esc_attr($term->term_id); ?>"
-                        <?php checked($selected, $term->term_id); ?> />
+                    <input type="radio"
+                           name="resource_language_radio"
+                           value="<?php echo esc_attr($term->term_id); ?>"
+                           <?php checked($selected, $term->term_id); ?> />
+
                     <?php echo esc_html($term->name); ?>
                 </label>
             </p>
             <?php
         }
+
     } else {
+
         echo 'No languages found.';
     }
 }
