@@ -20,9 +20,11 @@ class RegionalPagesPaired {
         // Only add Region column to Posts + Pages
         add_filter('manage_post_posts_columns', [$this, 'add_region_column']);
         add_filter('manage_page_posts_columns', [$this, 'add_region_column']);
+        add_filter('manage_news_posts_columns', [$this, 'add_region_column']);
 
         add_action('manage_post_posts_custom_column', [$this, 'render_region_column'], 10, 2);
         add_action('manage_page_posts_custom_column', [$this, 'render_region_column'], 10, 2);
+        add_action('manage_news_posts_custom_column', [$this, 'render_region_column'], 10, 2);
 
         // Helpers
         add_filter('body_class', [$this, 'body_class']);
@@ -40,7 +42,7 @@ class RegionalPagesPaired {
     }
 
     public function add_region_meta_box() {
-        add_meta_box( 'regional_region', 'Region', [$this, 'region_box'],  ['page', 'post'], 'side' );
+        add_meta_box('regional_region', 'Region', [$this, 'region_box'], ['page', 'post', 'news'], 'side');
     }
 
     public function region_box($post) {
@@ -170,8 +172,10 @@ function get_regional_permalink($post_id = null) {
     $post = get_post($post_id);
 
     if (!$post) {  return home_url('/');  }
-    return home_url('/' . $region . '/' . $post->post_type . 's/' . $post->post_name . '/');
+    $slug = ($post->post_type === 'news') ? 'news' : $post->post_type . 's';
+    return home_url('/' . $region . '/' . $slug . '/' . $post->post_name . '/');
 }
+
 
 function get_region_url($region) {
 
