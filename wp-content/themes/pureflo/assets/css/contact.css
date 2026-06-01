@@ -9,9 +9,6 @@
 
 .contact:before {content:''; opacity: 0.3; background: url('/wp-content/themes/pureflo-theme/assets/img/global/hex-vertical-wide.png') no-repeat fixed; background-position: 120% 0%;  position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index:-1;}
 
-.contact .hd-sidebar  { margin-bottom: 15px; color: var(--hd-color); position: relative; padding-left: 15px; }
-.contact .hd-sidebar:before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background-color: var(--pureflo-blue); border-radius: 2px; }
-
 .contact-card { display: flex; align-items: center; gap: 15px;}
 .contact-card .icon-box { width: 50px; height: 50px; flex-shrink: 0; background-color: color-mix(in srgb, var(--pureflo-blue), transparent 90%); border-radius: 10px; display: flex; justify-content: center; align-items: center; }
 .contact-card .icon-box i { font-size: 22px; color: var(--pureflo-blue); }

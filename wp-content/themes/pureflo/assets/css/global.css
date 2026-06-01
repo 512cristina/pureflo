@@ -34,6 +34,9 @@ video {width: 100% !important; height: auto !important;}
 .no-break {white-space: nowrap;}
 .arrow-right::after { content: "\F138"; margin-left: 0.5rem; font-family: "bootstrap-icons"; line-height: 1; vertical-align: -.125em;}
 .eyebrow {text-transform: uppercase; color:var(--ada-blue); font-weight: 600; font-size: 1rem;}
+.hd-sidebar  { margin-bottom: 15px; color: var(--hd-color); position: relative; padding-left: 15px; }
+.hd-sidebar:before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background-color: var(--pureflo-blue); border-radius: 2px; }
+.shadow-wht-box { background-color:#ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
 .pureflo-blue {color:var(--pureflo-blue);} 
 .ada-blue {color:var(--ada-blue);}
