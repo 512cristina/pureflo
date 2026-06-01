@@ -254,7 +254,7 @@ body.modal-open .hero, body.modal-open footer
 
 
 /* === HERO === */
-.hero { min-height: 450px; position: relative; display: flex; align-items: center; overflow: hidden; color:#ffffff; --main-color: #ffffff; --hd-color: #ffffff; background: var(--navy-black); background: linear-gradient(148deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 118, 214, 1) 100%);}
+.hero { min-height: 500px; position: relative; display: flex; align-items: center; overflow: hidden; color:#ffffff; --main-color: #ffffff; --hd-color: #ffffff; background: var(--navy-black); background: linear-gradient(148deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 118, 214, 1) 100%);}
 .hero .container { position: relative; z-index: 2; padding: 3rem 1rem; }
 
 .hero.default {background: linear-gradient(161deg, rgb(0, 14, 26) 50%, rgba(0, 75, 136) 90%);}
@@ -263,6 +263,7 @@ body.modal-open .hero, body.modal-open footer
 
 @media (min-width: 768px) { .hero.default:before {background-image: url('../img/hero/wavy-lines-md.webp');}}
 @media (min-width: 920px) { .hero.default:before {background-image: url('../img/hero/wavy-lines-lg.webp');}}
+@media (min-width: 1200px) {.hero { height: 65vh;}}
 @media (min-width: 1400px) { .hero.default:before {background-image: url('../img/hero/wavy-lines.webp');}}
 
 .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
