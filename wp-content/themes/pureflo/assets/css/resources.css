@@ -12,9 +12,11 @@
 .featured-resource {margin-top:-150px;}
 .featured-resource img {max-height: 300px; width: auto; position: relative;}
 
-.resource-filters select {font-size: 1rem; margin:0.5rem 0; border-radius: 5px; background-color: #F2F2F2; padding: 2px 8px; border: 1px solid #D9D9D9;}
-.resource-filters .btn-submit {background: none; border:0; color:var(--ada-blue); margin:0; vertical-align: middle;}
-.resource-filters .btn-submit:hover {color:rgba(0, 0, 0, 0.7) !important;}
+.resource-filters select {font-size: 1rem; margin:0 1rem 0 0; border-radius: 5px; background-color: #F2F2F2; padding: 2px 8px; border: 1px solid #D9D9D9; }
+.resource-filters .btn.btn-sm {padding: 2px 10px !important;}
+.resource-filters .btn.btn-sm:hover {color:rgba(0, 0, 0, 0.7) !important;}
+.rf-title {font-size: 1rem; text-transform: uppercase;  font-weight: 600; margin-right:1rem;}
+.bi-arrow-clockwise::before {font-weight: 900 !important;}
 
 .card figure {position: relative; overflow: hidden; margin: 0; }
 .card figure img {object-fit: contain; }
@@ -33,5 +35,3 @@
 .card .card-body {display:flex; flex-direction: column;}
 .card .card-text {font-size:1rem; margin: 8px 0 15px 0;}
 .card .card-icon {font-size:2rem; margin-top:auto;}
-
-.bi-arrow-clockwise::before {font-weight: 900 !important;}
