@@ -101,13 +101,39 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 
                 while ($query->have_posts()) : $query->the_post();
 
-                    $post_id   = get_the_ID();
-                    $file_id   = get_post_meta($post_id, '_rl_file', true);
+                    $post_id = get_the_ID();
                     $video_url = get_post_meta($post_id, '_rl_video', true);
 
-                    $file_url = $file_id ? wp_get_attachment_url($file_id) : '';
-                    $image_url = get_the_post_thumbnail_url($post_id, 'full');
+                    $languages = [
+                        'en' => 'EN',
+                        'fr' => 'FR',
+                        'it' => 'IT',
+                        'es' => 'ES',
+                        'de' => 'DE',
+                        'da' => 'DA',
+                        'nl' => 'NL'
+                    ];
 
+                    $resource_files = [];
+
+                    foreach ($languages as $slug => $label) {
+
+                        $file_id = get_post_meta( $post_id,  '_rl_file_' . $slug, true );
+
+                        if ($file_id) {
+                            $resource_files[$slug] = [ 'label' => $label, 'url'   => wp_get_attachment_url($file_id) ];
+                        }
+                    }
+
+                    $file_count = count($resource_files);
+                    $file_url = '';
+
+                    if ($file_count === 1) {
+                        $first_file = reset($resource_files);
+                        $file_url = $first_file['url'];
+                    }
+
+                    $image_url = get_the_post_thumbnail_url($post_id, 'full');
                     $image_id = get_post_meta($post_id, '_rl_image', true);
                     $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : 'https://placehold.co/350x200/png';
 
@@ -149,7 +175,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                             </div>
                         </div>
 
-                    <?php elseif ($file_url): ?>
+                    <?php elseif ($file_count > 0): ?>
                         <!-- DOCUMENT CARD -->
                         <div class="col-md-6 col-lg-3 d-flex">
                             <div class="card w-100 px-0"> 
@@ -160,12 +186,39 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                                 </a>
 
                                 <div class="card-body">
-                                    <a href="<?php echo esc_url($file_url); ?>" target="_blank">
+                                    <?php if ($file_count <= 1): ?>
+                                        <a href="<?php echo esc_url($file_url); ?>" target="_blank">
+                                            <h4 class="card-title"><?php the_title(); ?></h4>
+                                        </a>
+
+                                    <?php else: ?>
                                         <h4 class="card-title"><?php the_title(); ?></h4>
-                                    </a>
+                                    <?php endif; ?>
 
                                     <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
-                                    <a href="<?php echo esc_url($file_url); ?>" class="card-icon" target="_blank"><i class="bi bi-file-earmark-arrow-down-fill"></i></a>
+
+                                    <?php if ($file_count <= 1): ?>
+
+                                        <a href="<?php echo esc_url($file_url); ?>" class="card-icon" target="_blank">
+                                            <i class="bi bi-file-earmark-arrow-down-fill"><span class="d-none">Download file</span></i>
+                                        </a>
+
+                                    <?php else: ?>
+
+                                        <div class="download-lang">
+                                            <div class="card-icon"><i class="bi bi-file-earmark-arrow-down-fill"><span class="d-none">Download file</span></i></div>
+                                            <div><b>Download:</b><br>
+
+                                                <?php $links = [];
+                                                foreach ($resource_files as $file) {
+                                                    $links[] = '<a href="' . esc_url($file['url']) .  '" target="_blank">' . esc_html($file['label']) . '</a>';
+                                                }
+
+                                                echo implode(' &#9642; ', $links);
+                                                ?> 
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
                                 </div>
                             </div>
