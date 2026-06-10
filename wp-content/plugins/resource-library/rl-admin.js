@@ -29,8 +29,6 @@ jQuery(document).ready(function ($) {
             $('#rl-language-files-wrapper').hide();
             $('#rl-external-url-wrapper').hide();
 
-            
-
             return;
         }
 
@@ -48,14 +46,10 @@ jQuery(document).ready(function ($) {
 
         $('#rl-language-selector input[type="checkbox"]:checked')
             .each(function () {
-
                 const slug = $(this).data('slug');
-
-                $('.rl-language-file-row[data-language="' + slug + '"]')
-                    .show();
+                $('.rl-language-file-row[data-language="' + slug + '"]') .show();
 
             });
-
     }
 
 
@@ -89,17 +83,12 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
 
         const target = $(this).data('target');
-
         const frame = wp.media({
-
             title: 'Select Resource File',
-
             button: {
                 text: 'Use this file'
             },
-
             multiple: false
-
         });
 
         frame.on('select', function () {
@@ -135,13 +124,10 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.rl-remove-file', function (e) {
 
         e.preventDefault();
-
         const target = $(this).data('target');
 
         $('#rl_file_' + target).val('');
-
         $('#rl_file_preview_' + target).html('');
-
     });
 
 
@@ -155,27 +141,14 @@ jQuery(document).ready(function ($) {
     $('#rl_image_upload').on('click', function (e) {
 
         e.preventDefault();
-
         if (imageFrame) {
-
             imageFrame.open();
-
             return;
-
         }
 
         imageFrame = wp.media({
-
             title: 'Select Resource Image',
-
-            button: {
-
-                text: 'Use this image'
-
-            },
-
-            multiple: false
-
+            button: { text: 'Use this image'  }, multiple: false
         });
 
         imageFrame.on('select', function () {
@@ -186,20 +159,12 @@ jQuery(document).ready(function ($) {
                     .first()
                     .toJSON();
 
-            $('#rl_image')
-                .val(attachment.id);
-
-            $('#rl_image_preview')
-                .attr('src', attachment.url)
-                .show();
-
-            $('#rl_image_remove')
-                .show();
-
+            $('#rl_image') .val(attachment.id);
+            $('#rl_image_preview') .attr('src', attachment.url) .show();
+            $('#rl_image_remove') .show();
         });
 
         imageFrame.open();
-
     });
 
 
@@ -211,14 +176,9 @@ jQuery(document).ready(function ($) {
     $('#rl_image_remove').on('click', function (e) {
 
         e.preventDefault();
-
         $('#rl_image').val('');
-
-        $('#rl_image_preview')
-            .hide();
-
+        $('#rl_image_preview') .hide();
         $(this).hide();
-
     });
 
 
@@ -233,15 +193,9 @@ jQuery(document).ready(function ($) {
             $('#rl-language-selector input[type="checkbox"]:checked');
 
         if (checkedLanguages.length === 0) {
-
             e.preventDefault();
-
-            alert(
-                'Please select at least one Language.'
-            );
-
+            alert( 'Please select at least one Language.' );
             return false;
-
         }
 
         // =====================================================
@@ -252,15 +206,9 @@ jQuery(document).ready(function ($) {
             jQuery('input[name="tax_input[resource_topic][]"]:checked');
 
         if (checkedTopics.length === 0) {
-
             e.preventDefault();
-
-            alert(
-                'Please select at least one Topic.'
-            );
-
+            alert( 'Please select at least one Topic.' );
             return false;
-
         }
 
         let isVideo = false;
@@ -273,10 +221,7 @@ jQuery(document).ready(function ($) {
                 .trim()
                 .toLowerCase();
 
-            if (label === 'video') {
-                isVideo = true;
-            }
-
+            if (label === 'video') { isVideo = true; }
         });
 
         const sourceType = $('#rl_source_type').val();
@@ -284,32 +229,21 @@ jQuery(document).ready(function ($) {
         if (isVideo) {
 
             if (!$('#rl_video').val()) {
-
                 e.preventDefault();
-
-                alert(
-                    'Video resources require a Video URL.'
-                );
-
+                alert( 'Video resources require a Video URL.' );
                 return false;
-
             }
-
         }
         
         let missingFile = false;
 
         if ( !isVideo && sourceType === 'upload') {
-
             checkedLanguages.each(function () {
 
                 const slug = $(this).data('slug');
-
-                const value =
-                    $('#rl_file_' + slug).val();
+                const value = $('#rl_file_' + slug).val();
 
                 if (!value) {
-
                     alert(
                         'You selected '
                         + slug.toUpperCase()
@@ -317,48 +251,29 @@ jQuery(document).ready(function ($) {
                     );
 
                     missingFile = true;
-
                     return false;
-
                 }
-
             });
         }
 
         if ( !isVideo && sourceType === 'external' ) {
 
             if (!$('#rl_external_url').val()) {
-
                 e.preventDefault();
-
-                alert(
-                    'External resources require a URL.'
-                );
-
+                alert( 'External resources require a URL.' );
                 return false;
             }
         }
 
         if (missingFile) {
-
             e.preventDefault();
-
             return false;
-
         }
 
         if (!$('#rl_image').val()) {
-
             e.preventDefault();
-
-            alert(
-                'Please upload a Resource Image.'
-            );
-
+            alert( 'Please upload a Resource Image.' );
             return false;
-
         }
-
     });
-
 });

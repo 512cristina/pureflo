@@ -214,7 +214,7 @@ function rl_meta_box_callback($post) {
 
         <?php $external_url =  get_post_meta( $post->ID, '_rl_external_url', true ); ?>
 
-        <input type="url" name="rl_external_url" value="<?php echo esc_attr($external_url); ?>"
+        <input type="url" id="rl_external_url" name="rl_external_url" value="<?php echo esc_attr($external_url); ?>"
             style="width:100%;" placeholder="https://example.com/someurl-here/">
     </div>
 
