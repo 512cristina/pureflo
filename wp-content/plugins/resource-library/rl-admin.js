@@ -19,22 +19,32 @@ jQuery(document).ready(function ($) {
             if (label === 'video') {
                 isVideo = true;
             }
-
         });
+
+        const sourceType =
+            $('#rl_source_type').val();
 
         if (isVideo) {
 
-            $('#rl-language-files-wrapper')
-                .hide();
+            $('#rl-language-files-wrapper').hide();
+            $('#rl-external-url-wrapper').hide();
+
+            
 
             return;
         }
 
-        $('#rl-language-files-wrapper')
-            .show();
+        if (sourceType === 'external') {
 
-        $('.rl-language-file-row')
-            .hide();
+            $('#rl-language-files-wrapper').hide();
+            $('#rl-external-url-wrapper').show();
+
+            return;
+        }
+
+        $('#rl-external-url-wrapper').hide();
+        $('#rl-language-files-wrapper').show();
+        $('.rl-language-file-row').hide();
 
         $('#rl-language-selector input[type="checkbox"]:checked')
             .each(function () {
@@ -49,9 +59,6 @@ jQuery(document).ready(function ($) {
     }
 
 
-
-
-
     rlToggleLanguageRows();
 
     $(document).on(
@@ -63,6 +70,12 @@ jQuery(document).ready(function ($) {
     $(document).on(
         'change',
         'input[name="tax_input[resource_type][]"]',
+        rlToggleLanguageRows
+    );
+
+    $(document).on(
+        'change',
+        '#rl_source_type',
         rlToggleLanguageRows
     );
 
@@ -266,6 +279,8 @@ jQuery(document).ready(function ($) {
 
         });
 
+        const sourceType = $('#rl_source_type').val();
+
         if (isVideo) {
 
             if (!$('#rl_video').val()) {
@@ -284,7 +299,7 @@ jQuery(document).ready(function ($) {
         
         let missingFile = false;
 
-        if (!isVideo) {
+        if ( !isVideo && sourceType === 'upload') {
 
             checkedLanguages.each(function () {
 
@@ -308,6 +323,20 @@ jQuery(document).ready(function ($) {
                 }
 
             });
+        }
+
+        if ( !isVideo && sourceType === 'external' ) {
+
+            if (!$('#rl_external_url').val()) {
+
+                e.preventDefault();
+
+                alert(
+                    'External resources require a URL.'
+                );
+
+                return false;
+            }
         }
 
         if (missingFile) {

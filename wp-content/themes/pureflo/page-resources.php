@@ -102,7 +102,10 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                 while ($query->have_posts()) : $query->the_post();
 
                     $post_id = get_the_ID();
-                    $video_url = get_post_meta($post_id, '_rl_video', true);
+
+                    $video_url = get_post_meta( $post_id,  '_rl_video', true );
+                    $source_type = get_post_meta( $post_id,  '_rl_source_type',  true );
+                    $external_url = get_post_meta( $post_id, '_rl_external_url', true );
 
                     $languages = [
                         'en' => 'EN',
@@ -139,6 +142,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 
                     // Get resource type
                     $types = get_the_terms($post_id, 'resource_type');
+                    
                     $is_video = false;
 
                     if ($types && !is_wp_error($types)) {
@@ -146,6 +150,8 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                             if (in_array($type->slug, ['video', 'webinar'])) { $is_video = true; break; }
                         }
                     }
+
+                    $is_external = ( !$is_video  && $source_type === 'external' && !empty($external_url) );
 
                     if ($is_video && $video_url): ?>
                         <!-- VIDEO CARD -->
@@ -225,23 +231,23 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                         </div>
 
 
-                    <?php elseif ($video_url): ?>
+                    <?php elseif ($is_external): ?>
                         <!-- EXTERNAL LINK CARD -->
                         <div class="col-md-6 col-lg-3 d-flex">
                             <div class="card w-100 px-0"> 
 
-                                <a href="<?php echo esc_url($video_url); ?>" target="_blank" class="img-wrapper">
+                                <a href="<?php echo esc_url($external_url); ?>" class="img-wrapper" target="_blank" rel="noopener">
                                     <img src="<?php echo esc_url($image_url); ?>" width="350" height="200" class="card-img-top" 
                                         alt="<?php echo esc_attr(get_the_title()); ?>">
                                 </a>
 
                                 <div class="card-body">
-                                    <a href="<?php echo esc_url($video_url); ?>" target="_blank">
+                                    <a href="<?php echo esc_url($external_url); ?>" target="_blank" rel="noopener">
                                         <h4 class="card-title"><?php the_title(); ?></h4>
                                     </a>
 
                                     <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
-                                    <a href="<?php echo esc_url($video_url); ?>" class="card-icon" target="_blank"><i class="bi bi-arrow-up-right-square-fill"></i></a>
+                                    <a href="<?php echo esc_url($external_url); ?>" class="card-icon"  target="_blank" rel="noopener"><i class="bi bi-arrow-up-right-square-fill"></i></a>
 
                                 </div>
                             </div>
