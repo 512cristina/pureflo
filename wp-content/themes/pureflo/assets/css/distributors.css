@@ -1,13 +1,9 @@
 /* == DISTRIBUTOR PAGE ONLY == */
 
-.hero:before {content: '';  opacity: 1; position: absolute; inset: 0; background-repeat: no-repeat; background-position: top right; background-size: cover;
-    background-image: url('../img/hero/hero-dust-particles-sm.jpg'); }
+.hero { background-image: url('../img/hero/hero-distributor.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
+.hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
 
-@media (min-width: 600px) {.hero:before { background-image:url('../img/hero/hero-dust-particles-md.jpg');} }
-@media (min-width: 1200px) {
-    .hero { min-height: 50vh; }
-    .hero:before { background-image: url('../img/hero/hero-dust-particles.jpg'); background-attachment: fixed; }
-}
+@media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-distributor-md.jpg'); background-position:right top;}}
 
 .dist-list, .mobile-list {font-size:0.95rem;}
 .dist-list div.row {padding:8px 3px; border-radius:.375rem; }

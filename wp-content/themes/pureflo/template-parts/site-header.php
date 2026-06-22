@@ -52,21 +52,21 @@
 										<h4>Working for You</h4>
 
 										<div class="product-list">
-											<a href="/<?php echo $region; ?>/products/" class="product-link">
+											<a href="/<?php echo $region; ?>/products/pf3000/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>PureFlo 3000 PAPR Series</span>
 												<small>PureFlo PAPRs provide respiratory, head, eye, and face protection in one integrated head-top unit, reducing the need for multiple PPE components. And PureFlo PAPRs are ready to use right out of the box, with no complex setup required, so you can get to work faster. </small>
 												</div>
 											</a>
-											<a href="/<?php echo $region; ?>/products/" class="product-link">
+											<a href="/<?php echo $region; ?>/products/esm/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>PureFlo ESM+ Series</span>
 												<small>In high-heat environments, extra protection is essential. PureFlo has you covered with dependable protection when it matters most.</small>
 												</div>
 											</a>			
-											<a href="/<?php echo $region; ?>/products/" class="product-link">
+											<a href="/<?php echo $region; ?>/products/parts/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>Filters &amp; Parts</span>

@@ -2,14 +2,14 @@
 
 get_header(); ?>
 
-
 <!-- Hero Section -->
 <section class="hero">
 	<div class="overlay"></div>
 
 	<div class="container">
-		<div class="row align-items-center"><div class="col-lg-7">
-			<h1>News</h1>
+		<div class="row"><div class="col-lg-7">
+			<div class="eyebrow">PureFlo<sup>&reg;</sup> </div>
+			<h1 class="mt-1">News</h1>
 		</div></div>		
 	</div>
 </section>
@@ -21,7 +21,7 @@ get_header(); ?>
 	if ($featured_query->have_posts()) : while ($featured_query->have_posts()) : $featured_query->the_post(); 
 	$news_date = get_post_meta(get_the_ID(), '_pf_news_date', true); ?>
 
-<section class="latest-news" data-aos="fade-up" data-aos-duration="2000">
+<section class="latest-news z-2" data-aos="fade-up" data-aos-duration="2000">
 	<div class="container">
 
 		<div class="row justify-content-center"><div class="col-10 bg-light-grey p-5 rounded">
@@ -56,13 +56,14 @@ get_header(); ?>
 		$cards_query = new WP_Query([ 'post_type' => 'news', 'posts_per_page' => $posts_per_page, 'paged' => $paged, 
 			'offset' => ($paged - 1) * $posts_per_page + 1, 'meta_key' => '_pf_news_date', 'orderby' => 'meta_value', 'order' => 'DESC' ]);
  	
-	if ($cards_query->have_posts()) : 
-		$news_date = get_post_meta(get_the_ID(), '_pf_news_date', true); ?>
+	if ($cards_query->have_posts()) :  ?>
 
 		<!-- Cards row -->
 		<div class="row justify-content-between gx-3 gy-4">
 
-		<?php while ($cards_query->have_posts()) : $cards_query->the_post(); ?>
+		<?php while ($cards_query->have_posts()) : 
+				$cards_query->the_post(); 
+				 $news_date = get_post_meta(get_the_ID(), '_pf_news_date', true); ?>
 
 			<div class="col-md-6 col-lg-4 d-flex">
 				<div class="card w-100 px-0"> 				
@@ -71,7 +72,7 @@ get_header(); ?>
 					</a>
 					<div class="card-body d-flex flex-column">
 						<div class="date"><?php if ($news_date) { echo date('j F, Y', strtotime($news_date));} ?></div>
-						<a href="<?php echo esc_url(get_regional_permalink()); ?>"><h4 class="card-title mt-2 mb-4"><?php the_title(); ?></h4></a>
+						<a href="<?php echo esc_url(get_regional_permalink()); ?>" class="card-title mt-2 mb-4"><?php the_title(); ?></a>
 						<div class="mt-auto"><a href="<?php echo esc_url(get_regional_permalink()); ?>" class="btn btn-sm btn-primary">Read more <i class="bi bi-arrow-right"></i></a></div>
 					</div>
 				</div>

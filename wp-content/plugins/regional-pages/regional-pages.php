@@ -259,3 +259,9 @@ add_filter('wpseo_locale', function($locale) {
 
 	return 'en_US';
 });
+
+// EXECUTE PATH FOR CLASSIC EDITOR | EXAMPLE:  <a href="/[region]/news/">View News</a>
+function region_shortcode() {
+    return get_current_region();
+}
+add_shortcode('region', 'region_shortcode');

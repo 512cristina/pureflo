@@ -170,7 +170,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                                 </figure>
 
                                 <div class="card-body">
-                                    <h4 class="card-title"><?php the_title(); ?></h4>
+                                    <a href="<?php echo esc_url($video_url); ?>" class="card-title glightbox"  rel="noopener"><?php the_title(); ?></a>
                                     <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
 
                                     <a href="<?php echo esc_url($video_url); ?>" class="card-icon glightbox"  rel="noopener">
@@ -193,12 +193,12 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 
                                 <div class="card-body">
                                     <?php if ($file_count <= 1): ?>
-                                        <a href="<?php echo esc_url($file_url); ?>" target="_blank">
-                                            <h4 class="card-title"><?php the_title(); ?></h4>
+                                        <a href="<?php echo esc_url($file_url); ?>" class="card-title" target="_blank" rel="noopener">
+                                            <?php the_title(); ?>
                                         </a>
 
                                     <?php else: ?>
-                                        <h4 class="card-title"><?php the_title(); ?></h4>
+                                        <div class="card-title"><?php the_title(); ?></div>
                                     <?php endif; ?>
 
                                     <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
@@ -242,8 +242,8 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                                 </a>
 
                                 <div class="card-body">
-                                    <a href="<?php echo esc_url($external_url); ?>" target="_blank" rel="noopener">
-                                        <h4 class="card-title"><?php the_title(); ?></h4>
+                                    <a href="<?php echo esc_url($external_url); ?>" class="card-title" target="_blank" rel="noopener">
+                                        <?php the_title(); ?>
                                     </a>
 
                                     <div class="card-text"><?php echo wp_trim_words(get_the_content(), 20); ?></div>

@@ -123,3 +123,22 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
   .how-we-work .steps-grid { grid-template-columns: 1fr; }
   .how-we-work .step-card { padding: 2rem 1.5rem; }
 }
+
+/* === SUB PAGES === */
+
+.hero.esm { background-image: url('../img/hero/hero-esm.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
+.hero.esm::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
+@media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-pf3000-md.jpg'); background-position:right top;}}
+
+.hero.pf3000 { background-image: url('../img/hero/hero-pf3000.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
+.hero.pf3000::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
+@media (max-width: 1200px) {.hero.pf3000 {background-image: url('../img/hero/hero-pf3000-md.jpg'); background-position:right top;}}
+
+
+.quick-scan h5 {font-weight:600;}
+.quick-scan p {font-size:1.1rem; opacity:.9;}
+
+.features .card-img-top {object-fit: cover; transition: transform 0.5s ease;}
+.features .card-img-top:hover {transform: scale(1.2);}
+.features .card-title {font-size:1.35rem !important; font-weight: 600;}
+.features .card-text {font-size:1.2rem;}

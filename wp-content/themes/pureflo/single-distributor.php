@@ -34,15 +34,14 @@ while (have_posts()) : the_post();
     $address = implode(', ', array_filter([$street, $city, $state, $postal, $country]));
 ?>
 
-<section class="hero default">
+<section class="hero default sm">
 	<div class="container">
-		<div class="row align-items-center"><div class="col">
+		<div class="row"><div class="col">
 			<div class="eyebrow">Distributor</div>
 			<h1><?php the_title(); ?></h1>
 		</div></div>		
 	</div>
 </section>
-
 
 <section>
 	<div class="container">

@@ -1,13 +1,11 @@
 /* == CONTACT PAGE ONLY == */
 
-.hero {background: linear-gradient(161deg, rgb(0, 14, 26) 50%, rgba(0, 75, 136,0.9) 90%);}
-@media (min-width: 1200px) {
-    .hero:before {content: '';  opacity: 0.1; 
-    background: url('/wp-content/themes/pureflo-theme/assets/img/global/voltage-oscillirator.png') no-repeat fixed; background-size: cover; background-position: bottom right;
-    position: absolute; left: 0; right: 0; top: 0; bottom: 0;}
-}
+.hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 15%);}
+.hero video {position:absolute; top:0; width:100%;}
 
-.contact:before {content:''; opacity: 0.3; background: url('/wp-content/themes/pureflo-theme/assets/img/global/hex-vertical-wide.png') no-repeat fixed; background-position: 120% 0%;  position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index:-1;}
+@media (min-width: 768px) {.hero {height:60vh;} }
+
+.contact:before {content:''; opacity: 0.3; background: url('../img/global/hex-vertical-wide.png') no-repeat fixed; background-position: 120% 0%;  position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index:-1;}
 
 .contact-card { display: flex; align-items: center; gap: 15px;}
 .contact-card .icon-box { width: 50px; height: 50px; flex-shrink: 0; background-color: color-mix(in srgb, var(--pureflo-blue), transparent 90%); border-radius: 10px; display: flex; justify-content: center; align-items: center; }

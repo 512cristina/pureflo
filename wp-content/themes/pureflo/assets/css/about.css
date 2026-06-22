@@ -1,9 +1,15 @@
 /* == ABOUT PAGE ONLY == */
 
+.hero { background-image: url('../img/hero/hero-about.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
+.hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
+
+@media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-about-md.jpg'); background-position:right top;}}
+@media (max-width: 768px) {.hero {background-position:center;}}
+
 .why-pf {--hd-color:#ffffff; color:#ffffff; position:relative; border-radius: 1rem; background: linear-gradient(121deg,rgba(0, 28, 51, 1) 20%, rgba(0, 14, 26, 1) 49%, rgba(0, 75, 135, 1) 81%); }
 
 .why-pf:before {content: '';  opacity: 0.1; position: absolute; inset: 0; pointer-events: none;
-    background: url('../assets/img/global/wave-light-sm.webp') no-repeat; background-size: cover; background-position: bottom right;}
+    background: url('../img/global/wave-light-sm.webp') no-repeat; background-size: cover; background-position: bottom right;}
 
 .why-pf h4 {font-size:2rem; margin-left:1rem;}
 .why-pf .border-right {border-right: 5px solid var(--ada-blue);}
