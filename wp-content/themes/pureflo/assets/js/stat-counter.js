@@ -1,42 +1,55 @@
-
 const counterSection = document.querySelector('.stats-container');
 const counters = document.querySelectorAll('.counter');
-const speed = 200; // Lower is faster
 
-const startCounters = () => {
-  counters.forEach((counter) => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
+function startCounters() {
+    counters.forEach(counter => {
+        const target = parseFloat(counter.dataset.target);
+        const duration = parseInt(counter.dataset.duration) || 2000;
+        const decimals = parseInt(counter.dataset.decimals) || 0;
 
-      // Calculate increment
-      const inc = target / speed;
+        const startTime = performance.now();
 
-      if (count < target) {
-        // Add increment and wait
-        counter.innerText = Math.ceil(count + inc);
-        setTimeout(updateCount, 1);
-      } else {
-        counter.innerText = target; // Ensure final number is exact
-      }
-    };
-    updateCount();
-  });
-};
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
 
-// Intersection Observer Options
+            const current = target * progress;
+
+            if (decimals > 0) {
+                counter.textContent = current.toFixed(decimals);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                // Ensure the final value is exact
+                if (decimals > 0) {
+                    counter.textContent = target.toFixed(decimals);
+                } else {
+                    counter.textContent = target;
+                }
+            }
+        }
+
+        requestAnimationFrame(update);
+    });
+}
+
+// Intersection Observer
 const options = {
-  root: null, // use the viewport
-  threshold: 0.5 // trigger when 50% of section is visible
+    root: null,
+    threshold: 0.35
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      startCounters();
-      observer.unobserve(entry.target); // Run only once
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounters();
+            observer.unobserve(entry.target);
+        }
+    });
 }, options);
 
 observer.observe(counterSection);

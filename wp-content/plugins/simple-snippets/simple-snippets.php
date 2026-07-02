@@ -36,15 +36,6 @@ add_action('init', 'sss_register_snippets_cpt');
 function sss_add_columns($columns) {
     $columns['shortcode'] = 'Shortcode';
     $columns['modified'] = 'Last Modified';
-
-    // Remove unwanted Region column if present
-    if (isset($columns['region'])) {
-        unset($columns['region']);
-    }
-    if (isset($columns['taxonomy-region'])) {
-        unset($columns['taxonomy-region']);
-    }
-
     return $columns;
 }
 add_filter('manage_sss_snippet_posts_columns', 'sss_add_columns');
@@ -88,14 +79,7 @@ add_action('pre_get_posts', 'sss_default_order');
 
 // Add shortcode metabox
 function sss_add_shortcode_metabox() {
-    add_meta_box(
-        'sss_shortcode_box',
-        'Snippet Shortcode',
-        'sss_render_shortcode_metabox',
-        'sss_snippet',
-        'side',
-        'high'
-    );
+    add_meta_box( 'sss_shortcode_box', 'Snippet Shortcode', 'sss_render_shortcode_metabox',  'sss_snippet', 'side', 'high' );
 }
 add_action('add_meta_boxes', 'sss_add_shortcode_metabox');
 
@@ -114,18 +98,13 @@ function sss_render_shortcode_metabox($post) {
     echo '<input type="text" value="' . esc_attr($shortcode) . '" readonly style="width:100%; font-family:monospace;" onclick="this.select();">';
 }
 
-
 // Shortcode handler
 function sss_snippet_shortcode($atts) {
 
-    $atts = shortcode_atts([
-        'id' => ''
-    ], $atts);
-
+    $atts = shortcode_atts(['id' => '' ], $atts);
     if (!$atts['id']) return '';
 
     $snippet = get_page_by_path($atts['id'], OBJECT, 'sss_snippet');
-
     if (!$snippet) return '';
 
     $content = $snippet->post_content;

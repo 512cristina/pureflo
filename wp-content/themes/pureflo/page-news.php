@@ -96,8 +96,8 @@ get_header(); ?>
 
   </div>
 </section>
-
+<!-- ## LOADED VIA FUNTIONS.PHP ##
 <link href="/wp-content/themes/pureflo/assets/css/news.css" rel="preload" as="style">
 <link href="/wp-content/themes/pureflo/assets/css/news.css" rel="stylesheet">
-
+	-->
 <?php get_footer(); ?>

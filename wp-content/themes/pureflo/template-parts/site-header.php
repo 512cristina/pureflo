@@ -1,26 +1,25 @@
-<?php $region = get_current_region(); ?>
 <body>
 	
 <header class="fixed-top d-flex align-items-center">
 	<div class="container-fluid px-5 position-relative d-flex align-items-center justify-content-between">
-		<a href="/<?php echo $region; ?>/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/pureflo-logo-white.png"  width="267" height="68" alt="PureFlo"/></a>
+		<a href="/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/pureflo-logo-white.png"  width="267" height="68" alt="PureFlo"/></a>
 
 		<nav id="navmenu" class="navmenu">
-			<div class="nav1 text-end d-none d-lg-block"><a href="/<?php echo $region; ?>/distributors/" class="btn CTA-nav1-distributor">Find a Distributor</a></div>
+			<div class="nav1 text-end d-none d-lg-block"><a href="/distributors/" class="btn CTA-nav1-distributor">Find a Distributor</a></div>
 
 			<ul><!-- Products & Distributor Mobile Only  -->
 				<li class="nav1 d-lg-none"><a href="/distributors/" class="btn CTA-nav1-distributor">Find a Distributor</a></li>
-				<li class="dropdown d-lg-none"><a href="/<?php echo $region; ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="dropdown d-lg-none"><a href="/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
-						<li><a href="/<?php echo $region; ?>/products/"><span>PureFlo 3000 PAPR Series</span></a></li>
-						<li><a href="/<?php echo $region; ?>/products/"><span>PureFlo ESM+ Series</span></a></li>
-						<li><a href="/<?php echo $region; ?>/products/"><span>Filter &amp; Parts</span></a></li>
-						<li><a href="/<?php echo $region; ?>/industries/"><span>Industries</span></a></li>
+						<li><a href="/products/"><span>PureFlo 3000 PAPR Series</span></a></li>
+						<li><a href="/products/"><span>PureFlo ESM+ Series</span></a></li>
+						<li><a href="/products/"><span>Filter &amp; Parts</span></a></li>
+						<li><a href="/industries/"><span>Industries</span></a></li>
 					</ul>
 				</li>
 
 				<!-- Megamenu -->
-				<li class="megamenu"><a href="/<?php echo $region; ?>/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="megamenu"><a href="/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<!-- Desktop Megamenu -->
 					<div class="container desktop-megamenu">
 						<div class="tab-navigation">
@@ -52,21 +51,21 @@
 										<h4>Working for You</h4>
 
 										<div class="product-list">
-											<a href="/<?php echo $region; ?>/products/pf3000/" class="product-link">
+											<a href="/products/pf3000/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>PureFlo 3000 PAPR Series</span>
 												<small>PureFlo PAPRs provide respiratory, head, eye, and face protection in one integrated head-top unit, reducing the need for multiple PPE components. And PureFlo PAPRs are ready to use right out of the box, with no complex setup required, so you can get to work faster. </small>
 												</div>
 											</a>
-											<a href="/<?php echo $region; ?>/products/esm/" class="product-link">
+											<a href="/products/esm/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>PureFlo ESM+ Series</span>
 												<small>In high-heat environments, extra protection is essential. PureFlo has you covered with dependable protection when it matters most.</small>
 												</div>
 											</a>			
-											<a href="/<?php echo $region; ?>/products/parts/" class="product-link">
+											<a href="/products/parts/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 												<span>Filters &amp; Parts</span>
@@ -76,13 +75,11 @@
 										</div>										
 									</div>
 																	
-									<div class="col-12 col-xl-6 product-section text-center">	
-									<?php if ($region === 'us'): ?>									
+									<div class="col-12 col-xl-6 product-section text-center">										
 										<div class="product-list">
-											<a href="/us/trial/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/try-purflo-risk-free.png" width="201" height="200" alt="Try PureFlo Risk Free"  class="mt-4"  data-aos="flip-up" data-aos-duration="3000"></a>
+											<a href="/trial/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/try-purflo-risk-free.png" width="201" height="200" alt="Try PureFlo Risk Free"  class="mt-4"  data-aos="flip-up" data-aos-duration="3000"></a>
 										</div>
-										<a href="/us/trial/" class="btn btn-primary mt-4 ms-3 CTA-nav-products">Learn more</a>
-									<?php endif; ?>
+										<a href="/trial/" class="btn btn-primary mt-4 ms-3 CTA-nav-products">Learn more</a>
 									</div>
 								</div> <!-- End Row -->
 
@@ -91,7 +88,7 @@
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nav/welder-200x200.jpg" width="200" height="200"  alt="Learn more how Gentex's experience can work for you | decorative photo of a welder at work">
 										<div class="feature-info">
 											<h5>Put Our Experience to Work for You</h5>
-											<a href="/<?php echo $region; ?>/contact/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
+											<a href="/contact/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
 										</div>	
 									</div>								
 								</div>
@@ -106,7 +103,7 @@
 										<h4>Industries We Serve</h4>
 
 										<div class="product-list">											
-											<a href="/<?php echo $region; ?>/industries/#industry-tab-1" class="product-link">
+											<a href="/industries/#industry-tab-1" class="product-link">
 												<i class="bi bi-fire"></i>
 												<div>
 													<span>Foundries / High Heat</span>
@@ -114,7 +111,7 @@
 												</div>
 											</a>
 
-											<a href="/<?php echo $region; ?>/industries/#industry-tab-2" class="product-link">
+											<a href="/industries/#industry-tab-2" class="product-link">
 												<i class="bi bi-cone-striped"></i>
 												<div>
 													<span>Construction</span>
@@ -122,7 +119,7 @@
 												</div>
 											</a>
 
-											<a href="/<?php echo $region; ?>/industries/#industry-tab-3" class="product-link">
+											<a href="/industries/#industry-tab-3" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 													<span>General Trades / Technology</span>
@@ -130,14 +127,14 @@
 												</div>
 											</a>
 
-											<div class="mt-3"><a href="/<?php echo $region; ?>/industries/" class="btn btn-primary  mx-auto CTA-nav-industries-learn-more">Learn more</a></div>
+											<div class="mt-3"><a href="/industries/" class="btn btn-primary  mx-auto CTA-nav-industries-learn-more">Learn more</a></div>
 										</div>
 									</div>
 									
 									<div class="col-12 col-xl-6 product-section">
 										<h4>&nbsp;</h4>
 										<div class="product-list">
-											<a href="/<?php echo $region; ?>/industries/#industry-tab-4" class="product-link">
+											<a href="/industries/#industry-tab-4" class="product-link">
 												<i class="bi bi-lightning-charge"></i>
 												<div>
 													<span>Welding / Metalforming / Fabrication</span>
@@ -145,7 +142,7 @@
 												</div>
 											</a>
 
-											<a href="/<?php echo $region; ?>/industries/#industry-tab-5" class="product-link">
+											<a href="/industries/#industry-tab-5" class="product-link">
 												<i class="bi bi-radioactive"></i>
 												<div>
 													<span>Nuclear</span>
@@ -153,7 +150,7 @@
 												</div>
 											</a>
 
-											<a href="/<?php echo $region; ?>/industries/#industry-tab-6" class="product-link">
+											<a href="/industries/#industry-tab-6" class="product-link">
 												<i class="bi bi-prescription"></i>
 												<div>
 													<span>Laboratory / Pharmaceutical / Healthcare</span>
@@ -182,43 +179,24 @@
 				</li><!-- /Megamenu -->
 
 				
-				<li class="dropdown"><a href="/<?php echo $region; ?>/industries/"><span>Industries</span></a></li>
+				<li class="dropdown"><a href="/industries/"><span>Industries</span></a></li>
 
-				<li class="dropdown"><a href="/<?php echo $region; ?>/about/"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="dropdown"><a href="/about/"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
-						<li><a href="/<?php echo $region; ?>/about/">About Us</a></li>
-						<li><a href="/<?php echo $region; ?>/news/">News</a></li>
-						<li><a href="/<?php echo $region; ?>/faq/">FAQs</a></li>
-					<?php if (in_array($region, ['eu', 'anz'])): ?>	
-						<li><a href="/<?php echo $region; ?>/conformity/">Declarations of Conformity</a></li>
-					<?php endif; ?>
+						<li><a href="/about/">About Us</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/faq/">FAQs</a></li>
+						<li><a href="/conformity/">Declarations of Conformity</a></li>
 					</ul>
 				</li>
-				<li class="dropdown"><a href="/<?php echo $region; ?>/resources/"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				<li class="dropdown"><a href="/resources/"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>    
-						<li><a href="/<?php echo $region; ?>/resources/">Resource Library</a></li>
-						<li><a href="/<?php echo $region; ?>/faq/">FAQs</a></li>
-						<li><a href="/<?php echo $region; ?>/distributors/">Find a Distributor</a></li>
+						<li><a href="/resources/">Resource Library</a></li>
+						<li><a href="/faq/">FAQs</a></li>
+						<li><a href="/distributors/">Find a Distributor</a></li>
 					</ul>
 				</li>
-				<li><a href="/<?php echo $region; ?>/contact/">Contact</a></li>
-
-				<!-- Flag Selector -->
-				<?php $region_esc = htmlspecialchars($region, ENT_QUOTES, 'UTF-8');
-					  $template_uri = get_template_directory_uri();  ?>
-
-				<div class="region-switcher">
-					<div class="region-current" onclick="toggleRegionMenu()">
-						<img id="currentFlag" src="<?= $template_uri; ?>/assets/img/global/flag-<?= $region_esc; ?>-icon.png" alt="Region flag <?= $region_esc; ?>" width="30">
-						<span class="caret"></span>
-					</div>
-
-					<div class="region-menu" id="regionMenu">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/flag-us-icon.png" alt="US" onclick="switchRegion('us')" width="30">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/flag-eu-icon.png" alt="EU" onclick="switchRegion('eu')" width="30">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/flag-anz-icon.png" alt="ANZ" onclick="switchRegion('anz')" width="30">
-					</div>
-				</div>
+				<li><a href="/contact/">Contact</a></li>
 
 				<button type="button" class="search-toggle ms-3"><i class="bi bi-search"></i></button>
 				<!-- Search container -->

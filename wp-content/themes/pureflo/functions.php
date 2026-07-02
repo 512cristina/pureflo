@@ -1,14 +1,4 @@
 <?php
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'wp_shortlink_wp_head');
-
-add_action('wp_enqueue_scripts', function() {
-    wp_dequeue_style('wp-block-library');
-    wp_dequeue_style('wp-block-library-theme');
-});
-
 function pureflo_scripts() {
     $uri = get_template_directory_uri();
 
@@ -41,10 +31,6 @@ add_action('wp_footer', function() {
     }
 });
 
-function region_url($path = '') {
-	return home_url('/' . get_current_region() . '/' . ltrim($path, '/'));
-}
-
 
 // Featured Image instructions
 function my_featured_image_guidance($content, $post_id) {
@@ -55,7 +41,6 @@ function my_featured_image_guidance($content, $post_id) {
         <strong>Featured Image:</strong> Recommended 600 x 315 px (16:9 ratio) for best social sharing. </p>';
         return $note . $content;
     }
-
     return $content;
 }
 add_filter('admin_post_thumbnail_html', 'my_featured_image_guidance', 10, 2);
@@ -66,6 +51,7 @@ function pureflo_enqueue_template_styles() {
     $templates = [
         'page-resources.php'   => 'resources',
         'page-distributors.php' => 'distributors',
+        'page-news.php' => 'news',
     ];
 
     foreach ($templates as $template => $slug) {
@@ -97,6 +83,7 @@ remove_action( 'wp_head', 'feed_links', 2 ); // RSS feeds
 remove_action( 'wp_head', 'feed_links_extra', 3 ); // Extra feeds
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' ); // prev/next links
 remove_action( 'wp_head', 'wp_resource_hints', 2 ); // DNS prefetch
+remove_action('wp_head', 'wp_shortlink_wp_head'); // SHORTLINK Meta
 
     // Remove emoji scripts/styles
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );

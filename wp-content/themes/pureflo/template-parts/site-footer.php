@@ -1,4 +1,3 @@
-<?php $region = get_current_region(); ?>
 </main>
 
 <footer class="bkg-dark position-relative">
@@ -14,8 +13,8 @@
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <ul>
-                            <li><a href="/<?php echo get_current_region(); ?>/faq/">FAQs</a></li>
-                            <li><a href="/<?php echo get_current_region(); ?>/distributors/">Find a Distributor</a></li>
+                            <li><a href="/faq/">FAQs</a></li>
+                            <li><a href="/distributors/">Find a Distributor</a></li>
                             <li><a href="https://www.gentexcorp.com/our-brand-protection-promise/" rel="noopener" target="_blank">Brand Protection</a></li>
                             <li><a href="https://www.gentexcorp.com/supply-chain-transparency/" rel="noopener" target="_blank">Supply Chain Transparency</a></li>
                         </ul>
@@ -24,11 +23,11 @@
                     <div class="col-12 col-sm-6">
                         <ul>
                             <li><a href="https://www.gentexcorp.com/patents/"  rel="noopener" target="_blank">Patents</a></li>
-                            <li><a href="/product-warranty-information/" rel="noopener" target="_blank">Warranty</a></li>
+                            <li><a href="https://www.gentexcorp.com/product-warranty-information/" rel="noopener" target="_blank">Warranty</a></li>
                             <li><a href="https://www.gentexcorp.com/supplier-information/" rel="noopener" target="_blank">Suppliers</a></li>
-                            <?php if (in_array($region, ['eu', 'anz'])): ?>	
-						        <li><a href="/<?php echo $region; ?>/conformity/">Declarations of Conformity</a></li>
-					        <?php endif; ?>
+                            <?php //if (in_array($region, ['eu', 'anz'])): ?>	
+						        <li><a href="/conformity/">Declarations of Conformity</a></li>
+					        <?php //endif; ?>
                         </ul>                            
                     </div>
                 </div>

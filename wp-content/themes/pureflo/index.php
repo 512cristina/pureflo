@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+
+<?php 
+if ( current_user_can('administrator') ) {
+    echo '<pre>';
+    echo 'is_archive: ' . (is_archive() ? 'YES' : 'NO') . "\n";
+    echo 'is_post_type_archive(distributor): ' . (is_post_type_archive('distributor') ? 'YES' : 'NO') . "\n";
+    echo 'is_page: ' . (is_page() ? 'YES' : 'NO') . "\n";
+    echo 'is_home: ' . (is_home() ? 'YES' : 'NO') . "\n";
+    echo 'is_404: ' . (is_404() ? 'YES' : 'NO') . "\n";
+    echo '</pre>';
+}
+
+
+get_header(); ?>
 
 
 <section class="hero default">

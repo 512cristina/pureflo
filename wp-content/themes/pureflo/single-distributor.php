@@ -75,7 +75,7 @@ while (have_posts()) : the_post();
 		</div>
 
         <div class="row"><div class="col text-end mt-4 small">
-            <a href="/<?php echo get_current_region(); ?>/distributors/"><em>Search all distributors <i class="bi bi-arrow-right"></i></em></a>
+            <a href="/distributors/"><em>Search all distributors <i class="bi bi-arrow-right"></i></em></a>
         </div></div>
 
 	</div>

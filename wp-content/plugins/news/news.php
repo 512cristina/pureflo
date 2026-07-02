@@ -8,7 +8,6 @@
 
 if (!defined('ABSPATH')) exit;
 
-
 // -------------------------------------------------
 // REGISTER POST TYPE
 // -------------------------------------------------
@@ -31,22 +30,10 @@ function pf_register_press_release_cpt() {
 
         'public' => true,
         'menu_icon' => 'dashicons-megaphone',
-
-        'supports' => [
-            'title',
-            'editor',
-            'thumbnail',
-        ],
-
+        'supports' => ['title', 'editor', 'thumbnail', ],
         'has_archive' => 'news',
-
-        'rewrite' => [
-            'slug' => 'news',
-            'with_front' => false
-        ],
-
-        'show_in_rest' => true,
-        'menu_position' => 5,
+        'rewrite' => ['slug' => 'news', 'with_front' => false],
+        'show_in_rest' => true,  'menu_position' => 5,
 
     ]);
 }
@@ -58,46 +45,23 @@ add_action('init', 'pf_register_press_release_cpt');
 // -------------------------------------------------
 
 function pf_press_release_meta_box() {
-
-    add_meta_box(
-        'pf_press_release_details',
-        'Press Release Details',
-        'pf_press_release_meta_callback',
-        'news',
-        'side',
-        'high'
-    );
+    add_meta_box('pf_press_release_details', 'Press Release Details', 'pf_press_release_meta_callback', 'news', 'side', 'high' );
 }
 
 add_action('add_meta_boxes', 'pf_press_release_meta_box');
 
-
 function pf_press_release_meta_callback($post) {
 
     wp_nonce_field('pf_press_release_nonce', 'pf_press_release_nonce_field');
-
     $news_date = get_post_meta($post->ID, '_pf_news_date', true);
-
     if (!$news_date) { $news_date = current_time('Y-m-d'); }
-
     ?>
 
-    <p>
-        <label><strong>News Date</strong></label><br>
-
-        <input
-            type="date"
-            name="pf_news_date"
-            value="<?php echo esc_attr($news_date); ?>"
-            style="width:100%;"
-        >
+    <p><label><strong>News Date</strong></label><br>
+        <input type="date" name="pf_news_date" value="<?php echo esc_attr($news_date); ?>" style="width:100%;" >
     </p>
 
-    <p>
-        <em>
-            This date appears publicly on the press release.
-        </em>
-    </p>
+    <p><em>This date appears publicly on the press release. </em> </p>
 
     <?php
 }
@@ -112,24 +76,16 @@ function pf_save_press_release_meta($post_id) {
     if (
         !isset($_POST['pf_press_release_nonce_field']) ||
         !wp_verify_nonce($_POST['pf_press_release_nonce_field'], 'pf_press_release_nonce')
-    ) {
-        return;
-    }
+    ) { return; }
 
     // Autosave
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) { return;}
 
     // Permissions
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
+    if (!current_user_can('edit_post', $post_id)) { return; }
 
     // Post type
-    if (get_post_type($post_id) !== 'news') {
-        return;
-    }
+    if (get_post_type($post_id) !== 'news') { return; }
 
     // Validate News Date
     if (empty($_POST['pf_news_date'])) {
@@ -142,11 +98,7 @@ function pf_save_press_release_meta($post_id) {
     }
 
     // Save News Date
-    update_post_meta(
-        $post_id,
-        '_pf_news_date',
-        sanitize_text_field($_POST['pf_news_date'])
-    );
+    update_post_meta(  $post_id, '_pf_news_date',  sanitize_text_field($_POST['pf_news_date']) );
 }
 
 add_action('save_post', 'pf_save_press_release_meta');
@@ -169,7 +121,6 @@ function pf_press_release_image_guidance($content, $post_id) {
 
         return $note . $content;
     }
-
     return $content;
 }
 
@@ -198,9 +149,7 @@ function pf_press_release_column_content($column, $post_id) {
     if ($column === 'thumbnail') {
         if (has_post_thumbnail($post_id)) {
             echo get_the_post_thumbnail($post_id, [80, 80]);
-        } else {
-            echo '—';
-        }
+        } else { echo '—'; }
     }
 }
 
@@ -225,38 +174,16 @@ function pf_press_release_archive_sort($query) {
 
 add_action('pre_get_posts', 'pf_press_release_archive_sort');
 
-// -------------------------------------------------
-// REGIONAL NEWS REWRITE RULES
-// -------------------------------------------------
-
-function pf_news_regional_rewrites() {
-
-    add_rewrite_rule(
-        '^(us|eu|anz)/news/([^/]+)/?$',
-        'index.php?post_type=news&name=$matches[2]',
-        'top'
-    );
-}
-
-add_action('init', 'pf_news_regional_rewrites');
 
 // -------------------------------------------------
 // FLUSH REWRITES ON ACTIVATION
 // -------------------------------------------------
 
 function pf_press_release_activate() {
-
     pf_register_press_release_cpt();
-
     flush_rewrite_rules();
 }
-
 register_activation_hook(__FILE__, 'pf_press_release_activate');
 
-
-function pf_press_release_deactivate() {
-
-    flush_rewrite_rules();
-}
-
+function pf_press_release_deactivate() { flush_rewrite_rules(); }
 register_deactivation_hook(__FILE__, 'pf_press_release_deactivate');

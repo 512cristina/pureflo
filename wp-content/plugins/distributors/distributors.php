@@ -49,7 +49,7 @@ add_action('init', function() {
             'all_items' => 'All Distributors'
         ],
         'public' => true,
-        'has_archive' => 'distributors',
+        'has_archive' => false,
 
         'rewrite' => [
             'slug' => 'distributors',
@@ -59,6 +59,7 @@ add_action('init', function() {
         'menu_icon' => 'dashicons-groups',
         'supports' => ['title'],
     ]);
+
 });
 
 /**
@@ -190,7 +191,6 @@ add_action('admin_enqueue_scripts', function($hook){
     if ($post_type !== 'distributor') return;
 
     wp_enqueue_style('select2-css','https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css');
-
     wp_enqueue_script('select2-js','https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',['jquery'],null,true);
 
     wp_add_inline_script('select2-js', "
@@ -301,9 +301,7 @@ function dm_filter_distributors() {
                 }
 
                 $address = implode(', ', array_filter([$street, $city, $state, $postal, $country]));
-
-                $region = function_exists('get_current_region') ? get_current_region() : 'us';
-                $distributor_url = home_url('/' . $region . '/distributors/' . get_post_field('post_name', get_the_ID()) . '/');
+                $distributor_url = get_permalink();
             ?>
 
             <div class="row">
@@ -376,9 +374,7 @@ function dm_filter_distributors() {
                 }
 
                 $address = implode(', ', array_filter([$street, $city, $state, $postal, $country])); 
-
-                $region = function_exists('get_current_region') ? get_current_region() : 'us';
-                $distributor_url = home_url('/' . $region . '/distributors/' . get_post_field('post_name', get_the_ID()) . '/');
+                $distributor_url = get_permalink();
             ?>
 
             <div class="col-12 col-md-6">
