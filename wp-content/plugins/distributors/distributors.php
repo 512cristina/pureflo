@@ -243,6 +243,8 @@ function dm_filter_distributors() {
         'post_type' => 'distributor',
         'posts_per_page' => -1,
         'post_status' => 'publish',
+        'orderby' => 'title',
+        'order' => 'ASC',
     ];
 
     if (!empty($selected_country)) {
@@ -265,7 +267,7 @@ function dm_filter_distributors() {
         <!-- DESKTOP -->
         <div class="dist-list d-none d-lg-block">
             <div class="row dist-header mb-2">
-                <div class="col-3">Distributor Name</div>
+                <div class="col-3">Distributor Name <i id="sort-icon" class="bi bi-arrow-down-up"></i></div>
                 <div class="col-2">Contact</div>
                 <div class="col-4">Contact Info</div>
                 <div class="col-3">Countries</div>

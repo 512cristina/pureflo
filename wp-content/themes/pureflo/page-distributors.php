@@ -9,7 +9,9 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
         $query = new WP_Query([
             'post_type' => 'distributor',
             'posts_per_page' => -1,
-            'post_status' => 'publish'
+            'post_status' => 'publish',
+            'orderby' => 'title',
+            'order' => 'ASC'
         ]);
 
         if ($query->have_posts()) : ?>
@@ -196,7 +198,6 @@ while (have_posts()) : the_post();  the_content();  endwhile; ?>
 document.addEventListener('DOMContentLoaded', function () {
 
     const filter = document.getElementById('country-filter');
-
     const results = document.getElementById('distributor-results');
 
     function fetchDistributors(country = '') {
@@ -219,9 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchDistributors();
 
     // On change
-    filter.addEventListener('change', function () {
-        fetchDistributors(this.value);
-    });
+    filter.addEventListener('change', function () { fetchDistributors(this.value);  });
 
 });
 </script>
