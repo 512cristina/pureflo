@@ -567,3 +567,24 @@ add_action('admin_init', function () {
     exit;
 
 });
+
+add_action('admin_init', function () {
+
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    $query = new WP_Query([
+        'post_type'      => 'distributor',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+    ]);
+
+    foreach ($query->posts as $post_id) {
+        delete_post_meta($post_id, 'fax');
+    }
+
+    echo '<div class="notice notice-success"><p>All distributor fax numbers have been deleted.</p></div>';
+
+    exit; // Prevent running twice
+});
