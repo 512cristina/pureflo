@@ -4,23 +4,29 @@ get_header();
 while (have_posts()) : the_post();  the_content(); endwhile;
 ?>
 
-<form method="GET" id="rsFilterForm"> 
-<section class="pt-5 pb-0">
-	<div class="container">
-		
+<form method="GET" id="rsSearchForm">
+<section id="resources" class="p-0">
+    <div class="container">
         <div class="d-flex flex-wrap justify-content-center align-items-center mb-5">
 			<div class="fw-bolder my-0 me-3">SEARCH RESOURCES:</div>
             <div class="resource-search d-flex gap-2">
                 <input type="text" name="search" class="form-control" 
-                    value="<?php echo isset($_GET['search']) ? esc_attr($_GET['search']) : ''; ?>"  >
+                    value="<?php echo esc_attr($_GET['search'] ?? ''); ?>">
                 <button type="submit" class="btn btn-primary btn-sm">Search</button>
             </div>
-        </div>    
+        </div>   
+    </div>
+</section>
+</form>
 
-
-		<div class="d-flex flex-wrap justify-content-center align-items-center my-5 resource-filters">
+<form method="GET" id="rsFilterForm">
+<section class="p-0">
+	<div class="container">
+		<div class="d-flex flex-wrap justify-content-center align-items-center mb-5 resource-filters">
 			<div class="rf-title">Filter Resources:</div>
-   
+
+            <input type="hidden" name="search" value="<?php echo esc_attr($_GET['search'] ?? ''); ?>">
+
             <?php
             $selected_type  = $_GET['resource_type'] ?? '';
             $selected_topic = $_GET['resource_topic'] ?? '';
@@ -61,7 +67,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                 <?php endforeach; ?>
             </select>
 
-            <a href="<?php echo get_permalink(); ?>#rsFilterForm" class="btn btn-white btn-sm d-inline-block" title="Reset Filters"><i class="bi bi-arrow-clockwise"></i> Reset</a>
+            <a href="<?php echo get_permalink(); ?>#resources" class="btn btn-white btn-sm d-inline-block" title="Reset Filters"><i class="bi bi-arrow-clockwise"></i> Reset</a>
         </div>
 
 	</div>
@@ -69,32 +75,24 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 
 <section class="bkg-light resource-list">
 	<div class="container">
-		<div class="row justify-content-between gx-3 gy-4" id="rsList">
+		<div class="row gx-3 gy-4" id="rsList">
 
         <?php
             $tax_query = [];
 
-            if (!empty($selected_type)) {
-                $tax_query[] = ['taxonomy' => 'resource_type', 'field'    => 'slug', 'terms'    => $selected_type, ];
-            }
+            if (!empty($selected_type)) { $tax_query[] = ['taxonomy' => 'resource_type', 'field'    => 'slug', 'terms'    => $selected_type, ]; }
 
-            if (!empty($selected_topic)) {
-                $tax_query[] = ['taxonomy' => 'resource_topic', 'field'    => 'slug', 'terms'    => $selected_topic, ];
-            }
+            if (!empty($selected_topic)) { $tax_query[] = ['taxonomy' => 'resource_topic', 'field'    => 'slug', 'terms'    => $selected_topic, ]; }
             
-            if (!empty($selected_language)) {
-                $tax_query[] = [ 'taxonomy' => 'resource_language', 'field'    => 'slug', 'terms'    => $selected_language, ];
-            }
+            if (!empty($selected_language)) { $tax_query[] = [ 'taxonomy' => 'resource_language', 'field'    => 'slug', 'terms'    => $selected_language, ]; }
             
             if (count($tax_query) > 1) { $tax_query['relation'] = 'AND'; }
 
             $search_term = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
-
             $args = [ 'post_type' => 'resource', 'posts_per_page' => -1, 'post_status' => 'publish', ];
 
-            if (!empty($search_term)) { $args['s'] = $search_term; }
-
-            if (!empty($tax_query)) { $args['tax_query'] = $tax_query; }
+           if (!empty($search_term)) { $args['s'] = $search_term; }  // Search everything
+                else { if (!empty($tax_query)) { $args['tax_query'] = $tax_query;  } }   // Only apply filters when NOT searching
 
             $query = new WP_Query($args);
             if ($query->have_posts()) : 
@@ -120,12 +118,8 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                     $resource_files = [];
 
                     foreach ($languages as $slug => $label) {
-
                         $file_id = get_post_meta( $post_id,  '_rl_file_' . $slug, true );
-
-                        if ($file_id) {
-                            $resource_files[$slug] = [ 'label' => $label, 'url'   => wp_get_attachment_url($file_id) ];
-                        }
+                        if ($file_id) { $resource_files[$slug] = [ 'label' => $label, 'url'   => wp_get_attachment_url($file_id) ]; }
                     }
 
                     $file_count = count($resource_files);
@@ -146,9 +140,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
                     $is_video = false;
 
                     if ($types && !is_wp_error($types)) {
-                        foreach ($types as $type) {
-                            if (in_array($type->slug, ['video', 'webinar'])) { $is_video = true; break; }
-                        }
+                        foreach ($types as $type) { if (in_array($type->slug, ['video', 'webinar'])) { $is_video = true; break; } }
                     }
 
                     $is_external = ( !$is_video  && $source_type === 'external' && !empty($external_url) );
