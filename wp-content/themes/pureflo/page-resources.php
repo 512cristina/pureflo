@@ -5,7 +5,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 ?>
 
 <form method="GET" id="rsSearchForm">
-<section id="resources" class="p-0">
+<section class="p-0">
     <div class="container">
         <div class="d-flex flex-wrap justify-content-center align-items-center mb-5">
 			<div class="fw-bolder my-0 me-3">SEARCH RESOURCES:</div>
@@ -20,7 +20,7 @@ while (have_posts()) : the_post();  the_content(); endwhile;
 </form>
 
 <form method="GET" id="rsFilterForm">
-<section class="p-0">
+<section id="resources" class="p-0">
 	<div class="container">
 		<div class="d-flex flex-wrap justify-content-center align-items-center mb-5 resource-filters">
 			<div class="rf-title">Filter Resources:</div>
