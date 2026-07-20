@@ -13,8 +13,20 @@
 function pureflo_register_faq() {
     register_post_type('faq', [
         'labels' => [
-            'name' => 'FAQs',
-            'singular_name' => 'FAQ'
+            'name'                  => 'FAQs',
+            'singular_name'         => 'FAQ',
+            'menu_name'             => 'FAQs',
+            'name_admin_bar'        => 'FAQ',
+            'add_new'               => 'Add FAQ',
+            'add_new_item'          => 'Add FAQ',
+            'new_item'              => 'New FAQ',
+            'edit_item'             => 'Edit FAQ',
+            'view_item'             => 'View FAQ',
+            'all_items'             => 'All FAQs',
+            'search_items'          => 'Search FAQs',
+            'parent_item_colon'     => 'Parent FAQ:',
+            'not_found'             => 'No FAQs found.',
+            'not_found_in_trash'    => 'No FAQs found in Trash.',
         ],
         'public' => true,
         'has_archive' => false,
@@ -61,81 +73,49 @@ function pureflo_faq_shortcode($atts) {
 
     // Filter by category slug
     if (!empty($atts['category'])) {
-
         $categories = array_map('trim', explode(',', $atts['category']));
-
-        $args['tax_query'] = [
-            [
-                'taxonomy' => 'faq_category',
-                'field'    => 'slug',
-                'terms'    => $categories
-            ]
-        ];
+        $args['tax_query'] = [ ['taxonomy' => 'faq_category', 'field' => 'slug', 'terms' => $categories] ];
     }
 
     $faqs = new WP_Query($args);
-
-    if (!$faqs->have_posts()) {
-        return '<p>No FAQs found.</p>';
-    }
+    if (!$faqs->have_posts()) { return '<p>No FAQs found.</p>'; }
 
     // Unique accordion ID prevents conflicts
     $accordion_id = 'faq-' . wp_rand(1000, 9999);
-
     ob_start();
-    ?>
+?>
 
     <div class="accordion" id="<?php echo esc_attr($accordion_id); ?>">
 
-    <?php
-    $i = 0;
-
+<?php $i = 0;
     while ($faqs->have_posts()) :
         $faqs->the_post();
-
         $i++;
-
         $collapse_id = $accordion_id . '-collapse-' . $i;
     ?>
 
         <div class="accordion-item">
 
             <button class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
+                type="button" data-bs-toggle="collapse"
                 data-bs-target="#<?php echo esc_attr($collapse_id); ?>"
-                aria-expanded="false"
-                aria-controls="<?php echo esc_attr($collapse_id); ?>">
+                aria-expanded="false" aria-controls="<?php echo esc_attr($collapse_id); ?>">
 
-                <div class="faq-icon">
-                    <i class="bi bi-question-circle"></i>
-                </div>
-
+                <div class="faq-icon"><i class="bi bi-question-circle"></i></div>
                 <?php the_title(); ?>
-
             </button>
 
-            <div id="<?php echo esc_attr($collapse_id); ?>"
-                class="accordion-collapse collapse"
+            <div id="<?php echo esc_attr($collapse_id); ?>" class="accordion-collapse collapse"
                 data-bs-parent="#<?php echo esc_attr($accordion_id); ?>">
 
-                <div class="accordion-body">
-                    <?php echo wpautop(get_the_content()); ?>
-                </div>
-
+                <div class="accordion-body"><?php echo wpautop(get_the_content()); ?></div>
             </div>
-
         </div>
-
     <?php endwhile; ?>
-
     </div>
 
-    <?php
-
-    wp_reset_postdata();
-
-    return ob_get_clean();
+    <?php wp_reset_postdata();
+        return ob_get_clean();
 }
 add_shortcode('pureflo_faq', 'pureflo_faq_shortcode');
 
@@ -166,35 +146,21 @@ add_action('restrict_manage_posts', 'pureflo_faq_category_filter');
 function pureflo_faq_filter_query($query) {
     global $pagenow;
 
-    if (
-        $pagenow === 'edit.php' &&
-        isset($_GET['faq_category']) &&
-        $query->is_main_query()
-    ) {
-        $term = $_GET['faq_category'];
-
+    if ($pagenow === 'edit.php' && isset($_GET['faq_category']) && $query->is_main_query() ) 
+    {   $term = $_GET['faq_category'];
         if (!empty($term) && $term !== '0') {
-            $query->query_vars['tax_query'] = [[
-                'taxonomy' => 'faq_category',
-                'field' => 'term_id',
-                'terms' => $term,
-            ]];
+            $query->query_vars['tax_query'] = [[ 'taxonomy' => 'faq_category', 'field' => 'term_id', 'terms' => $term, ]];
         }
     }
 }
 add_action('pre_get_posts', 'pureflo_faq_filter_query');
 
 // ENABLE SORTABLE UI
-function pureflo_faq_sortable() {
-    add_post_type_support('faq', 'page-attributes');
-}
+function pureflo_faq_sortable() { add_post_type_support('faq', 'page-attributes'); }
 add_action('init', 'pureflo_faq_sortable');
 
 // ADD CATEGORY COLUMN
-function pureflo_faq_columns($columns) {
-    $columns['faq_category'] = 'Category';
-    return $columns;
-}
+function pureflo_faq_columns($columns) { $columns['faq_category'] = 'Category'; return $columns; }
 add_filter('manage_faq_posts_columns', 'pureflo_faq_columns');
 
 // POPULATE COLUMN
@@ -207,10 +173,7 @@ function pureflo_faq_column_content($column, $post_id) {
 add_action('manage_faq_posts_custom_column', 'pureflo_faq_column_content', 10, 2);
 
 // ADD ORDER COLUMN
-function pureflo_add_order_column($columns) {
-    $columns['menu_order'] = 'Order';
-    return $columns;
-}
+function pureflo_add_order_column($columns) { $columns['menu_order'] = 'Order'; return $columns; }
 add_filter('manage_faq_posts_columns', 'pureflo_add_order_column');
 
 // SHOW ORDER VALUE
@@ -220,10 +183,6 @@ function pureflo_show_order_column($column, $post_id) {
 add_action('manage_faq_posts_custom_column', 'pureflo_show_order_column', 10, 2);
 
 // ADD CSS TO FIX COLUMN WIDTHS
-add_action('admin_head', function() {
-    echo '<style>
-        .wp-list-table .column-menu_order { width: 80px; text-align: center; }
-    </style>';
-});
+add_action('admin_head', function() { echo '<style> .wp-list-table .column-menu_order { width: 80px; text-align: center; } </style>'; });
 
 
