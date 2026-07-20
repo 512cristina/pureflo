@@ -125,7 +125,7 @@ function pf_press_release_image_guidance($content, $post_id) {
 }
 
 add_filter('admin_post_thumbnail_html', 'pf_press_release_image_guidance', 10, 2);
-
+ 
 
 // -------------------------------------------------
 // OPTIONAL: CUSTOM COLUMNS
@@ -141,7 +141,7 @@ function pf_press_release_columns($columns) {
     ];
 }
 
-add_filter('manage_press_release_posts_columns', 'pf_press_release_columns');
+add_filter('manage_news_posts_columns', 'pf_press_release_columns');
 
 
 function pf_press_release_column_content($column, $post_id) {
@@ -153,7 +153,7 @@ function pf_press_release_column_content($column, $post_id) {
     }
 }
 
-add_action( 'manage_press_release_posts_custom_column', 'pf_press_release_column_content', 10, 2 );
+add_action( 'manage_news_posts_custom_column', 'pf_press_release_column_content', 10, 2 );
 
 // -------------------------------------------------
 // SORT PRESS RELEASES BY NEWS DATE

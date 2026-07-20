@@ -32,7 +32,7 @@ get_header(); ?>
 					<h2 class="mt-3"><?php the_title(); ?></h2>
 					<p><?php echo wp_trim_words(get_the_excerpt(), 18, '[...]'); ?></p>
 
-					<a href="<?php echo esc_url(get_regional_permalink()); ?>" class="btn btn-primary btn-sm mt-4">Read more <i class="bi bi-arrow-right"></i></a>
+					<a href="<?php echo esc_url(the_permalink()); ?>" class="btn btn-primary btn-sm mt-4">Read more <i class="bi bi-arrow-right"></i></a>
 				</div>
 
 				<div class="col-lg-4 offset-lg-1 order-1 order-lg-2 mb-3 mb-lg-0 text-center">
@@ -67,13 +67,13 @@ get_header(); ?>
 
 			<div class="col-md-6 col-lg-4 d-flex">
 				<div class="card w-100 px-0"> 				
-					<a href="<?php echo esc_url(get_regional_permalink()); ?>" class="img-wrapper">
+					<a href="<?php echo esc_url(the_permalink()); ?>" class="img-wrapper">
 						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" width="400" height="300" class="card-img-top" alt="<?php the_title(); ?>">
 					</a>
 					<div class="card-body d-flex flex-column">
 						<div class="date"><?php if ($news_date) { echo date('j F, Y', strtotime($news_date));} ?></div>
-						<a href="<?php echo esc_url(get_regional_permalink()); ?>" class="card-title mt-2 mb-4"><?php the_title(); ?></a>
-						<div class="mt-auto"><a href="<?php echo esc_url(get_regional_permalink()); ?>" class="btn btn-sm btn-primary">Read more <i class="bi bi-arrow-right"></i></a></div>
+						<a href="<?php echo esc_url(the_permalink()); ?>" class="card-title mt-2 mb-4"><?php the_title(); ?></a>
+						<div class="mt-auto"><a href="<?php echo esc_url(the_permalink()); ?>" class="btn btn-sm btn-primary">Read more <i class="bi bi-arrow-right"></i></a></div>
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,6 @@ get_header(); ?>
   </div>
 </section>
 <!-- ## LOADED VIA FUNTIONS.PHP ##
-<link href="/wp-content/themes/pureflo/assets/css/news.css" rel="preload" as="style">
 <link href="/wp-content/themes/pureflo/assets/css/news.css" rel="stylesheet">
 	-->
 <?php get_footer(); ?>

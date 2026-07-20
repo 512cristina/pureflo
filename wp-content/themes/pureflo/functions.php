@@ -48,16 +48,19 @@ add_filter('admin_post_thumbnail_html', 'my_featured_image_guidance', 10, 2);
 // LOAD CSS FILES FOR CUSTOMR PAGE TEMPLATES
 
 function pureflo_enqueue_template_styles() {
+    // Page templates
     $templates = [
-        'page-resources.php'   => 'resources',
+        'page-resources.php'    => 'resources',
         'page-distributors.php' => 'distributors',
-        'page-news.php' => 'news',
     ];
 
     foreach ($templates as $template => $slug) {
         if (is_page_template($template)) 
-        { wp_enqueue_style('pureflo-' . $slug, get_template_directory_uri() . '/assets/css/' . $slug . '.css', array(), '1.0' );}
+        { wp_enqueue_style( 'pureflo-' . $slug, get_template_directory_uri() . '/assets/css/' . $slug . '.css', [], '1.0' );}
     }
+
+    // News archive
+    if (is_post_type_archive('news')) { wp_enqueue_style('pureflo-news', get_template_directory_uri() . '/assets/css/news.css', [], '1.0' ); }
 }
 add_action('wp_enqueue_scripts', 'pureflo_enqueue_template_styles');
 
