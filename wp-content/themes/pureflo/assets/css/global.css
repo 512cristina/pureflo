@@ -377,8 +377,9 @@ body.modal-open .hero, body.modal-open footer
 .offer .benefits-row { margin-top: 2rem; }
 .offer .benefits-row .benefit-item { display: flex; align-items: flex-start; margin-bottom: 1rem; }
 .offer .benefits-row .benefit-item .icon-box { width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--pureflo-blue) 0%, color-mix(in srgb, var(--pureflo-blue), transparent 20%) 100%); color:#ffffff; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-right: 1rem; font-size: 1.25rem; }
-.offer .benefits-row .benefit-item .benefit-content h5 { margin-bottom: 0.5rem; font-weight: 600; color: var(--hd-color); }
-.offer .benefits-row .benefit-item .benefit-content p { margin: 0; font-size: 0.9rem; color: color-mix(in srgb, var(--main-color), transparent 25%); line-height: 1.5; }
+.offer .benefits-row .benefit-item .benefit-content h5 {  margin: 0 0 0.3rem; color: var(--hd-color); font-weight: 600;}
+.offer .benefits-row .benefit-item .benefit-content p { margin: 0; font-size: 1rem; color: color-mix(in srgb, var(--main-color), transparent 25%); line-height: 1.5; }
+
 
 .offer .action-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 .offer .action-buttons .guarantee-badge { display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem; color: var(--hd-color); font-size: 0.9rem; font-weight: 500; }
