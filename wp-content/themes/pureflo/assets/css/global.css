@@ -348,23 +348,6 @@ body.modal-open .hero, body.modal-open footer
 .accordion-item.active button .faq-icon {background:#004B88; color:#ffffff;}
 
 
-/* === TESTIMONIALS ===*/
-
-.testimonial-item {text-align: center; margin-bottom:2rem;}
-.testimonial-item p { font-style: italic; margin: 0 15px 15px 15px; padding: 20px; position: relative; background: color-mix(in srgb, #000000, transparent 97%); margin-bottom: 35px; border-radius: 6px; }
-.testimonial-item p::after { content: ""; width: 0; height: 0; border-top: 20px solid color-mix(in srgb, #000000, transparent 97%); border-right: 20px solid transparent; border-left: 20px solid transparent; position: absolute; bottom: -20px; left: calc(50% - 20px); }
-.testimonial-item img { width: 90px; border-radius: 50%; margin: 0 auto; }
-.testimonial-item h3 { font-size: 18px; font-weight: bold; margin: 10px 0 5px 0; }
-.testimonial-item h4 { font-size: 14px; color: color-mix(in srgb, var(--main-color), transparent 20%); margin: 0; }
-.testimonial-item .quote-icon-left,
-.testimonial-item .quote-icon-right { color: color-mix(in srgb, var(--pureflo-blue), transparent 40%); font-size:1.4rem; line-height: 0; }
-.testimonial-item .quote-icon-left { display: inline-block; left: -5px; position: relative; }
-.testimonial-item .quote-icon-right { display: inline-block; right: -5px; position: relative; top: 10px; transform: scale(-1, -1); }
-
-@media (max-width: 1400px) {.testimonial-item p {font-size:1.2rem;}}
-@media (min-width: 992px) {.testimonial-item p {height: 100%; max-height: 180px;}}
-
-
 /* === OFFERS / TRIAL === */
 
 .offer { padding:0; position: relative; border-radius: 20px; background-color: #ffffff; box-shadow: 0 20px 60px color-mix(in srgb, var(--pureflo-blue), transparent 92%); overflow: hidden; }

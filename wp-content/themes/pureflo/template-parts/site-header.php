@@ -51,31 +51,31 @@
 										<h4>Working for You</h4>
 
 										<div class="product-list">
-											<a href="/products/pf3000/" class="product-link">
+											<a href="/products/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<span>PureFlo 3000 PAPR Series</span>
-												<small>PureFlo PAPRs provide respiratory, head, eye, and face protection in one integrated head-top unit, reducing the need for multiple PPE components. And PureFlo PAPRs are ready to use right out of the box, with no complex setup required, so you can get to work faster. </small>
+												<span>NIOSH Certified</span>
+												<small>Something about products for the North American market certified requirements...Lorem ipsum dolor sit ame. </small>
 												</div>
 											</a>
-											<a href="/products/esm/" class="product-link">
+											<a href="/products/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<span>PureFlo ESM+ Series</span>
-												<small>In high-heat environments, extra protection is essential. PureFlo has you covered with dependable protection when it matters most.</small>
+												<span>EN (CE) &amp; AS/NZS Certified</span>
+												<small>Something about products for the EU and Australia/New Zealand market certified requirements...Lorem ipsum dolor sit amet. </small>
 												</div>
 											</a>			
-											<a href="/products/parts/" class="product-link">
+											<a href="/distributor/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<span>Filters &amp; Parts</span>
-												<small>In high-heat environments, extra protection is essential. PureFlo has you covered with dependable protection when it matters most.</small>
+												<span>Find a Distributor</span>
+												<small>Ready to buy? Find a distributor closests to you.</small>
 												</div>
 											</a>									
 										</div>										
 									</div>
 																	
-									<div class="col-12 col-xl-6 product-section text-center">										
+									<div class="col-12 col-xl-6 product-section text-center">																		
 										<div class="product-list">
 											<a href="/trial/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/try-purflo-risk-free.png" width="201" height="200" alt="Try PureFlo Risk Free"  class="mt-4"  data-aos="flip-up" data-aos-duration="3000"></a>
 										</div>
@@ -184,7 +184,6 @@
 				<li class="dropdown"><a href="/about/"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
 						<li><a href="/about/">About Us</a></li>
-						<li><a href="/news/">News</a></li>
 						<li><a href="/faq/">FAQs</a></li>
 						<li><a href="/conformity/">Declarations of Conformity</a></li>
 					</ul>
