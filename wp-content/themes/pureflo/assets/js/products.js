@@ -33,8 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
     mainLink.addEventListener('click', function (e) { e.preventDefault(); lightbox.open();  });
 });
 
-document.getElementById('collapseGuide').addEventListener(
-  'shown.bs.collapse', function () { this.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+// CAROUSEL ACTIVE THUMB DETECTION
+
+document.getElementById('collapseGuide')?.addEventListener(
+  'shown.bs.collapse',
+  function () {
+    this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 );
 
 // Reusable function for any carousel + button group
@@ -44,10 +49,34 @@ function setupCarousel(carouselId, buttonContainerSelector) {
 
   if (!carousel || !buttons.length) return;
 
-  carousel.addEventListener('slid.bs.carousel', function (e) {
-    buttons.forEach(btn => btn.classList.remove('active'));
+  const slides = carousel.querySelectorAll('.carousel-item');
 
-    if (buttons[e.to]) { buttons[e.to].classList.add('active'); }
+  function updateActiveButton(index) {
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+
+      if (i === index) {
+        btn.setAttribute('aria-current', 'true');
+      } else {
+        btn.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  // Set the initial active button
+  const initialIndex = [...slides].findIndex(slide =>
+    slide.classList.contains('active')
+  );
+  updateActiveButton(initialIndex >= 0 ? initialIndex : 0);
+
+  // Update after each slide change
+  carousel.addEventListener('slid.bs.carousel', function () {
+    const activeIndex = [...slides].findIndex(slide =>
+      slide.classList.contains('active')
+    );
+
+    updateActiveButton(activeIndex);
   });
 }
+
 setupCarousel('#pfCarousel', '.pf-icons');
