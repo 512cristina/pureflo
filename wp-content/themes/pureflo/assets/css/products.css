@@ -168,7 +168,8 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .pf-icons button {border:0; background:none; max-width: 100px; opacity: .5;}
 .pf-icons button span {display: block; font-size:14px; font-weight: 500;}
 .pf-icons button.active {opacity: 1;}
-.pf-icons img {max-width: 75px;}
+.pf-icons button img {max-width: 75px; filter: grayscale(100%);}
+.pf-icons button.active img {filter:none;}
 
 #pfCarousel {font-size:1rem; background: var(--background-color); border-radius: 1rem; padding: 1.5rem 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;}
 #pfCarousel h3, #pfCarousels h3 {font-size:1.4rem;}
