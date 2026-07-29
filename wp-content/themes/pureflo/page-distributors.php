@@ -63,9 +63,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial load
     fetchDistributors();
 
-    // On change
-    filter.addEventListener('change', function () { fetchDistributors(this.value);  });
+    // OLD NO GA4 Filter Event  filter.addEventListener('change', function () { fetchDistributors(this.value);  });
 
+
+    // On change
+    filter.addEventListener('change', function () {
+
+        const countryCode = this.value;
+        const countryName = this.options[this.selectedIndex].text;
+
+        // Send country selection to Google Tag Manager
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'distributor_country_select',
+            country: countryName,
+            country_code: countryCode
+        });
+
+        // Existing distributor filtering
+        fetchDistributors(countryCode);
+
+    });
 });
 </script>
 
