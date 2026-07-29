@@ -71,7 +71,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 
 .hero.esm { background-image: url('../img/hero/hero-esm.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
 .hero.esm::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
-@media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-pf3000-md.jpg'); background-position:right top;}}
+@media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-md.jpg'); background-position:right top;}}
 
 .hero.pf3000 { background-image: url('../img/hero/hero-pf3000.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
 .hero.pf3000::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
@@ -80,7 +80,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .quick-scan h5 {font-weight:600;}
 .quick-scan p {font-size:1.1rem; opacity:.9;}
 
-.trust-bar {text-align: center; padding:1rem; color:#ffffff; font-size:1.5rem; font-family: "geom-graphic"; font-weight: 400; letter-spacing: 5px;}
+.trust-bar {text-align: center; padding:1rem; color:#ffffff; font-size:1.5rem; font-family: "new-science"; font-weight: 400; letter-spacing: 5px;}
 
     /* == CARDS == */
     
@@ -100,9 +100,9 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
     /* == GALLERIES == */
 
 #galleryMainImage { max-height: 500px; object-fit: contain; }
-.gallery-thumb { width:50px; height:50px; object-fit: cover; cursor: pointer; transition: all 0.2s ease; }
-.gallery-thumb:hover { transform: scale(1.05); }
-.gallery-thumb.active { border: 2px solid var(--pureflo-blue); }
+.gallery-thumb { width:50px; height:50px; object-fit: cover; cursor: pointer; transition: all 0.2s ease; opacity: 0.5; }
+.gallery-thumb:hover { transform: scale(1.05); opacity: 1;}
+.gallery-thumb.active { border: 2px solid var(--pureflo-blue); opacity: 1;}
 
 
     /* === VERTICAL PRODUCT TABS === */
