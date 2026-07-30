@@ -10,11 +10,16 @@
 			<ul><!-- Products & Distributor Mobile Only  -->
 				<li class="nav1 d-lg-none"><a href="/distributors/" class="btn CTA-nav1-distributor">Find a Distributor</a></li>
 				<li class="dropdown d-lg-none"><a href="/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-					<ul>
-						<li><a href="/products/"><span>PureFlo 3000 PAPR Series</span></a></li>
-						<li><a href="/products/"><span>PureFlo ESM+ Series</span></a></li>
-						<li><a href="/products/"><span>Filter &amp; Parts</span></a></li>
-						<li><a href="/industries/"><span>Industries</span></a></li>
+
+					<ul><small class="fst-italic fw-500 ms-3">NIOSH Certified</small>
+						<li><a href="/products/niosh/pf2000/">PureFlo 2000</a></li>
+						<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
+						<li><a href="/products/niosh/esm/">PureFlo ESM+</a></li>
+
+						<small class="fst-italic fw-500 ms-3">EN (CE) Certified</small>
+						<li><a href="/products/en/purelite/">PureLite</a></li>
+						<li><a href="/products/en/pf3000/">PureFlo 3000</a></li>
+						<li><a href="/products/en/esm/">PureFlo ESM+</a></li>
 					</ul>
 				</li>
 
@@ -51,20 +56,32 @@
 										<h4>Working for You</h4>
 
 										<div class="product-list">
-											<a href="/products/" class="product-link">
+											<div class="product-item">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<span>NIOSH Certified</span>
-												<small>Something about products for the North American market certified requirements...Lorem ipsum dolor sit ame. </small>
+												<a href="/products/#tab-ence">NIOSH Certified</a>
+												<small>Certified to U.S. NIOSH standards for respiratory protection used throughout the United States and Canada.</small>
+												<ul>
+													<li><a href="/products/niosh/pf2000/">PureFlo 2000</a></li>
+													<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
+													<li><a href="/products/niosh/esm/">PureFlo ESM+</a></li>
+												</ul>
 												</div>
-											</a>
-											<a href="/products/" class="product-link">
+											</div>
+
+											<div class="product-item">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<span>EN (CE) &amp; AS/NZS Certified</span>
-												<small>Something about products for the EU and Australia/New Zealand market certified requirements...Lorem ipsum dolor sit amet. </small>
+												<a href="/products/#tab-ence">EN (CE) Certified</a>
+												<small>Certified to European EN (CE) standards, commonly required throughout the EU, Australia, and New Zealand.</small>
+												<ul>
+													<li><a href="/products/en/purelite/">PureLite</a></li>
+													<li><a href="/products/en/pf3000/">PureFlo 3000</a></li>
+													<li><a href="/products/en/esm/">PureFlo ESM+</a></li>
+												</ul>
 												</div>
-											</a>			
+											</div>		
+												
 											<a href="/distributor/" class="product-link">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
