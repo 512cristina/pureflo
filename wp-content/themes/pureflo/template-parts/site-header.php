@@ -12,11 +12,11 @@
 				<li class="dropdown d-lg-none"><a href="/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 
 					<ul><small class="fst-italic fw-500 ms-3">NIOSH Certified</small>
-						<li><a href="/products/niosh/pf2000/">PureFlo 2000</a></li>
 						<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
 						<li><a href="/products/niosh/esm/">PureFlo ESM+</a></li>
 
 						<small class="fst-italic fw-500 ms-3">EN (CE) Certified</small>
+						<li><a href="/products/en/pf2000/">PureFlo 2000</a></li>
 						<li><a href="/products/en/purelite/">PureLite</a></li>
 						<li><a href="/products/en/pf3000/">PureFlo 3000</a></li>
 						<li><a href="/products/en/esm/">PureFlo ESM+</a></li>
@@ -62,7 +62,6 @@
 												<a href="/products/#tab-ence">NIOSH Certified</a>
 												<small>Certified to U.S. NIOSH standards for respiratory protection used throughout the United States and Canada.</small>
 												<ul>
-													<li><a href="/products/niosh/pf2000/">PureFlo 2000</a></li>
 													<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
 													<li><a href="/products/niosh/esm/">PureFlo ESM+</a></li>
 												</ul>
@@ -76,19 +75,13 @@
 												<small>Certified to European EN (CE) standards, commonly required throughout the EU, Australia, and New Zealand.</small>
 												<ul>
 													<li><a href="/products/en/purelite/">PureLite</a></li>
+													<li><a href="/products/en/pf2000/">PureFlo 2000</a></li>
 													<li><a href="/products/en/pf3000/">PureFlo 3000</a></li>
 													<li><a href="/products/en/esm/">PureFlo ESM+</a></li>
 												</ul>
 												</div>
 											</div>		
-												
-											<a href="/distributor/" class="product-link">
-												<i class="bi bi-cpu-fill"></i>
-												<div>
-												<span>Find a Distributor</span>
-												<small>Ready to buy? Find a distributor closests to you.</small>
-												</div>
-											</a>									
+									
 										</div>										
 									</div>
 																	
@@ -104,8 +97,9 @@
 									<div class="col col-xl-8 d-flex align-items-center gap-3 feature">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nav/welder-200x200.jpg" width="200" height="200"  alt="Learn more how Gentex's experience can work for you | decorative photo of a welder at work">
 										<div class="feature-info">
-											<h5>Put Our Experience to Work for You</h5>
-											<a href="/contact/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
+											<h5 class="mt-0">Find a Distributor</h5>
+											<p class="mb-0">Ready to buy? Find a distributor closests to you.</p>
+											<a href="/distributor/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
 										</div>	
 									</div>								
 								</div>
@@ -182,8 +176,8 @@
 									<div class="col col-xl-8 d-flex align-items-center gap-3 feature">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nav/phone-photo.jpg" width="150" height="100" alt="Customer Support | decorative photo of a phone">
 										<div class="feature-info">
-											<h5>Customer Service</h5>
-											<p>Call <a href="tel:+1888-894-1755">888-894-1755</a>, Monday-Friday, 9am-5pm ET.</p>
+											<h5 class="mt-0">Customer Service</h5>
+											<p class="mb-0">Call <a href="tel:+1888-894-1755">888-894-1755</a>, Monday-Friday, 9am-5pm ET.</p>
 											<a href="tel:+18888941755" class="callout-link">Call now <i class="bi bi-arrow-right"></i></a>
 										</div>	
 									</div>								
