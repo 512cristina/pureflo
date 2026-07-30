@@ -92,7 +92,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
   /* === CERTIFICATION TABS === */
 .certification .nav-tabs {border-color:var(--pureflo-blue) !important;}
 .certification .nav-tabs li {margin-bottom:0;}
-.certification .nav-tabs .nav-link {color:var(--pureflo-blue) !important; font-family: "geom-graphic"; cursor: pointer; border-color:var(--pureflo-blue) !important;}
+.certification .nav-tabs .nav-link {color:var(--pureflo-blue) !important; font-family: "new-science"; font-weight:500; cursor: pointer; border-color:var(--pureflo-blue) !important; border-bottom:none;}
 .certification .nav-tabs .nav-link.active {background-color:var(--pureflo-blue) !important; color: #ffffff !important; border-color:var(--pureflo-blue) !important;}
 .certification .nav-tabs .nav-link:hover {border-color:var(--pureflo-blue) !important; background-color:var(--pureflo-blue) !important; color: #ffffff !important; text-decoration: none !important;}
 /*  .certification #tab-niosh, .certification #tab-ence { scroll-margin-top: 200px; } */
