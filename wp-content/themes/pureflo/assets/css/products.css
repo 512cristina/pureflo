@@ -185,4 +185,5 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .niosh-logo {position:absolute; bottom:1rem; right:1rem; max-width: 125px; filter: grayscale(100%);}
 
 .table-striped tbody tr > th {font-weight: 500;}
+.table-striped tbody tr > th small {display:block; font-weight:300;}
 .table-striped tbody tr.header > th {background-color: var(--pureflo-blue) !important; color: #fff; }
