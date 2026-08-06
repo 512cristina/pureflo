@@ -227,6 +227,7 @@ header .logo img { max-height: 50px; width:auto;}
 .btn.btn-outline i { transition: transform 0.8s ease; }
 .btn.btn-outline:hover { background-color: color-mix(in srgb, var(--pureflo-blue), #000 15%); color:#ffffff; box-shadow: 0 8px 15px color-mix(in srgb, var(--pureflo-blue), transparent 70%);}
 .btn.btn-outline:hover i { transform: translateX(5px); }
+.btn.btn-outline.square {border-radius: 4px;}
 
 .btn.btn-square { display: inline-flex; align-items: center; background-color: var(--pureflo-blue); color:#ffffff; padding: 12px 24px; border-radius: 4px; transition: all 0.3s ease; }
 .btn.btn-square span { margin-right: 8px; }
