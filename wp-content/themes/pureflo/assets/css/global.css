@@ -63,6 +63,8 @@ ul {list-style-type: square;}
 ul li {margin:8px 0;}
 ul li::marker {color:var(--pureflo-blue);} 
 ul.default li::marker {color:var(--almost-black);}
+ul ul {list-style-type: '— ';}
+ul ul li::marker {color:var(--pureflo-blue); font-weight: 500;} 
 
 ol li {margin:8px 0; padding-left:5px;}
 ol li::marker {color:var(--pureflo-blue); font-weight: 500;}
