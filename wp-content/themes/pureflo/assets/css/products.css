@@ -1,10 +1,9 @@
-/* == PRODUCTS PAGE ONLY == */
+/* == PRODUCTS SECTIONS ONLY == */
 
 .hero { background-image: url('../img/hero/hero-products.jpg'); background-position:right bottom; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
 .hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
 
 @media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-products-md.jpg');}}
-
 
 hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .img-overlap {margin-bottom:-250px;}
@@ -68,6 +67,10 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 }
 
 /* === SUB PAGES === */
+
+.hero.esm-niosh { background-image: url('../img/hero/hero-esm-niosh.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
+.hero.esm-niosh::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
+@media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-niosh-md.jpg'); background-position:right top;}}
 
 .hero.esm { background-image: url('../img/hero/hero-esm.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
 .hero.esm::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
