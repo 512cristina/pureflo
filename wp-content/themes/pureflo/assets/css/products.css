@@ -198,7 +198,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 
 .table-striped.specs {font-size:0.95rem;}
 .table-striped.specs.checks td {text-align: center;}
-.table-striped.specs.checks tr td:second-child {text-align: left;}
+.table-striped.specs.checks tr td:first-of-type {text-align: left;}
 .table-striped.specs .bi { font-weight: 500; font-size:1.1rem;}
 .table-striped.specs .bi-check {color:#33aa55;}
 .table-striped.specs .bi-x {color:var(--opscore-red);}
