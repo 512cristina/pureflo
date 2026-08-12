@@ -89,10 +89,12 @@ while (have_posts()) : the_post();  the_content(); endwhile;
             if (count($tax_query) > 1) { $tax_query['relation'] = 'AND'; }
 
             $search_term = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
+            $resource_id = isset($_GET['resource-id']) ? absint($_GET['resource-id']) : 0;
             $args = [ 'post_type' => 'resource', 'posts_per_page' => -1, 'post_status' => 'publish', ];
-
-           if (!empty($search_term)) { $args['s'] = $search_term; }  // Search everything
-                else { if (!empty($tax_query)) { $args['tax_query'] = $tax_query;  } }   // Only apply filters when NOT searching
+            
+            if ($resource_id) { $args['p'] = $resource_id; }  // Show only the requested Resource
+                elseif (!empty($search_term)) { $args['s'] = $search_term; } // Search everything
+                elseif (!empty($tax_query)) { $args['tax_query'] = $tax_query; } // Only apply filters when NOT searching
 
             $query = new WP_Query($args);
             if ($query->have_posts()) : 
