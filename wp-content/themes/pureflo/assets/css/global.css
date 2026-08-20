@@ -294,7 +294,7 @@ body.modal-open .hero, body.modal-open footer
 .hero .eyebrow {font-family: "new-science"; font-weight: 500; letter-spacing: 5px; font-size: 1.2rem;}
 .hero sup {font-weight: 300; font-size: 0.5em; top: -1em;}
 
-@media (min-width: 768px) {.hero {height:75vh;}  .hero.sm {height:60vh;} }
+@media (min-width: 768px) {.hero {height:80vh;}  .hero.sm {height:60vh;} }
 @media (max-width: 767.9px) { .hero {height:auto; }}
 
 .hero.default {background: linear-gradient(161deg, rgb(0, 14, 26) 50%, rgba(0, 75, 136) 90%);}
