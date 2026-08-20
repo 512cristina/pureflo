@@ -46,36 +46,6 @@
 
 @keyframes float {0%, 00% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
-
-
-/*-------------------
-# How We Work
----------------------*/
-.how-we-work .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; position: relative; margin-bottom: 3rem; }
-
-@media (min-width: 992px) { .how-we-work .steps-grid { grid-template-columns: repeat(4, 1fr); }}
-@media (max-width: 768px) { .how-we-work .steps-grid { gap: 1.5rem; }}
-
-.how-we-work .step-card { background: #ffffff; padding: 2.5rem 2rem; border-radius: 20px; text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; border: 1px solid color-mix(in srgb, var(--pureflo-blue), transparent 90%); }
-.how-we-work .step-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); border-color: var(--pureflo-blue); }
-.how-we-work .step-card:hover .step-icon { background-color: var(--pureflo-blue); color: #ffffff; transform: scale(1.1); }
-.how-we-work .step-card:hover .step-arrow { transform: translateX(5px); }
-.how-we-work .step-card .step-icon { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, color-mix(in srgb, var(--pureflo-blue), transparent 80%) 0%, color-mix(in srgb, var(--pureflo-blue), transparent 90%) 100%); color: var(--pureflo-blue); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; transition: all 0.3s ease; }
-.how-we-work .step-card .step-number { background: linear-gradient(135deg, var(--pureflo-blue) 0%, color-mix(in srgb, var(--pureflo-blue), #000 20%) 100%); color: #ffffff; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 1rem; }
-.how-we-work .step-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--hd-color); }
-@media (max-width: 576px) { .how-we-work .step-card h3 { font-size: 1.2rem; } }
-
-.how-we-work .step-card p { font-size: 0.95rem; color: var(--main-color); line-height: 1.6; margin-bottom: 0; }
-.how-we-work .step-card .step-arrow { position: absolute; top: 50%; right: -15px; width: 30px; height: 30px; background-color: var(--pureflo-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 0.9rem; transition: all 0.3s ease; z-index: 2; }
-.how-we-work .step-card:last-child .step-arrow { display: none; }
-@media (max-width: 991px) { .how-we-work .step-card .step-arrow { display: none; } }
-
-@media (max-width: 991px) { .how-we-work .steps-grid { grid-template-columns: repeat(2, 1fr); }}
-@media (max-width: 576px) { 
-  .how-we-work .steps-grid { grid-template-columns: 1fr; }
-  .how-we-work .step-card { padding: 2rem 1.5rem; }
-}
-
 /* === OFFERS === */
 
 .offer-section { position: relative; padding: 100px 0; background: linear-gradient(170deg, #ffffff 0%, color-mix(in srgb, #ffffff, var(--pureflo-blue) 5%) 100%); }

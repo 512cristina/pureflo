@@ -66,14 +66,14 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
   .how-we-work .step-card { padding: 2rem 1.5rem; }
 }
 
-/* === SUB PAGES === */
+/* === SUB PAGES HERO === */
 
-.hero.esm-niosh { background-image: url('../img/hero/hero-esm-niosh.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
-.hero.esm-niosh::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
+.hero.esm { background-image: url('../img/hero/hero-esm-niosh.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
+.hero.esm::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
 @media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-niosh-md.jpg'); background-position:right top;}}
 
-.hero.esm { background-image: url('../img/hero/hero-esm.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
-.hero.esm::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
+.hero.esm-en { background-image: url('../img/hero/hero-esm.jpg'); background-position:left center; background-repeat: no-repeat; background-size: cover;}
+.hero.esm-en::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
 @media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-md.jpg'); background-position:right top;}}
 
 .hero.pf3000 { background-image: url('../img/hero/hero-pf3000.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
@@ -86,7 +86,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 
 .hero.purelite { background-image: url('../img/hero/hero-purelite.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
 .hero.purelite::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
-@media (max-width: 1200px) {.hero.pf3000 {background-image: url('../img/hero/hero-purelite-md.jpg'); background-position:right top;}}
+@media (max-width: 1200px) {.hero.purelite {background-image: url('../img/hero/hero-purelite-md.jpg'); background-position:right top;}}
 
 .quick-scan h5 {font-weight:600;}
 .quick-scan p {font-size:1.1rem; opacity:.9;}
