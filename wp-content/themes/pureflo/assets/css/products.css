@@ -191,6 +191,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.343 4 3.204 4h9.592c.861 0 1.319 1.013.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");}
 .niosh-logo {position:absolute; bottom:1rem; right:1rem; max-width: 125px; filter: grayscale(100%);}
 .ce-mark {position:absolute; bottom:1rem; right:2rem; max-width:75px; }
+.ce-mark-bottom-left {position:absolute; bottom:2rem; left:2rem; max-width:75px; }
 
 .table-striped tbody tr > th {font-weight: 500;}
 .table-striped tbody tr > th small {display:block; font-weight:300;}
