@@ -44,6 +44,13 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .certifications .cert-features.niosh-feat .card-body .bi {color:var(--ada-blue);}
 .certifications .cert-features.ence-feat .card-body .bi {color:#007744;}
 
+@media (min-width: 1400px) { 
+	.certifications .niosh .card, 
+	.certifications .ence .card {min-height: 385px;}
+	.certifications .cert-features .card {min-height: auto;}
+}
+
+
 /* === SUB PAGES HERO === */
 
 .hero.esm { background-image: url('../img/hero/hero-esm-niosh.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
