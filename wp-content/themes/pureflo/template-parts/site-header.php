@@ -59,7 +59,7 @@
 											<div class="product-item">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<a href="/products/#tab-ence">NIOSH Certified</a>
+												<a href="/products/#certifications">NIOSH Certified</a>
 												<small>Certified to U.S. NIOSH standards for respiratory protection used throughout the United States and Canada.</small>
 												<ul>
 													<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
@@ -71,7 +71,7 @@
 											<div class="product-item">
 												<i class="bi bi-cpu-fill"></i>
 												<div>
-												<a href="/products/#tab-ence">EN (CE) Certified</a>
+												<a href="/products/#certifications">EN (CE) Certified</a>
 												<small>Certified to European EN (CE) standards, commonly required throughout the EU, Australia, and New Zealand.</small>
 												<ul>
 													<li><a href="/products/en/purelite/">PureLite</a></li>
