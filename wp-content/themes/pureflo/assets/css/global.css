@@ -53,8 +53,7 @@ strong {font-weight: 500 !important;}
 .footnote {font-style: italic; font-size: 0.9rem;}
 .new-science {font-family: "new-science";}
 
-.pureflo-blue {color:var(--pureflo-blue);} 
-.pf-blue {color:var(--pureflo-blue);} 
+.pureflo-blue, .pf-blue {color:var(--pureflo-blue);} 
 .ada-blue {color:var(--ada-blue);}
 .gtex-oj {color:var(--gtex-oj);}
 
