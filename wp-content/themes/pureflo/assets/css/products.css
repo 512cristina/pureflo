@@ -26,7 +26,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 
 .certifications {font-size: 1rem;}
 .certifications .header {font-weight: 500;}
-.certifications .header .bi {font-size:2.5rem; margin-right:8px; color:var(--pf-blue);}
+.certifications .header .bi {font-size:2.5rem; margin-right:8px;}
 .certifications .header small {display: block; font-size: 0.85rem; font-weight: 300;}
 .certifications hr {border-top-color: #d9e4f2;}
 
@@ -38,7 +38,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .certifications .cert-features .card {display: flex; flex-direction: row; background: var(--almost-white); background: linear-gradient(90deg, rgba(235, 241, 249, 1) 0%, rgba(244, 249, 249, 1) 65%);}
 .certifications .cert-features .card-body {display:flex; flex: 1; font-size: 0.8rem;}
 
-.certifications .cert-features .card-body .bi {font-size:2rem; margin-right:5px;}
+.certifications .cert-features .card-body .bi {font-size:2rem; margin-right:5px; color:var(--pf-blue);}
 .certifications .cert-features .card-body strong {display: block;}
 
 .certifications .cert-features.niosh-feat .card-body .bi {color:var(--ada-blue);}
