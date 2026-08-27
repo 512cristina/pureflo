@@ -10,6 +10,30 @@
 
 .hero p { margin-bottom: 40px; max-width: 600px; }
 
+
+/* SERVING WORLDWIDE */
+
+.worldw h2:after { content: ""; display: block; width: 100px; height: 2px; background:var(--ada-blue); margin: 12px 0 0 0;}
+
+.worldw .cert-item { display: flex; align-items: flex-start; padding: 0 20px; }
+.worldw .cert-icon { width: 52px; height: 52px; min-width: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.6rem; margin-right:1rem; }
+
+.worldw h3 { margin: 3px 0 2px; font-size:14px; color: var(--ada-blue); font-weight:600; text-transform: uppercase;}
+.worldw .subtitle { font-size: 12px; color: #273444; }
+.worldw .line { width: 80px; height: 2px; margin: 8px 0 8px; background:var(--ada-blue); }
+.worldw .cert-description { max-width: 200px; margin: 0; font-size:14px; }
+
+.worldw .niosh .cert-icon { background: var(--ada-blue); }
+
+.worldw .ence h3 {color: #408848;}
+.worldw .ence .cert-icon,
+.worldw .ence .line { background: #4b9551; }
+.worldw .ce-mark {filter: invert(1); max-width: 30px;}
+
+.worldw .int h3 { color: #e39f17; text-shadow:0 0 1px #999;}
+.worldw .int .cert-icon,
+.worldw .int .line  { background: #edb12f; }
+
 /* === FEATURED PRODUCT === */
 
 .featured-product { position: relative; }
