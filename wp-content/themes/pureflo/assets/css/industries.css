@@ -42,8 +42,9 @@
 .industries .tab-pane.show { transform: translateY(0); opacity: 1; }
 
 @media (max-width: 991px) { .industries .nav-tabs { margin-bottom: 30px; }
-  .industries .nav-tabs .nav-link { padding: 15px; }
-  .industries .nav-tabs .nav-link .icon-box { width: 40px; height: 40px; }
+  .industries .nav-tabs.nav-item { margin-bottom: 0; }
+  .industries .nav-tabs .nav-link { padding: 5px 8px; background:#f9f9f9;}
+  .industries .nav-tabs .nav-link .icon-box { width: 30px; height: 30px; }
   .industries .nav-tabs .nav-link .icon-box i { font-size: 20px; }
   .industries .tab-content .content-box { padding: 30px; }
   .industries .tab-content .content-box h3 { font-size: 24px; }

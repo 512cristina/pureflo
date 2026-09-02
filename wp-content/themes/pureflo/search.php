@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="hero default">
+<section class="hero sm default">
 	<div class="container">
 		<div class="row align-items-center"><div class="col-lg-7">
 			<div class="eyebrow">PureFlo</div>
@@ -8,15 +8,6 @@
 		</div></div>		
 	</div>
 </section>
-
-<style>
-.form-control:focus { outline: none; box-shadow: none; border-color: inherit; }
-.search-field {background-color:var(--almost-white) !important;}
-.card .img-wrapper {overflow: hidden;}
-.card-text {font-size:1rem; margin: 8px 0 15px 0;}
-.card-title {font-size:1.05rem;}
-a.read-more {display:block; font-weight: 600; text-transform: uppercase; font-size:0.9rem; margin-top:0.6rem; text-align:right; margin-top:auto;}
-</style>
 
 <section>
 	<div class="container">        
@@ -84,5 +75,14 @@ a.read-more {display:block; font-weight: 600; text-transform: uppercase; font-si
 
 	</div>
 </section>
+
+<style>
+.form-control:focus { outline: none; box-shadow: none; border-color: inherit; }
+.search-field {background-color:var(--almost-white) !important;}
+.card .img-wrapper {overflow: hidden;}
+.card-text {font-size:1rem; margin: 8px 0 15px 0;}
+.card-title {font-size:1.05rem;}
+a.read-more {display:block; font-weight: 600; text-transform: uppercase; font-size:0.9rem; margin-top:0.6rem; text-align:right; margin-top:auto;}
+</style>
 
 <?php get_footer(); ?>

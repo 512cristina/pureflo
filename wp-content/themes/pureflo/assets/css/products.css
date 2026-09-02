@@ -77,6 +77,8 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .quick-scan p {font-size:1.1rem; opacity:.9;}
 
 .trust-bar {text-align: center; padding:1rem; color:#ffffff; font-size:1.5rem; font-family: "new-science"; font-weight: 500; letter-spacing: 5px;}
+@media (max-width: 768px) {.trust-bar { font-size: 1.3rem; line-height: 1.2;} }
+@media (max-width: 576px) {.trust-bar { font-size: 1rem; font-weight: 500;} }
 
     /* == CARDS == */
     
@@ -91,7 +93,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .gallery-thumb { width:50px; height:50px; object-fit: cover; cursor: pointer; transition: all 0.2s ease; opacity: 0.5; }
 .gallery-thumb:hover { transform: scale(1.05); opacity: 1;}
 .gallery-thumb.active { border: 2px solid var(--pureflo-blue); opacity: 1;}
-
+@media (max-width: 768px) {#galleryMainImage { max-height: 350px;} }
 
     /* === VERTICAL PRODUCT TABS === */
 
@@ -134,8 +136,9 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .product-tabs .tab-pane.show { transform: translateY(0); opacity: 1; }
 
 @media (max-width: 991px) { .product-tabs .nav-tabs { margin-bottom: 30px; }
-  .product-tabs .nav-tabs .nav-link { padding: 15px; }
-  .product-tabs .nav-tabs .nav-link .icon-box { width: 40px; height: 40px; }
+  .product-tabs .nav-tabs .nav-item { margin-bottom: 0; }
+  .product-tabs .nav-tabs .nav-link { padding: 5px 8px; background:#f9f9f9;}
+  .product-tabs .nav-tabs .nav-link .icon-box { width: 30px; height: 30px; }
   .product-tabs .nav-tabs .nav-link .icon-box i { font-size: 20px; }
   .product-tabs .tab-content .content-box { padding: 30px; }
   .product-tabs .tab-content .content-box h3 { font-size: 24px; }
@@ -167,6 +170,7 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .niosh-logo {position:absolute; bottom:1rem; right:1rem; max-width: 125px; filter: grayscale(100%);}
 .ce-mark {position:absolute; bottom:1rem; right:2rem; max-width:75px; }
 .ce-mark-bottom-left {position:absolute; bottom:2rem; left:2rem; max-width:75px; }
+@media (max-width: 768px) {.ce-mark-bottom-left {left:auto; bottom:1rem; right:1rem; max-width:50px;} }
 
 .table-striped tbody tr > th {font-weight: 500;}
 .table-striped tbody tr > th small {display:block; font-weight:300;}
