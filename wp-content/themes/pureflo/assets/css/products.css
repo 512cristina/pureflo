@@ -57,9 +57,9 @@ hr.sm {width:200px; border-top-width:2px; color:var(--pureflo-blue);}
 .hero.esm::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
 @media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-niosh-md.jpg'); background-position:right top;}}
 
-.hero.esm-en { background-image: url('../img/hero/hero-esm.jpg'); background-position:left center; background-repeat: no-repeat; background-size: cover;}
+.hero.esm-en { background-image: url('../img/hero/hero-esm-en.jpg'); background-position:left center; background-repeat: no-repeat; background-size: cover;}
 .hero.esm-en::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
-@media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-md.jpg'); background-position:right top;}}
+@media (max-width: 1200px) {.hero.esm {background-image: url('../img/hero/hero-esm-en-md.jpg'); background-position:right top;}}
 
 .hero.pf3000 { background-image: url('../img/hero/hero-pf3000.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover;}
 .hero.pf3000::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
