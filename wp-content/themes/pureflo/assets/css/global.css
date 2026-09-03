@@ -241,7 +241,7 @@ header .logo img { max-height: 50px; width:auto;}
 .btn.btn-white:hover { background-color:transparent; border-color:#ffffff; color: #ffffff; transform: translateY(-2px);}
 
 .btn.ada-blue {background-color: var(--ada-blue); border-color: var(--ada-blue); }
-.btn.btn-sm {padding: 5px 12px; border-radius: 8px; font-size: 12px;}
+.btn.btn-sm {padding: 5px 12px; font-size: 12px;}
 
 /* == GLOBAL FOOTER == */
 
