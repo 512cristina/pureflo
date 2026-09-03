@@ -31,7 +31,7 @@
 .industries .tab-content {color: color-mix(in srgb, var(--main-color), transparent 20%); font-size: 1rem; }
 .industries .tab-content .content-box { background: var(--background-color); border-radius: 1rem; padding: 1.5rem 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); transition: all 0.4s ease; }
 .industries .tab-content .content-box h3 { font-size: 28px; color: var(--hd-color); margin-bottom: 20px; position: relative; padding-bottom: 15px; }
-.industries .tab-content .content-box h3::after { content: ""; position: absolute; bottom: 0; left: 0; width: 50%; height: 3px; background: var(--pureflo-blue); border-radius: 3px; }
+.industries .tab-content .content-box h3::after { content: ""; position: absolute; bottom: 0; left: 0; width: 75px; height: 3px; background: var(--pureflo-blue); border-radius: 3px; }
 
 .industries .tab-content .content-box .image-box { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); }
 .industries .tab-content .content-box .image-box img { transition: all 0.6s ease; }
