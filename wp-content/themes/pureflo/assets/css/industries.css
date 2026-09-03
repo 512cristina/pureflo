@@ -58,14 +58,26 @@
   .industries .tab-content .content-box p { font-size: 15px; }
 }
 
-.why-pf {--hd-color:#ffffff; color:#ffffff; position:relative; border-radius: 1rem; background: linear-gradient(121deg,rgba(0, 28, 51, 1) 20%, rgba(0, 14, 26, 1) 49%, rgba(0, 75, 135, 1) 81%); }
+/* == WHY PUREFLO == */
+.why-pf {position: relative; overflow: hidden;}
+.why-pf::before {content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 250px; opacity: 0.15; pointer-events: none; z-index: 0;
+    background-image: url('../img/global/hex-pattern-left.png'); background-repeat: no-repeat; background-position: left top; background-size: 100% auto;}
 
-.why-pf:before {content: '';  opacity: 0.1; position: absolute; inset: 0; pointer-events: none;
-    background: url('../img/hero/wave-light-sm.webp') no-repeat; background-size: cover; background-position: bottom right;}
+.why-pf::after {content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 250px; opacity: 0.15; pointer-events: none; z-index: 0;
+    background-image: url('../img/global/hex-pattern-right.png'); background-repeat: no-repeat; background-position: right bottom; background-size: 100% auto;}
 
-.why-pf h4 {font-size:2rem; margin-left:1rem;}
-.why-pf .border-right {border-right: 5px solid var(--ada-blue);}
+.why-pf .container { position: relative; z-index: 1;}
 
-.why-pf .btn.btn-outline { color: var(--ada-blue);  border-color: var(--ada-blue);}
-.why-pf .btn.btn-outline:hover { color: #ffffff;  border-color: #ffffff;}
-.why-pf a {color:var(--ada-blue);}
+.why-pf .row > .col-md-6:not(:last-child) { border-right: 1px solid rgba(0, 0, 0, 0.12);}
+.why-pf-item { height: 100%; padding: 0 35px; }
+
+.why-pf-icon { width: 64px; height: 64px; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 50%; color: var(--pf-blue); font-size: 1.75rem; box-shadow: 0 3px 10px rgba(0, 40, 80, 0.08); }
+.why-pf-item h3 { margin-bottom: 10px; color: var(--pf-blue); font-size: 0.9rem; font-weight: 700; line-height: 1.3; text-transform: uppercase; }
+.why-pf-item p { margin: 0 auto; font-size: 0.9rem; }
+
+@media (max-width: 991.98px) {.why-pf .row > .col-md-6:not(:last-child) { border-right: none;} }
+@media (max-width: 767.98px) {
+    .why-pf-item { padding: 30px 20px; }
+	  .why-pf .row > .col-md-6:not(:last-child) { border-bottom:1px solid rgba(0, 0, 0, 0.12);}
+    .why-pf-icon { margin-bottom: 15px; } 
+}
