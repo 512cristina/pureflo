@@ -1,10 +1,11 @@
 /* == INDUSTRIES PAGE ONLY == */
 
 .hero { background-image: url('../img/hero/hero-industries.jpg'); background-position:left top; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
-.hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 35%);}
-
-@media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-industries-md.jpg'); background-position:right top;}}
-@media (max-width: 768px) {	.hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 65%);}}
+@media (max-width: 1200px) {
+    .hero {background-image: url('../img/hero/hero-industries-md.jpg'); background-position:center top;}
+    .hero::after   { content: ""; position: absolute; inset: 0; pointer-events: none;  background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.3) 65%);}
+}
+@media (max-width: 768px) {.hero {background-position:left top;}}
 
 .industries .nav-tabs { border: none; background: color-mix(in srgb, var(--background-color), transparent 50%); border-radius: 16px; backdrop-filter: blur(8px); }
 .industries .nav-tabs .nav-item { margin-bottom: 15px; }
