@@ -4,6 +4,33 @@
 @media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-trial-md.jpg');}}
 @media (max-width: 768px) {.hero {background-position:center;}}
 
+/* ## TRIAL STEPS ## */
+
+.trial-steps { padding-top: 5rem; }
+.trial-step { position: relative; }
+
+.trial-step-card { position: relative; height: 100%; padding: 72px 30px 30px; text-align: center; background: #fff; border: 1px solid #dcecf7; border-radius: 14px; box-shadow: 0 8px 28px rgba(11, 65, 105, 0.07); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.trial-step-card:hover { transform: translateY(-4px); box-shadow: 0 14px 35px rgba(11, 65, 105, 0.11); }
+
+.trial-step-number { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background:var(--ada-blue); color: #fff; font-size: 28px; font-weight: 700; line-height: 1; box-shadow: 0 4px 12px rgba(8, 127, 193, 0.22); }
+.trial-step-icon { width: 92px; height: 92px; margin: 0 auto 22px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #e8f5fc; }
+.trial-step-icon svg { width: 48px; height: 48px; fill: none; stroke:var(--pf-blue); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+.trial-step-card h3 { margin: 0 0 14px; font-size: 22px; font-weight: 700; line-height: 1.2; }
+.trial-step-card p { margin: 0; font-size: 17px; line-height: 1.55; }
+.trial-step-arrow { position: absolute; z-index: 5; top: 50%; right: -17px; transform: translateY(-50%); width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; color:var(--ada-blue); background: #fff; font-size: 42px; font-weight: 300; line-height: 1; }
+
+@media (max-width: 1199.98px) { .trial-step:nth-child(2) .trial-step-arrow {display: none; }}
+@media (max-width: 767.98px) {
+  .trial-steps {   padding-top: 20px; padding-bottom: 40px; }
+  .trial-step {   margin-bottom: 25px; }
+  .trial-step:last-child {   margin-bottom: 0; }
+  .trial-step-arrow {   display: none !important; }
+  .trial-step-card {   padding: 68px 25px 28px; }
+}
+
+/* ## BENEFIT CARDS ## */
+
 .pf-benefit {position: relative; height: 100%; min-height: 200px; padding: 1.5rem; background: var(--almost-white); border-radius: 10px; transition: transform .2s ease, box-shadow .2s ease;}
 .pf-benefit:hover {transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0, 0, 0, .08);}
 .pf-benefit-icon {width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--pf-blue); font-size: 2.25rem;}
