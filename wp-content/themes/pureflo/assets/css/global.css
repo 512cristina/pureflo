@@ -74,7 +74,8 @@ ol li {margin:8px 0; padding-left:5px;}
 ol li::marker {color:var(--pureflo-blue); font-weight: 500;}
 
 .bkg-light {background-color:var(--almost-white);}
-.bkg-dark { background-color:var(--almost-black); --main-color: #ffffff; --hd-color: #ffffff; }
+.bkg-dark { background-color:var(--almost-black); color: #ffffff; --hd-color: #ffffff; }
+.bkg-dark a {color:var(--hero-blue);}
 .bg-light-grey {background-color: #f2f2f2; color:#000000; }
 .bg-pureflo-blue {background-color:var(--pureflo-blue); color:#ffffff; --hd-color:#ffffff;}
 .bg-pf-blue {background-color:var(--pureflo-blue); color:#ffffff; --hd-color:#ffffff;}
@@ -247,8 +248,8 @@ header .logo img { max-height: 50px; width:auto;}
 
 /* == GLOBAL FOOTER == */
 
-footer { color: var(--main-color); background-color: var(--background-color); font-size: 14px; position: relative; padding:3rem 0;}
-footer a {color:var(--ada-blue);}
+footer { background-color: var(--almost-black); color:#ffffff; --main-color:#ffffff; --hd-color:#ffffff; font-size: 14px; position: relative; padding:3rem 0;}
+footer a {color:var(--hero-blue);}
 footer h4 { font-size: 1rem; position: relative; padding-bottom: 12px; }
 
 footer .footer-links { margin-bottom: 30px; }

@@ -1,6 +1,6 @@
 </main>
 
-<footer class="bkg-dark position-relative">
+<footer>
 
     <div class="container">
         <div class="row gy-4 mb-4">
