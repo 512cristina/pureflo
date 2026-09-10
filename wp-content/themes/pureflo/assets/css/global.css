@@ -58,6 +58,7 @@ strong {font-weight: 500 !important;}
 
 .pureflo-blue, .pf-blue {color:var(--pureflo-blue);} 
 .ada-blue {color:var(--ada-blue);}
+.hero-blue {color:var(--hero-blue);}
 .gtex-oj {color:var(--gtex-oj);}
 
 hr {opacity: 1;}
