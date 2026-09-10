@@ -52,7 +52,7 @@ strong {font-weight: 500 !important;}
 .eyebrow { color:var(--ada-blue); font-weight: 600; font-size: 1rem;}
 .hd-sidebar  { margin-bottom: 15px; color: var(--hd-color); position: relative; padding-left: 15px; }
 .hd-sidebar:before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background-color: var(--pureflo-blue); border-radius: 2px; }
-.shadow-wht-box { background-color:#ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+.shadow-wht-box { background-color:#ffffff; padding:1rem 1.5rem; border-radius:1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 .footnote {font-style: italic; font-size: 0.9rem;}
 .new-science {font-family: "new-science";}
 
