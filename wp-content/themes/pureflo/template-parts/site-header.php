@@ -12,14 +12,13 @@
 				<li class="dropdown d-lg-none"><a href="/products/"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 
 					<ul><small class="fst-italic fw-500 ms-3">NIOSH Certified</small>
-						<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
-						<li><a href="/products/niosh/esm/">PureFlo ESM+</a></li>
+						<li><a href="/products/niosh/pf3000/">PureFlo 3000 PAPRs</a></li>
+						<li><a href="/products/niosh/esm/">PureFlo ESM+ PAPRs</a></li>
 
 						<small class="fst-italic fw-500 ms-3">EN (CE) Certified</small>
-						<li><a href="/products/en/pf2000/">PureFlo 2000</a></li>
-						<li><a href="/products/en/purelite/">PureLite</a></li>
-						<li><a href="/products/en/pf3000/">PureFlo 3000</a></li>
-						<li><a href="/products/en/esm/">PureFlo ESM+</a></li>
+						<li><a href="/products/en/purelite/">PureLite PAPR</a></li>
+						<li><a href="/products/en/pf3000/">PureFlo 3000 PAPRs</a></li>
+						<li><a href="/products/en/esm/">PureFlo ESM+ PAPRs</a></li>
 					</ul>
 				</li>
 
@@ -62,8 +61,8 @@
 												<a href="/products/#certifications">NIOSH Certified</a>
 												<small>Certified to U.S. NIOSH standards for respiratory protection used throughout the United States and Canada.</small>
 												<ul>
-													<li><a href="/products/niosh/pf3000/">PureFlo 3000</a></li>
-													<li><a href="/products/niosh/esm/">PureFlo ESM+</a></li>
+													<li><a href="/products/niosh/pf3000/">PureFlo 3000 PAPRs</a></li>
+													<li><a href="/products/niosh/esm/">PureFlo ESM+ PAPRs</a></li>
 												</ul>
 												</div>
 											</div>
@@ -74,10 +73,9 @@
 												<a href="/products/#certifications">EN (CE) Certified</a>
 												<small>Certified to European EN (CE) standards, commonly required throughout the EU, Australia, and New Zealand.</small>
 												<ul>
-													<li><a href="/products/en/purelite/">PureLite</a></li>
-													<li><a href="/products/en/pf2000/">PureFlo 2000</a></li>
-													<li><a href="/products/en/pf3000/">PureFlo 3000</a></li>
-													<li><a href="/products/en/esm/">PureFlo ESM+</a></li>
+													<li><a href="/products/en/purelite/">PureLite PAPR</a></li>
+													<li><a href="/products/en/pf3000/">PureFlo 3000 PAPRs</a></li>
+													<li><a href="/products/en/esm/">PureFlo ESM+ PAPRs</a></li>
 												</ul>
 												</div>
 											</div>		
@@ -98,7 +96,7 @@
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nav/welder-200x200.jpg" width="200" height="200"  alt="Learn more how Gentex's experience can work for you | decorative photo of a welder at work">
 										<div class="feature-info">
 											<h5 class="mt-0">Find a Distributor</h5>
-											<p class="mb-0">Ready to buy? Find a distributor closests to you.</p>
+											<p class="mb-0">Ready to buy? Find a distributor near you.</p>
 											<a href="/distributor/" class="callout-link">Learn more now <i class="bi bi-arrow-right"></i></a>
 										</div>	
 									</div>								
@@ -118,7 +116,7 @@
 												<i class="bi bi-fire"></i>
 												<div>
 													<span>Foundries / High Heat</span>
-													<small>Safety is top of mind.</small>
+													<small>Protection that keeps production moving.</small>
 												</div>
 											</a>
 
@@ -126,7 +124,7 @@
 												<i class="bi bi-cone-striped"></i>
 												<div>
 													<span>Construction</span>
-													<small>Keeping you safe.</small>
+													<small>Respiratory protection built for the jobsite.</small>
 												</div>
 											</a>
 
@@ -134,7 +132,7 @@
 												<i class="bi bi-cpu-fill"></i>
 												<div>
 													<span>General Trades / Technology</span>
-													<small>Configurable design.  </small>
+													<small>Simplify PPE across your workforce. </small>
 												</div>
 											</a>
 
@@ -149,7 +147,7 @@
 												<i class="bi bi-lightning-charge"></i>
 												<div>
 													<span>Welding / Metalforming / Fabrication</span>
-													<small>A breakthrough in safety. </small>
+													<small>Integrated protection for demanding metalwork. </small>
 												</div>
 											</a>
 
@@ -157,7 +155,7 @@
 												<i class="bi bi-radioactive"></i>
 												<div>
 													<span>Nuclear</span>
-													<small>Safety and comfort in one unit.  </small>
+													<small>Streamline protection for nuclear work.  </small>
 												</div>
 											</a>
 
@@ -165,7 +163,7 @@
 												<i class="bi bi-prescription"></i>
 												<div>
 													<span>Laboratory / Pharmaceutical / Healthcare</span>
-													<small>World-class protection in one.</small>
+													<small>Protection that supports your cleaning protocols.</small>
 												</div>
 											</a>	
 										</div>
