@@ -1,6 +1,8 @@
 /* == TRIAL PAGE ONLY == */
 
 .hero { background-image: url('../img/hero/hero-trial.jpg'); background-position:right bottom; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
+.hero::after  { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.1) 15%);}
+
 @media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-trial-md.jpg');}}
 @media (max-width: 768px) {.hero {background-position:center;}}
 
