@@ -5,7 +5,7 @@
   --background-color: #ffffff; 
   --main-color: #000000; 
   --hd-color: #001133;   
-  --almost-white:#ebf1f9;
+  --almost-white:#f0f8fe;  /*   #ebf1f9  #F1F7FB  */
   --almost-black:#000e1a; /* rgb(0, 14, 26) */
   --dark-grey: #283232;
   --navy-black: #001133;
@@ -49,7 +49,7 @@ strong {font-weight: 500 !important;}
 .fw-600 {font-weight: 600;}
 .no-break {white-space: nowrap;}
 .arrow-right::after { content: "\F138"; margin-left: 0.5rem; font-family: "bootstrap-icons"; line-height: 1; vertical-align: -.125em;}
-.eyebrow { color:var(--ada-blue); font-weight: 600; font-size: 1rem;}
+.eyebrow { color:var(--ada-blue); font-weight: 600; font-size: 0.9rem;}
 .hd-sidebar  { margin-bottom: 15px; color: var(--hd-color); position: relative; padding-left: 15px; }
 .hd-sidebar:before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background-color: var(--pureflo-blue); border-radius: 2px; }
 .shadow-wht-box { background-color:#ffffff; padding:1rem 1.5rem; border-radius:1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
