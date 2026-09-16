@@ -339,7 +339,7 @@ body.modal-open .hero, body.modal-open footer
 .callout-box { background: linear-gradient(135deg, color-mix(in srgb, var(--pureflo-blue), transparent 92%), color-mix(in srgb, var(--pureflo-blue), transparent 95%)); padding: 20px; border-radius: 12px; position: relative; }
 
 .callout-list { list-style: none; padding: 0; margin:0; }
-.callout-list li { display: flex; align-items: center; margin-bottom: 1rem; padding-left: 8px; transition: all 0.3s ease; }
+.callout-list li { display: flex; align-items: center; margin-bottom: 0.7rem; padding-left: 8px; transition: all 0.3s ease; }
 .callout-list li i { font-size: 20px; color: var(--pureflo-blue); margin-right: 12px; } /* icon */
 .callout-list li:hover { transform: translateX(5px); }
 
