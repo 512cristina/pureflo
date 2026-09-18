@@ -5,8 +5,10 @@
 
 @media (min-width: 768px) {.hero { height: 75vh;} }
 @media (max-width: 1200px) {.hero {background-image: url('../img/hero/hero-about-md.jpg'); background-position:right top;}}
-@media (max-width: 768px) {.hero {background-position:center;}}
-
+@media (max-width: 768px) {
+	.hero {background-position:left top;}
+	.hero::after { background: linear-gradient(0deg,rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0.3) 75%);}
+}
 
 /* == PRINCIPLES == */
 
