@@ -212,6 +212,7 @@
 					<form role="search" method="get" action="<?php echo home_url('/'); ?>" class="search-form d-flex align-items-center">
 						<input  type="search"  class="form-control search-input"  placeholder="Search..." name="s" onclick="this.placeholder=''">
 					</form>
+					<div id="algoliaSearch"></div>
 
 				</div>
 			</ul> 
