@@ -14,6 +14,7 @@ function pureflo_scripts() {
     wp_enqueue_script('glightbox', $uri.'/assets/js/glightbox.min.js', [], null, true);
     wp_enqueue_script('global', $uri.'/assets/js/global.js', [], null, true);
     wp_enqueue_script('counter', $uri.'/assets/js/stat-counter.js', [], null, true);
+    wp_enqueue_script('cse', 'https://cse.google.com/cse.js?cx=7346cbd776a434ef4', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'pureflo_scripts');
 

@@ -209,10 +209,9 @@
 				<button type="button" class="search-toggle ms-3"><i class="bi bi-search"></i></button>
 				<!-- Search container -->
 				<div class="nav-search">
-					<form role="search" method="get" action="<?php echo home_url('/'); ?>" class="search-form d-flex align-items-center">
-						<input  type="search"  class="form-control search-input"  placeholder="Search..." name="s" onclick="this.placeholder=''">
+					<form method="get" action="/search/?q" class="search-form d-flex align-items-center" role="search" aria-label="Search Site">
+						<input  type="search"  class="form-control search-input"  placeholder="Search..." name="q" onclick="this.placeholder=''" aria-label="Enter search term">
 					</form>
-					<div id="algoliaSearch"></div>
 
 				</div>
 			</ul> 
